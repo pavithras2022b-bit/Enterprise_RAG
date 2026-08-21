@@ -1,0 +1,23 @@
+# Module 3 - Chunking configuration.
+# Read by the orchestration layer (Phase 6) to construct a
+# ChunkingStrategy via chunking.strategies.create_chunker() without
+# touching code, per Phase 5's "one YAML per module" design.
+
+chunking:
+  # Which strategy create_chunker() should build. One of:
+  # fixed_size, sentence_aware, structure_aware.
+  # structure_aware is the project's chosen primary strategy
+  # (Phase 2 Technology Stack) for policy-heavy enterprise documents.
+  strategy: structure_aware
+
+  # Target/window chunk size, in whitespace-delimited words, used by
+  # sentence_aware and structure_aware (StructureAwareChunker /
+  # SentenceAwareChunker both take a target_size kwarg). Section 2
+  # Stage 2 recommends 200-500 tokens; 300 is the midpoint default.
+  target_size: 300
+
+  # fixed_size strategy only: FixedSizeChunker's constructor takes
+  # size/overlap (not target_size), matching chunk_fixed_size()'s
+  # signature from the Phase 4 module contract.
+  fixed_size_size: 300
+  fixed_size_overlap: 50

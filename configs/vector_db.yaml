@@ -1,0 +1,19 @@
+# Module 8 - Vector Database configuration.
+# Read by the orchestration layer (Phase 6) to construct VectorStore
+# (and optionally FAISSBenchmarkIndex for evaluation) without touching
+# code.
+
+vector_db:
+  chroma:
+    collection_name: enterprise_docs
+    # Directory for on-disk persistence. Leave unset (or empty) for an
+    # in-memory client, appropriate for tests/quick experiments only.
+    persist_directory: data/chroma_store
+
+  faiss_benchmark:
+    # Only used by Module 13's evaluation harness for a raw-speed
+    # comparison against ChromaDB (Section 13.2's baseline list);
+    # never the production retrieval path.
+    enabled: false
+    index_type: flat  # flat | hnsw
+    dimension: 384  # must match embeddings.model's output dimension

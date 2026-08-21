@@ -1,0 +1,31 @@
+# Module 12 - LLM Response Generation configuration.
+# Read by the orchestration layer (Phase 6) to construct LLMClient,
+# PromptBuilder, and (optionally) LoRAAdapterManager without touching
+# code.
+
+llm:
+  client:
+    # Ollama-compatible generation server. Section 12.2: Ollama/vLLM,
+    # run locally -- enterprise data must not leave company
+    # infrastructure.
+    base_url: http://localhost:11434
+    model_name: llama3.2:3b
+    timeout_seconds: 180.0
+    # Low temperature favors factual accuracy over creativity for
+    # enterprise Q&A (Section 3M).
+    temperature: 0.2
+
+  prompt_builder:
+    # Leave null to use the default grounding/citation instruction in
+    # llm/prompt_builder.py. If overridden, the replacement MUST still
+    # direct the model to cite sources as "[source_id]", or citation
+    # extraction will silently find nothing.
+    system_instruction: null
+
+  lora:
+    base_model: null  # e.g. "meta-llama/Llama-3-8B" per Section 12.3
+    device: cpu
+    # name -> adapter checkpoint directory (peft training output_dir).
+    adapters: {}
+    # Which registered adapter (if any) to load at startup.
+    active_adapter: null

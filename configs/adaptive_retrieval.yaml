@@ -1,0 +1,37 @@
+# Module 10 - Adaptive Retrieval configuration.
+# Read by the orchestration layer (Phase 6) to select and configure an
+# AlphaClassifier tier for AdaptiveFusionEngine, without touching code.
+# Toggling classifier_type: rule_based -> learned here is exactly the
+# switch Ablation A5 (Section 13.3) needs.
+
+adaptive_retrieval:
+  classifier_type: rule_based  # rule_based | learned
+
+  rule_based:
+    relational_indicators:
+      - who
+      - "which department"
+      - "which team"
+      - "reports to"
+      - manager
+      - "belongs to"
+      - "how many"
+      - "who manages"
+      - "who is"
+      - "which policy applies"
+    descriptive_indicators:
+      - "how do i"
+      - explain
+      - "what is the process"
+      - why
+      - describe
+      - "walk me through"
+      - "what is"
+      - "how does"
+
+  learned:
+    checkpoint_path: models/alpha_classifier/model.joblib
+
+  train:
+    max_iter: 1000
+    seed: 42

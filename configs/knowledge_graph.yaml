@@ -1,0 +1,40 @@
+# Module 6 - Knowledge Graph configuration.
+# Read by the orchestration layer (Phase 6) to construct
+# Neo4jConnection and Neo4jGraphBuilder without touching code.
+
+knowledge_graph:
+  connection:
+    # Bolt connection URI for the target Neo4j instance (Community
+    # Edition, local or Aura Free tier per Section 12.4).
+    uri: bolt://localhost:7687
+    username: neo4j
+    # Read from environment at runtime -- never commit a real password.
+    # See .env.example: NEO4J_PASSWORD.
+    password: ${NEO4J_PASSWORD}
+    database: neo4j
+
+  schema:
+    # Mirrors ner.schema.EntityType / relation_extraction.schema.RelationType.
+    # GraphSchema.default() already covers all of these; this list is
+    # informational/documentation, and a starting point for a future
+    # restricted-schema config (e.g. a department-scoped deployment).
+    node_labels:
+      - Employee
+      - Department
+      - Policy
+      - Project
+      - Software
+      - LeaveType
+      - Role
+      - NetworkResource
+    relationship_types:
+      - BELONGS_TO
+      - HAS_ROLE
+      - FOLLOWS
+      - MANAGES
+      - ASSIGNED_TO
+      - USES
+      - REQUIRES_ACCESS
+      - ELIGIBLE_FOR
+      - GOVERNS
+      - REQUIRES_TRAINING

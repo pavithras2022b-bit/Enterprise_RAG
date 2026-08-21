@@ -1,0 +1,29 @@
+# Module 2 - Cleaning configuration.
+#
+# NOTE: The source project guide's Phase 5 config list did not include
+# a config file for the Cleaning module, despite Section 5 stating the
+# project follows "one YAML per module." This file fills that gap so
+# Module 2 stays consistent with the rest of the pipeline's
+# config-driven design (Code Generation Rule 7).
+
+preprocessing:
+  cleaner:
+    # Minimum exact repetitions before a line is treated as boilerplate
+    # (e.g. a "Confidential -- Internal Use Only" footer on every page).
+    min_repeats: 3
+
+    # Only lines at or under this length are eligible for repeat-based
+    # boilerplate stripping.
+    max_boilerplate_line_length: 200
+
+    # Jaccard similarity (0-1) at/above which two paragraphs are
+    # treated as near-duplicates and the later one is dropped.
+    similarity_threshold: 0.85
+
+    # Word-shingle size used for paragraph similarity comparison.
+    shingle_size: 5
+
+  metadata_tagger:
+    # Number of leading characters of cleaned text scanned for
+    # document_type keywords.
+    scan_chars: 2000

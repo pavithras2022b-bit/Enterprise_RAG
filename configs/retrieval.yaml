@@ -1,0 +1,10 @@
+retrieval:
+  entity_linker:
+    similarity_threshold: 80.0   # rapidfuzz partial_ratio, 0-100
+    refresh_on_init: true
+
+  hybrid_controller:
+    max_hops: 3
+    k_vector: 20
+    k_graph: 20
+    alpha: 0.5   # static default; Module 10 overrides per-query at runtime

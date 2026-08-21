@@ -1,0 +1,27 @@
+# Module 1 - Document Ingestion configuration.
+# Read by the orchestration layer (Phase 6) to construct DocumentLoader
+# and drive load_directory() without touching code, per Phase 5's
+# "one YAML per module" design.
+
+ingestion:
+  # Tag attached to every RawDocument produced by this run. One of:
+  # local_filesystem, confluence, sharepoint, unknown.
+  source_system: local_filesystem
+
+  # File extensions Module 1 will attempt to extract. Must match keys
+  # registered in DocumentLoader._EXTENSION_MAP (loaders.py).
+  supported_extensions:
+    - .pdf
+    - .docx
+    - .html
+    - .htm
+
+  # Whether load_directory() descends into subdirectories.
+  recursive_scan: true
+
+  # Hash algorithm used by dedupe.compute_checksum. One of:
+  # sha256, sha1, md5.
+  checksum_algorithm: sha256
+
+  # Default root directory for raw source documents (Stage 0).
+  raw_data_dir: data/raw

@@ -1,0 +1,1122 @@
+[
+  {
+    "document_id": "DOC-001",
+    "filename": "document_001.pdf",
+    "file_type": "pdf",
+    "title": "Human Resources Department Overview",
+    "department": "Human Resources",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-002",
+    "filename": "document_002.docx",
+    "file_type": "docx",
+    "title": "Information Technology Department Overview",
+    "department": "Information Technology",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-003",
+    "filename": "document_003.html",
+    "file_type": "html",
+    "title": "Information Security Department Overview",
+    "department": "Information Security",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-004",
+    "filename": "document_004.pdf",
+    "file_type": "pdf",
+    "title": "Finance Department Overview",
+    "department": "Finance",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-005",
+    "filename": "document_005.docx",
+    "file_type": "docx",
+    "title": "Procurement Department Overview",
+    "department": "Procurement",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-006",
+    "filename": "document_006.html",
+    "file_type": "html",
+    "title": "Engineering Department Overview",
+    "department": "Engineering",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-007",
+    "filename": "document_007.pdf",
+    "file_type": "pdf",
+    "title": "Sales Department Overview",
+    "department": "Sales",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-008",
+    "filename": "document_008.docx",
+    "file_type": "docx",
+    "title": "Marketing Department Overview",
+    "department": "Marketing",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-009",
+    "filename": "document_009.html",
+    "file_type": "html",
+    "title": "Legal Department Overview",
+    "department": "Legal",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-010",
+    "filename": "document_010.pdf",
+    "file_type": "pdf",
+    "title": "Operations Department Overview",
+    "department": "Operations",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-011",
+    "filename": "document_011.docx",
+    "file_type": "docx",
+    "title": "Research & Development Department Overview",
+    "department": "Research & Development",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-012",
+    "filename": "document_012.html",
+    "file_type": "html",
+    "title": "Customer Support Department Overview",
+    "department": "Customer Support",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-013",
+    "filename": "document_013.pdf",
+    "file_type": "pdf",
+    "title": "Facilities Department Overview",
+    "department": "Facilities",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-014",
+    "filename": "document_014.docx",
+    "file_type": "docx",
+    "title": "Leave and Attendance Policy",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-015",
+    "filename": "document_015.html",
+    "file_type": "html",
+    "title": "Employee Benefits Policy",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-016",
+    "filename": "document_016.pdf",
+    "file_type": "pdf",
+    "title": "Recruitment and Onboarding Policy",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-017",
+    "filename": "document_017.docx",
+    "file_type": "docx",
+    "title": "Performance Management Policy",
+    "department": "Human Resources",
+    "document_category": "HR Policy"
+  },
+  {
+    "document_id": "DOC-018",
+    "filename": "document_018.html",
+    "file_type": "html",
+    "title": "Code of Conduct Policy",
+    "department": "Human Resources",
+    "document_category": "HR Policy"
+  },
+  {
+    "document_id": "DOC-019",
+    "filename": "document_019.pdf",
+    "file_type": "pdf",
+    "title": "Anti-Harassment and Grievance Redressal Policy",
+    "department": "Human Resources",
+    "document_category": "HR Policy"
+  },
+  {
+    "document_id": "DOC-020",
+    "filename": "document_020.docx",
+    "file_type": "docx",
+    "title": "Exit and Separation Policy",
+    "department": "Human Resources",
+    "document_category": "HR Policy"
+  },
+  {
+    "document_id": "DOC-021",
+    "filename": "document_021.html",
+    "file_type": "html",
+    "title": "Work From Home Policy",
+    "department": "Human Resources",
+    "document_category": "Work From Home"
+  },
+  {
+    "document_id": "DOC-022",
+    "filename": "document_022.pdf",
+    "file_type": "pdf",
+    "title": "Information Security Policy",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-023",
+    "filename": "document_023.docx",
+    "file_type": "docx",
+    "title": "Password and Access Management Policy",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-024",
+    "filename": "document_024.html",
+    "file_type": "html",
+    "title": "Data Classification and Handling Policy",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-025",
+    "filename": "document_025.pdf",
+    "file_type": "pdf",
+    "title": "Incident Response Policy",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-026",
+    "filename": "document_026.docx",
+    "file_type": "docx",
+    "title": "Bring Your Own Device (BYOD) Policy",
+    "department": "Information Security",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-027",
+    "filename": "document_027.html",
+    "file_type": "html",
+    "title": "Acceptable Use of IT Resources Policy",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-028",
+    "filename": "document_028.pdf",
+    "file_type": "pdf",
+    "title": "IT Asset Management Policy",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-029",
+    "filename": "document_029.docx",
+    "file_type": "docx",
+    "title": "Software Procurement and Licensing Policy",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-030",
+    "filename": "document_030.html",
+    "file_type": "html",
+    "title": "Travel and Expense Policy",
+    "department": "Finance",
+    "document_category": "Travel Policy"
+  },
+  {
+    "document_id": "DOC-031",
+    "filename": "document_031.pdf",
+    "file_type": "pdf",
+    "title": "Procurement and Vendor Management Policy",
+    "department": "Procurement",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-032",
+    "filename": "document_032.docx",
+    "file_type": "docx",
+    "title": "Purchase Requisition and Approval Policy",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-033",
+    "filename": "document_033.html",
+    "file_type": "html",
+    "title": "Expense Reimbursement Policy",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-034",
+    "filename": "document_034.pdf",
+    "file_type": "pdf",
+    "title": "Annual Holiday Calendar",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-035",
+    "filename": "document_035.docx",
+    "file_type": "docx",
+    "title": "Leave Approval Workflow Guide",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-036",
+    "filename": "document_036.html",
+    "file_type": "html",
+    "title": "Attendance Tracking Procedure",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-037",
+    "filename": "document_037.pdf",
+    "file_type": "pdf",
+    "title": "Leave Encashment FAQ",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-038",
+    "filename": "document_038.docx",
+    "file_type": "docx",
+    "title": "Leave and Remote Work Interaction Guidelines",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-039",
+    "filename": "document_039.html",
+    "file_type": "html",
+    "title": "Manager's Guide to Leave Approvals",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-040",
+    "filename": "document_040.pdf",
+    "file_type": "pdf",
+    "title": "Leave Types Reference Guide",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-041",
+    "filename": "document_041.docx",
+    "file_type": "docx",
+    "title": "Compensatory Off Procedure",
+    "department": "Human Resources",
+    "document_category": "Leave and Attendance"
+  },
+  {
+    "document_id": "DOC-042",
+    "filename": "document_042.html",
+    "file_type": "html",
+    "title": "Employee Benefits Overview",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-043",
+    "filename": "document_043.pdf",
+    "file_type": "pdf",
+    "title": "Group Health Insurance Plan Details",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-044",
+    "filename": "document_044.docx",
+    "file_type": "docx",
+    "title": "Wellness and Fitness Reimbursement Program",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-045",
+    "filename": "document_045.html",
+    "file_type": "html",
+    "title": "Employee Stock Purchase Plan Guide",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-046",
+    "filename": "document_046.pdf",
+    "file_type": "pdf",
+    "title": "Learning and Development Stipend Guide",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-047",
+    "filename": "document_047.docx",
+    "file_type": "docx",
+    "title": "Employee Assistance Program Guide",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-048",
+    "filename": "document_048.html",
+    "file_type": "html",
+    "title": "Benefits Enrollment Procedure",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-049",
+    "filename": "document_049.pdf",
+    "file_type": "pdf",
+    "title": "Employee Benefits FAQ",
+    "department": "Human Resources",
+    "document_category": "Employee Benefits"
+  },
+  {
+    "document_id": "DOC-050",
+    "filename": "document_050.docx",
+    "file_type": "docx",
+    "title": "IT Helpdesk Ticket Procedure",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-051",
+    "filename": "document_051.html",
+    "file_type": "html",
+    "title": "New Employee Device Provisioning Procedure",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-052",
+    "filename": "document_052.pdf",
+    "file_type": "pdf",
+    "title": "Remote Access VPN Setup Guide",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-053",
+    "filename": "document_053.docx",
+    "file_type": "docx",
+    "title": "IT Service Catalog",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-054",
+    "filename": "document_054.html",
+    "file_type": "html",
+    "title": "IT Onboarding Checklist",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-055",
+    "filename": "document_055.pdf",
+    "file_type": "pdf",
+    "title": "Software Installation Request FAQ",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-056",
+    "filename": "document_056.docx",
+    "file_type": "docx",
+    "title": "IT Change Management Procedure",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-057",
+    "filename": "document_057.html",
+    "file_type": "html",
+    "title": "Network Operations Overview",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-058",
+    "filename": "document_058.pdf",
+    "file_type": "pdf",
+    "title": "IT Asset Disposal Procedure",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-059",
+    "filename": "document_059.docx",
+    "file_type": "docx",
+    "title": "BYOD Enrollment Guide",
+    "department": "Information Technology",
+    "document_category": "IT/Security"
+  },
+  {
+    "document_id": "DOC-060",
+    "filename": "document_060.html",
+    "file_type": "html",
+    "title": "Security Awareness Training Program",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-061",
+    "filename": "document_061.pdf",
+    "file_type": "pdf",
+    "title": "Quarterly Access Review Procedure",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-062",
+    "filename": "document_062.docx",
+    "file_type": "docx",
+    "title": "Vendor Security Assessment Procedure",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-063",
+    "filename": "document_063.html",
+    "file_type": "html",
+    "title": "Annual Security Audit Summary",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-064",
+    "filename": "document_064.pdf",
+    "file_type": "pdf",
+    "title": "Project Nimbus Zero-Trust Architecture Brief",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-065",
+    "filename": "document_065.docx",
+    "file_type": "docx",
+    "title": "Security Incident Handling Procedure",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-066",
+    "filename": "document_066.html",
+    "file_type": "html",
+    "title": "Phishing Recognition and Reporting Guidance",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-067",
+    "filename": "document_067.pdf",
+    "file_type": "pdf",
+    "title": "Confidential Data Handling Quick Guide",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-068",
+    "filename": "document_068.docx",
+    "file_type": "docx",
+    "title": "Multi-Factor Authentication Rollout Notice",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-069",
+    "filename": "document_069.html",
+    "file_type": "html",
+    "title": "Third-Party Contractor Access Guidelines",
+    "department": "Information Security",
+    "document_category": "Information Security"
+  },
+  {
+    "document_id": "DOC-070",
+    "filename": "document_070.pdf",
+    "file_type": "pdf",
+    "title": "Work From Home Eligibility by Department",
+    "department": "Human Resources",
+    "document_category": "Work From Home"
+  },
+  {
+    "document_id": "DOC-071",
+    "filename": "document_071.docx",
+    "file_type": "docx",
+    "title": "Home Office Equipment Request Procedure",
+    "department": "Information Technology",
+    "document_category": "Work From Home"
+  },
+  {
+    "document_id": "DOC-072",
+    "filename": "document_072.html",
+    "file_type": "html",
+    "title": "Hybrid Work Schedule Guide",
+    "department": "Human Resources",
+    "document_category": "Work From Home"
+  },
+  {
+    "document_id": "DOC-073",
+    "filename": "document_073.pdf",
+    "file_type": "pdf",
+    "title": "Work From Home Security Guidelines",
+    "department": "Information Security",
+    "document_category": "Work From Home"
+  },
+  {
+    "document_id": "DOC-074",
+    "filename": "document_074.docx",
+    "file_type": "docx",
+    "title": "Work From Home FAQ",
+    "department": "Human Resources",
+    "document_category": "Work From Home"
+  },
+  {
+    "document_id": "DOC-075",
+    "filename": "document_075.html",
+    "file_type": "html",
+    "title": "Work From Home Program Overview",
+    "department": "Human Resources",
+    "document_category": "Work From Home"
+  },
+  {
+    "document_id": "DOC-076",
+    "filename": "document_076.pdf",
+    "file_type": "pdf",
+    "title": "Interview Process Guide",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-077",
+    "filename": "document_077.docx",
+    "file_type": "docx",
+    "title": "Offer Approval Workflow",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-078",
+    "filename": "document_078.html",
+    "file_type": "html",
+    "title": "Background Verification Procedure",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-079",
+    "filename": "document_079.pdf",
+    "file_type": "pdf",
+    "title": "Employee Referral Program",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-080",
+    "filename": "document_080.docx",
+    "file_type": "docx",
+    "title": "New Hire Onboarding Checklist",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-081",
+    "filename": "document_081.html",
+    "file_type": "html",
+    "title": "New Hire Orientation Schedule",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-082",
+    "filename": "document_082.pdf",
+    "file_type": "pdf",
+    "title": "Probation Period Policy",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-083",
+    "filename": "document_083.docx",
+    "file_type": "docx",
+    "title": "Engineering Department Onboarding Guide",
+    "department": "Engineering",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-084",
+    "filename": "document_084.html",
+    "file_type": "html",
+    "title": "Recruitment and Hiring FAQ",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-085",
+    "filename": "document_085.pdf",
+    "file_type": "pdf",
+    "title": "Internal Mobility and Transfer Guide",
+    "department": "Human Resources",
+    "document_category": "Recruitment/Onboarding"
+  },
+  {
+    "document_id": "DOC-086",
+    "filename": "document_086.docx",
+    "file_type": "docx",
+    "title": "Purchase Requisition Procedure",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-087",
+    "filename": "document_087.html",
+    "file_type": "html",
+    "title": "Vendor Onboarding Procedure",
+    "department": "Procurement",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-088",
+    "filename": "document_088.pdf",
+    "file_type": "pdf",
+    "title": "Invoice Processing Procedure",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-089",
+    "filename": "document_089.docx",
+    "file_type": "docx",
+    "title": "Budget Approval Matrix",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-090",
+    "filename": "document_090.html",
+    "file_type": "html",
+    "title": "Capital Expenditure Approval Guide",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-091",
+    "filename": "document_091.pdf",
+    "file_type": "pdf",
+    "title": "Project Phoenix Finance Systems Consolidation Brief",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-092",
+    "filename": "document_092.docx",
+    "file_type": "docx",
+    "title": "Finance and Procurement FAQ",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-093",
+    "filename": "document_093.html",
+    "file_type": "html",
+    "title": "Monthly Payroll Processing Procedure",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-094",
+    "filename": "document_094.pdf",
+    "file_type": "pdf",
+    "title": "Vendor Management Best Practices Notes",
+    "department": "Procurement",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-095",
+    "filename": "document_095.docx",
+    "file_type": "docx",
+    "title": "Cost Center Structure Guide",
+    "department": "Finance",
+    "document_category": "Finance/Procurement"
+  },
+  {
+    "document_id": "DOC-096",
+    "filename": "document_096.html",
+    "file_type": "html",
+    "title": "Travel Booking Procedure via SAP Concur",
+    "department": "Finance",
+    "document_category": "Travel Policy"
+  },
+  {
+    "document_id": "DOC-097",
+    "filename": "document_097.pdf",
+    "file_type": "pdf",
+    "title": "International Travel Guidelines",
+    "department": "Legal",
+    "document_category": "Travel Policy"
+  },
+  {
+    "document_id": "DOC-098",
+    "filename": "document_098.docx",
+    "file_type": "docx",
+    "title": "Travel Expense Claim FAQ",
+    "department": "Finance",
+    "document_category": "Travel Policy"
+  },
+  {
+    "document_id": "DOC-099",
+    "filename": "document_099.html",
+    "file_type": "html",
+    "title": "Business Travel Safety Guidelines",
+    "department": "Legal",
+    "document_category": "Travel Policy"
+  },
+  {
+    "document_id": "DOC-100",
+    "filename": "document_100.pdf",
+    "file_type": "pdf",
+    "title": "Class of Travel and Accommodation Standards",
+    "department": "Finance",
+    "document_category": "Travel Policy"
+  },
+  {
+    "document_id": "DOC-101",
+    "filename": "document_101.docx",
+    "file_type": "docx",
+    "title": "Conference and Training Travel Approval Guide",
+    "department": "Finance",
+    "document_category": "Travel Policy"
+  },
+  {
+    "document_id": "DOC-102",
+    "filename": "document_102.html",
+    "file_type": "html",
+    "title": "Engineering Release Management Process",
+    "department": "Engineering",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-103",
+    "filename": "document_103.pdf",
+    "file_type": "pdf",
+    "title": "Production Incident Postmortem Process",
+    "department": "Engineering",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-104",
+    "filename": "document_104.docx",
+    "file_type": "docx",
+    "title": "Facilities Maintenance Request Procedure",
+    "department": "Facilities",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-105",
+    "filename": "document_105.html",
+    "file_type": "html",
+    "title": "Customer Support Escalation Matrix",
+    "department": "Customer Support",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-106",
+    "filename": "document_106.pdf",
+    "file_type": "pdf",
+    "title": "Contract Review Process",
+    "department": "Legal",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-107",
+    "filename": "document_107.docx",
+    "file_type": "docx",
+    "title": "Marketing Campaign Approval Process",
+    "department": "Marketing",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-108",
+    "filename": "document_108.html",
+    "file_type": "html",
+    "title": "Sales Deal Desk Approval Process",
+    "department": "Sales",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-109",
+    "filename": "document_109.pdf",
+    "file_type": "pdf",
+    "title": "Research Proposal Review Process",
+    "department": "Research & Development",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-110",
+    "filename": "document_110.docx",
+    "file_type": "docx",
+    "title": "HR Grievance Handling Process",
+    "department": "Human Resources",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-111",
+    "filename": "document_111.html",
+    "file_type": "html",
+    "title": "Security Incident Escalation Procedure",
+    "department": "Information Security",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-112",
+    "filename": "document_112.pdf",
+    "file_type": "pdf",
+    "title": "Data Backup and Recovery Procedure",
+    "department": "Information Technology",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-113",
+    "filename": "document_113.docx",
+    "file_type": "docx",
+    "title": "Project Orion Data Center Migration Runbook",
+    "department": "Information Technology",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-114",
+    "filename": "document_114.html",
+    "file_type": "html",
+    "title": "Project Titan Process Automation Overview",
+    "department": "Operations",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-115",
+    "filename": "document_115.pdf",
+    "file_type": "pdf",
+    "title": "Quarterly Expense Audit Procedure",
+    "department": "Finance",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-116",
+    "filename": "document_116.docx",
+    "file_type": "docx",
+    "title": "General Company FAQ",
+    "department": "Operations",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-117",
+    "filename": "document_117.html",
+    "file_type": "html",
+    "title": "Payroll FAQ",
+    "department": "Finance",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-118",
+    "filename": "document_118.pdf",
+    "file_type": "pdf",
+    "title": "Information Security FAQ",
+    "department": "Information Security",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-119",
+    "filename": "document_119.docx",
+    "file_type": "docx",
+    "title": "New Hire Onboarding FAQ",
+    "department": "Human Resources",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-120",
+    "filename": "document_120.html",
+    "file_type": "html",
+    "title": "IT Support FAQ",
+    "department": "Information Technology",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-121",
+    "filename": "document_121.pdf",
+    "file_type": "pdf",
+    "title": "Expense Reimbursement FAQ",
+    "department": "Finance",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-122",
+    "filename": "document_122.docx",
+    "file_type": "docx",
+    "title": "Manager Responsibilities FAQ",
+    "department": "Human Resources",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-123",
+    "filename": "document_123.html",
+    "file_type": "html",
+    "title": "Remote Work Technology FAQ",
+    "department": "Information Technology",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-124",
+    "filename": "document_124.pdf",
+    "file_type": "pdf",
+    "title": "General Benefits FAQ",
+    "department": "Human Resources",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-125",
+    "filename": "document_125.docx",
+    "file_type": "docx",
+    "title": "Business Travel FAQ",
+    "department": "Finance",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-126",
+    "filename": "document_126.html",
+    "file_type": "html",
+    "title": "Project Engagement FAQ",
+    "department": "Engineering",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-127",
+    "filename": "document_127.pdf",
+    "file_type": "pdf",
+    "title": "Vendor and Procurement FAQ",
+    "department": "Procurement",
+    "document_category": "FAQ"
+  },
+  {
+    "document_id": "DOC-128",
+    "filename": "document_128.docx",
+    "file_type": "docx",
+    "title": "Project Atlas: Project Charter",
+    "department": "Engineering",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-129",
+    "filename": "document_129.html",
+    "file_type": "html",
+    "title": "Project Helios: Project Charter",
+    "department": "Research & Development",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-130",
+    "filename": "document_130.pdf",
+    "file_type": "pdf",
+    "title": "Project Orion: Project Charter",
+    "department": "Information Technology",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-131",
+    "filename": "document_131.docx",
+    "file_type": "docx",
+    "title": "Project Nimbus: Project Charter",
+    "department": "Information Security",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-132",
+    "filename": "document_132.html",
+    "file_type": "html",
+    "title": "Project Vega: Project Charter",
+    "department": "Sales",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-133",
+    "filename": "document_133.pdf",
+    "file_type": "pdf",
+    "title": "Project Falcon: Project Charter",
+    "department": "Marketing",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-134",
+    "filename": "document_134.docx",
+    "file_type": "docx",
+    "title": "Project Phoenix: Project Charter",
+    "department": "Finance",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-135",
+    "filename": "document_135.html",
+    "file_type": "html",
+    "title": "Project Titan: Project Charter",
+    "department": "Operations",
+    "document_category": "Internal Procedure"
+  },
+  {
+    "document_id": "DOC-136",
+    "filename": "document_136.pdf",
+    "file_type": "pdf",
+    "title": "Human Resources Department Roster",
+    "department": "Human Resources",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-137",
+    "filename": "document_137.docx",
+    "file_type": "docx",
+    "title": "Engineering Department Roster",
+    "department": "Engineering",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-138",
+    "filename": "document_138.html",
+    "file_type": "html",
+    "title": "Finance Department Roster",
+    "department": "Finance",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-139",
+    "filename": "document_139.pdf",
+    "file_type": "pdf",
+    "title": "Information Technology Department Roster",
+    "department": "Information Technology",
+    "document_category": "Department Overview"
+  },
+  {
+    "document_id": "DOC-140",
+    "filename": "document_140.docx",
+    "file_type": "docx",
+    "title": "Information Security Department Roster",
+    "department": "Information Security",
+    "document_category": "Department Overview"
+  }
+]

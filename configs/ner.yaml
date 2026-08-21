@@ -1,0 +1,48 @@
+# Module 4 - NER configuration.
+# Read by the orchestration layer (Phase 6) to construct/train an
+# NERModel without touching code, per Phase 5's "one YAML per module"
+# design.
+
+ner:
+  # Local checkpoint directory or Hugging Face Hub model id to load
+  # for inference (typically train_ner()'s output_dir after
+  # fine-tuning).
+  model_name_or_path: dslim/bert-base-NER
+
+  # This CoNLL model emits PER/ORG/LOC/MISC rather than enterprise BIO tags.
+  # Temporary stopgap only; replace with a train_ner() checkpoint once labeled
+  # enterprise BIO data is available.
+  use_generic_label_mapping: true
+
+  # torch device string: "cpu" or "cuda".
+  device: cpu
+
+  # Minimum average span confidence (0-1) for a predicted entity to be
+  # kept.
+  confidence_threshold: 0.5
+
+  # Maximum token sequence length passed to the tokenizer; longer
+  # chunk text is truncated.
+  max_length: 512
+
+  resolver:
+    # Minimum rapidfuzz token_sort_ratio score (0-100) for two entity
+    # mentions to be merged into the same canonical node.
+    # NOTE (honest limitation): character-level fuzzy matching catches
+    # paraphrase-like variants ("the Finance team" vs "Finance
+    # department") but misses abbreviations ("Finance Dept." vs
+    # "Finance department" scores well below even a relaxed threshold).
+    # Closing that gap needs a synonym dictionary or embedding-based
+    # matching (Section 4.2's documented alternative) -- out of scope
+    # for this rule/fuzzy baseline.
+    similarity_threshold: 85.0
+
+  training:
+    # Pretrained checkpoint to fine-tune from (Section 12.3).
+    base_checkpoint: bert-base-cased
+    output_dir: models/ner
+    num_epochs: 3
+    batch_size: 8
+    learning_rate: 5.0e-5
+    validation_split: 0.2
+    seed: 42

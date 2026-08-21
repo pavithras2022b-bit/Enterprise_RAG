@@ -1,0 +1,22 @@
+# Module 7 - Embedding Generation configuration.
+# Read by the orchestration layer (Phase 6) to construct EmbeddingModel
+# and drive fine_tune_embeddings() without touching code.
+
+embeddings:
+  model:
+    # Local checkpoint directory or Hugging Face Hub model id.
+    # all-MiniLM-L6-v2 is the project's chosen base checkpoint
+    # (Section 12.3); substitute a local path when Hub access is
+    # unavailable.
+    checkpoint: all-MiniLM-L6-v2
+    device: cpu
+    normalize_embeddings: true
+    batch_size: 32
+
+  train:
+    base_model: all-MiniLM-L6-v2
+    checkpoint_dir: models/embeddings
+    num_epochs: 3
+    batch_size: 16
+    warmup_ratio: 0.1
+    seed: 42

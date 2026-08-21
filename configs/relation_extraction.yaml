@@ -1,0 +1,37 @@
+# Module 5 - Relationship Extraction configuration.
+# Read by the orchestration layer (Phase 6) to construct
+# RelationClassifier / RulePatternExtractor and drive train_re()
+# without touching code.
+
+relation_extraction:
+  model:
+    # bert-base-cased has no relation head trained for this schema. Enable only
+    # after training a checkpoint with train_re() on labeled relation data.
+    enabled: false
+    # Local checkpoint directory or Hugging Face Hub model id. A
+    # BERT-family entity-marker relation classifier per Section 3H;
+    # substitute a local path when Hub access is unavailable.
+    checkpoint: bert-base-cased
+    device: cpu
+    confidence_threshold: 0.5
+    max_length: 256
+    # Entity pairs whose spans are farther apart than this (characters)
+    # within a chunk are skipped -- precision guard + avoids O(n^2)
+    # inference blowup on chunks with many entities.
+    max_pair_distance: 200
+
+  rules:
+    # This existing deterministic, schema-aware baseline remains active.
+    enabled: true
+    # Maximum character length of the connector text between two
+    # entities for them to be considered a candidate pair at all.
+    max_connector_length: 60
+
+  train:
+    base_checkpoint: bert-base-cased
+    checkpoint_dir: models/relation_extraction
+    num_epochs: 3
+    batch_size: 8
+    learning_rate: 5.0e-5
+    validation_split: 0.2
+    seed: 42
