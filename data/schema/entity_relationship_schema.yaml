@@ -1,0 +1,166 @@
+# Meridian Dynamics Inc. - Enterprise Knowledge Graph Schema Definition
+# Master Schema Contract for Entity Resolution and Relation Extraction
+
+schema_version: "1.0.0"
+organization: "Meridian Dynamics Inc."
+
+entity_types:
+  Employee:
+    description: "An individual employee or contractor at Meridian Dynamics."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+        unique: true
+      - name: "text"
+        type: "string"
+        required: true
+      - name: "source_chunk_id"
+        type: "string"
+        required: false
+
+  Department:
+    description: "An organizational business unit or department."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+        unique: true
+      - name: "text"
+        type: "string"
+        required: true
+
+  System:
+    description: "An enterprise IT system, service, database, or infrastructure asset."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+        unique: true
+      - name: "text"
+        type: "string"
+        required: true
+
+  Project:
+    description: "An enterprise engineering, research, or operational project initiative."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+        unique: true
+
+  Policy:
+    description: "A formal organizational policy, standard, governance document, or guideline."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+        unique: true
+
+  Software:
+    description: "A software application, framework, or tooling component."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+
+  Role:
+    description: "A job title, designation, or access role in the organization."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+
+  LeaveType:
+    description: "A type of employee leave (e.g., Casual Leave, Sick Leave, Maternity Leave)."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+
+  NetworkResource:
+    description: "A VPN, internal gateway, subnet, server cluster, or network endpoint."
+    properties:
+      - name: "canonical_name"
+        type: "string"
+        required: true
+
+relation_types:
+  REPORTS_TO:
+    description: "Reporting hierarchy between an employee and their manager."
+    source_types: ["Employee"]
+    target_types: ["Employee"]
+    bidirectional_alias: "MANAGES"
+
+  MANAGES:
+    description: "Management relation from a manager to a direct report."
+    source_types: ["Employee"]
+    target_types: ["Employee", "Department"]
+
+  OWNS_SYSTEM:
+    description: "Ownership or administrative responsibility over an IT system or service."
+    source_types: ["Department", "Employee"]
+    target_types: ["System", "Software"]
+
+  WORKS_ON:
+    description: "Assignment or contribution of an employee to a project."
+    source_types: ["Employee"]
+    target_types: ["Project"]
+    bidirectional_alias: "ASSIGNED_TO"
+
+  ASSIGNED_TO:
+    description: "Assignment relation between an employee and a project."
+    source_types: ["Employee"]
+    target_types: ["Project"]
+
+  GOVERNED_BY:
+    description: "Governance of a department, system, or project under a specific policy."
+    source_types: ["Department", "System", "Project"]
+    target_types: ["Policy"]
+    bidirectional_alias: "GOVERNS"
+
+  GOVERNS:
+    description: "A policy governing a department, system, project, or leave type."
+    source_types: ["Policy"]
+    target_types: ["Department", "System", "Project", "LeaveType"]
+
+  APPLIES_TO:
+    description: "Applicability of a policy or standard to employees or departments."
+    source_types: ["Policy"]
+    target_types: ["Department", "Employee", "Role"]
+    bidirectional_alias: "FOLLOWS"
+
+  FOLLOWS:
+    description: "Compliance of a department or employee with a policy."
+    source_types: ["Department", "Employee"]
+    target_types: ["Policy"]
+
+  BELONGS_TO:
+    description: "Membership of an employee in a department."
+    source_types: ["Employee"]
+    target_types: ["Department"]
+
+  HAS_ROLE:
+    description: "Assignment of a role to an employee."
+    source_types: ["Employee"]
+    target_types: ["Role"]
+
+  USES:
+    description: "Usage of software or systems by a project, department, or employee."
+    source_types: ["Project", "Department", "Employee"]
+    target_types: ["Software", "System"]
+
+  REQUIRES_ACCESS:
+    description: "Access requirement for a role or employee to a network resource or system."
+    source_types: ["Role", "Employee"]
+    target_types: ["NetworkResource", "System"]
+
+  ELIGIBLE_FOR:
+    description: "Eligibility of an employee or role for a leave type or benefit."
+    source_types: ["Employee", "Role"]
+    target_types: ["LeaveType"]
+
+  REQUIRES_TRAINING:
+    description: "Mandatory training required for an employee or role to use software or systems."
+    source_types: ["Department", "Role", "Employee"]
+    target_types: ["Software", "System", "Policy"]

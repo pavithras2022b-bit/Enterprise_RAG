@@ -54,6 +54,7 @@ class LLMClient:
         timeout: float = 60.0,
         temperature: float = 0.2,
         http_session: Optional[requests.Session] = None,
+        lora_manager: Optional[Any] = None,
     ) -> None:
         """
         Args:
@@ -66,16 +67,19 @@ class LLMClient:
             http_session: Injectable requests.Session, for testing
                 against a local fake server without patching global
                 state.
+            lora_manager: Optional LoRAAdapterManager instance for direct
+                in-process inference.
         """
         self._base_url = base_url.rstrip("/")
         self._model_name = model_name
         self._timeout = timeout
         self._temperature = temperature
         self._session = http_session if http_session is not None else requests.Session()
+        self._lora_manager = lora_manager
 
     def generate(self, prompt: str) -> str:
         """
-        Send a single generation request to the server.
+        Send a single generation request to the server or directly to LoRAAdapterManager.
 
         Args:
             prompt: The complete prompt text (typically from
@@ -86,13 +90,16 @@ class LLMClient:
 
         Raises:
             ValueError: If prompt is empty/whitespace-only.
-            LLMClientError: If the HTTP request fails, the server
-                returns a non-2xx status, the response body is not
-                valid JSON, or the expected "response" field is
-                missing.
+            LLMClientError: If the request or local generation fails.
         """
         if not prompt or not prompt.strip():
             raise ValueError("generate() requires a non-empty prompt.")
+
+        if self._lora_manager is not None:
+            try:
+                return self._lora_manager.generate(prompt)
+            except Exception as exc:
+                raise LLMClientError(f"Local LoRA generation failed: {exc}") from exc
 
         url = f"{self._base_url}/api/generate"
         payload: dict[str, Any] = {
@@ -104,9 +111,17 @@ class LLMClient:
 
         try:
             response = self._session.post(url, json=payload, timeout=self._timeout)
-            response.raise_for_status()
+
+            if not response.ok:
+                raise LLMClientError(
+                    f"Ollama returned HTTP {response.status_code}. "
+                    f"Response body: {response.text}"
+                )
+
         except requests.RequestException as exc:
-            raise LLMClientError(f"LLM generation request to {url} failed: {exc}") from exc
+            raise LLMClientError(
+                f"LLM generation request to {url} failed: {exc}"
+            ) from exc
 
         try:
             data = response.json()
@@ -120,6 +135,12 @@ class LLMClient:
             raise LLMClientError(
                 f"LLM server response is missing the expected 'response' field: {data!r}"
             )
+
+        if not str(text).strip():
+            raise LLMClientError(
+                f"LLM server returned an empty response. Full response: {data!r}"
+            )
+
         return text
 
     def generate_answer(
@@ -153,6 +174,22 @@ class LLMClient:
         latency_ms = (time.monotonic() - start_time) * 1000.0
 
         citations = extract_citations(text, evidence)
+
+        # Remove hallucinated bracketed citation IDs from user-visible text.
+        # Valid citations are preserved; unsupported IDs are never trusted.
+        valid_ids = {item.candidate_id for item in evidence}
+
+        import re
+
+        def _sanitize_citation(match):
+            candidate_id = match.group(1).strip()
+            return match.group(0) if candidate_id in valid_ids else ""
+
+        text = re.sub(
+            r"\[([^\[\]]+)\]",
+            _sanitize_citation,
+            text,
+        ).strip()
 
         return GeneratedAnswer(
             text=text,

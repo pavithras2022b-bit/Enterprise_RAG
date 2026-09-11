@@ -5,7 +5,7 @@
 # switch Ablation A5 (Section 13.3) needs.
 
 adaptive_retrieval:
-  classifier_type: rule_based  # rule_based | learned
+  classifier_type: learned  # rule_based | learned
 
   rule_based:
     relational_indicators:

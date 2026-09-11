@@ -302,10 +302,12 @@ class TestEntityLinker:
         finance_refs = [r for r in refs if r.canonical_name == "Finance"]
         assert len(finance_refs) == 1
 
-    def test_link_before_refresh_raises(self, fake_neo4j_connection):
+    def test_link_before_refresh_returns_empty_list(self, fake_neo4j_connection):
+        # EntityLinker degrades gracefully (per its own docstring) rather than
+        # raising, so vector-only retrieval can still work if the graph index
+        # was never populated (e.g. Neo4j was unavailable at construction time).
         linker = EntityLinker(fake_neo4j_connection, refresh_on_init=False)
-        with pytest.raises(EntityLinkerError):
-            linker.link("Finance")
+        assert linker.link("Finance") == []
 
 
 # ========================================================================

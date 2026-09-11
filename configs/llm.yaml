@@ -9,7 +9,7 @@ llm:
     # run locally -- enterprise data must not leave company
     # infrastructure.
     base_url: http://localhost:11434
-    model_name: llama3.2:3b
+    model_name: qwen2.5-3b-lora-ragqa
     timeout_seconds: 180.0
     # Low temperature favors factual accuracy over creativity for
     # enterprise Q&A (Section 3M).
@@ -23,9 +23,9 @@ llm:
     system_instruction: null
 
   lora:
-    base_model: null  # e.g. "meta-llama/Llama-3-8B" per Section 12.3
-    device: cpu
+    base_model: "Qwen/Qwen2.5-3B-Instruct"
+    device: "cpu"
     # name -> adapter checkpoint directory (peft training output_dir).
-    adapters: {}
-    # Which registered adapter (if any) to load at startup.
-    active_adapter: null
+    adapters:
+      qwen2.5-3b-lora-ragqa: "outputs/qwen2.5-3b-lora-ragqa/final_adapter"
+    active_adapter: "qwen2.5-3b-lora-ragqa"

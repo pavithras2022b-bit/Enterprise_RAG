@@ -36,9 +36,11 @@ class EntityType(str, Enum):
     POLICY = "POLICY"
     PROJECT = "PROJECT"
     SOFTWARE = "SOFTWARE"
+    SYSTEM = "SYSTEM"
     LEAVE_TYPE = "LEAVE_TYPE"
     ROLE = "ROLE"
     NETWORK_RESOURCE = "NETWORK_RESOURCE"
+
 
 
 class SchemaValidationError(Exception):

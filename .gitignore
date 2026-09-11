@@ -1,10 +1,40 @@
-﻿.venv/
+# Virtual environment
+.venv/
+
+# Python / test caches
 __pycache__/
 *.pyc
-.env
-models/
-*.log
 .pytest_cache/
+.pytest_tmp/
+
+# Secrets / environment
+.env
+
+# Temporary files and diagnostics
+tmp_*.py
+*.log
+ingestion_output.txt
+test_output.txt
+
+# Development backups
+*.bak
+*.before_*.bak
+
+# Local databases / generated indexes
+chroma_db/
+data/chroma_store/
+
+# Large locally served model artifacts
+*.gguf
+
+# JavaScript dependencies
 node_modules/
+
+# Local helper / review artifacts
 fix_llm.py
 review1_doc_final.pdf
+dev_archive/
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db

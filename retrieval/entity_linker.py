@@ -1,4 +1,4 @@
-"""
+﻿"""
 retrieval.entity_linker (Module 9)
 
 EntityLinker maps free-text mentions in a query to known graph node
@@ -69,54 +69,114 @@ class EntityLinker:
 
     def link(self, query: str) -> list[GraphNodeRef]:
         """
-        Fuzzy-matches `query` against every cached canonical_name using
-        rapidfuzz.fuzz.partial_ratio (appropriate here because the query is
-        a full sentence and the canonical name is typically a short
-        substring of it -- see Section 5.2 of the spec). Returns one
-        GraphNodeRef per canonical_name scoring >= similarity_threshold,
-        deduplicated by canonical_name (keeping the highest-scoring match),
-        sorted by descending match_score.
-        
-        If the index is not populated (e.g., Neo4j unavailable), returns
-        an empty list for graceful degradation to vector-only retrieval.
+        Link entity mentions in a query to known Neo4j canonical names.
+
+        Exact canonical-name matches are preferred. If no exact match
+        exists, fuzzy matching is used as a fallback. Very short graph
+        fragments are ignored to avoid partial_ratio false positives.
         """
         if self._index is None:
-            # Graceful degradation: return empty list if index not populated
             return []
 
         if not query or not query.strip():
             return []
 
+        query_lower = query.lower()
+
+        # --------------------------------------------------------------
+        # 1. Prefer exact canonical-name occurrences in the query.
+        # --------------------------------------------------------------
+        exact_matches: list[GraphNodeRef] = []
+
+        for label, canonical_name in self._index:
+            clean_name = canonical_name.strip()
+
+            # Ignore tiny fragmented graph nodes such as "A", "S", "Ka".
+            if len(clean_name) < 3:
+                continue
+
+            try:
+                entity_type = EntityType(label)
+            except ValueError:
+                continue
+
+            if clean_name.lower() in query_lower:
+                try:
+                    exact_matches.append(
+                        GraphNodeRef(
+                            mention_text=clean_name,
+                            canonical_name=clean_name,
+                            entity_type=entity_type,
+                            match_score=100.0,
+                        )
+                    )
+                except SchemaValidationError:
+                    continue
+
+        if exact_matches:
+            # Prefer the longest exact canonical name.
+            max_length = max(
+                len(ref.canonical_name)
+                for ref in exact_matches
+            )
+
+            longest_matches = [
+                ref
+                for ref in exact_matches
+                if len(ref.canonical_name) == max_length
+            ]
+
+            return sorted(
+                longest_matches,
+                key=lambda ref: ref.match_score,
+                reverse=True,
+            )
+
+        # --------------------------------------------------------------
+        # 2. Fuzzy fallback when no exact entity occurs in the query.
+        # --------------------------------------------------------------
         best_by_name: dict[str, GraphNodeRef] = {}
 
         for label, canonical_name in self._index:
-            score = fuzz.partial_ratio(canonical_name.lower(), query.lower())
+            clean_name = canonical_name.strip()
+
+            # Fuzzy matching short strings is extremely noisy.
+            if len(clean_name) < 5:
+                continue
+
+            score = fuzz.partial_ratio(
+                clean_name.lower(),
+                query_lower,
+            )
+
             if score < self._similarity_threshold:
                 continue
 
             try:
                 entity_type = EntityType(label)
             except ValueError:
-                # A node label outside the known EntityType enum isn't
-                # something Module 9 can meaningfully link to; skip it
-                # rather than raising, consistent with the "never crash on
-                # a stray node" spirit of the empty-index behavior rule.
                 continue
 
             try:
                 candidate = GraphNodeRef(
-                    mention_text=canonical_name,
-                    canonical_name=canonical_name,
+                    mention_text=clean_name,
+                    canonical_name=clean_name,
                     entity_type=entity_type,
                     match_score=float(score),
                 )
             except SchemaValidationError:
                 continue
 
-            existing = best_by_name.get(canonical_name)
-            if existing is None or candidate.match_score > existing.match_score:
-                best_by_name[canonical_name] = candidate
+            existing = best_by_name.get(clean_name)
+
+            if (
+                existing is None
+                or candidate.match_score > existing.match_score
+            ):
+                best_by_name[clean_name] = candidate
 
         return sorted(
-            best_by_name.values(), key=lambda ref: ref.match_score, reverse=True
+            best_by_name.values(),
+            key=lambda ref: ref.match_score,
+            reverse=True,
         )

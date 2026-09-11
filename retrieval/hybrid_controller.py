@@ -31,11 +31,12 @@ from .entity_linker import EntityLinker
 from .schema import CandidateSource, FusedCandidate, GraphFact, GraphNodeRef
 
 _TRAVERSAL_QUERY_TEMPLATE = """
-MATCH path = (start {{canonical_name: $start_name}})-[*1..{max_hops}]->(end)
+MATCH path = (start {{canonical_name: $start_name}})-[*1..{max_hops}]-(end)
 RETURN [n IN nodes(path) | n.canonical_name] AS node_names,
        [n IN nodes(path) | labels(n)[0]] AS node_labels,
        [r IN relationships(path) | type(r)] AS rel_types,
        [r IN relationships(path) | r.source_chunk_id] AS source_chunk_ids,
+       [r IN relationships(path) | startNode(r).canonical_name] AS rel_start_names,
        length(path) AS hops
 """.strip()
 
@@ -122,6 +123,7 @@ class HybridRetrievalController:
                 node_names: list[str] = row.get("node_names") or []
                 rel_types: list[str] = row.get("rel_types") or []
                 source_chunk_ids: list[Optional[str]] = row.get("source_chunk_ids") or []
+                rel_start_names: list[str] = row.get("rel_start_names") or []
 
                 for i, rel_type in enumerate(rel_types):
                     if rel_type not in self._graph_schema.allowed_relationship_types:
@@ -130,8 +132,12 @@ class HybridRetrievalController:
                             f"relationship type: {rel_type!r}."
                         )
 
-                    subject_name = node_names[i]
-                    object_name = node_names[i + 1]
+                    path_a, path_b = node_names[i], node_names[i + 1]
+                    real_start = rel_start_names[i] if i < len(rel_start_names) else path_a
+                    if real_start == path_a:
+                        subject_name, object_name = path_a, path_b
+                    else:
+                        subject_name, object_name = path_b, path_a
                     hop_count = i + 1
                     source_chunk_id = (
                         source_chunk_ids[i] if i < len(source_chunk_ids) else None

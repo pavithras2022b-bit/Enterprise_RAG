@@ -1,0 +1,736 @@
+{
+  "evaluation_type": "controlled_v1_vs_guarded_v2_retrieval_on_generation_queries",
+  "v1_generation_source": "C:\\Users\\shanm\\OneDrive\\Documents\\Enterprise-Retrieval-Augmented-Generation\\outputs\\llm_generation_evaluation.json",
+  "experimental_change": "Only the learned adaptive vector weight is changed: alpha_v2 = max(alpha_v1, 0.50). Vector hits, graph hits, fusion implementation, query set, and retrieval depths are identical.",
+  "summary": {
+    "queries_evaluated": 15,
+    "alpha_floor": 0.5,
+    "k_vector": 10,
+    "k_graph": 10,
+    "alpha_changed_queries": 1,
+    "top5_changed_queries": 0,
+    "top10_changed_queries": 0
+  },
+  "per_query_results": [
+    {
+      "query_index": 1,
+      "query": "Where are campaign assets published?",
+      "alpha_v1": 0.7250291705131531,
+      "alpha_v2_guarded": 0.7250291705131531,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "html_b5b2ed5ec4fada14_chunk_0000",
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "docx_a8dac8815d7d2064_chunk_0000",
+        "html_fbd04418b024a980_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "html_b5b2ed5ec4fada14_chunk_0000",
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "docx_a8dac8815d7d2064_chunk_0000",
+        "html_fbd04418b024a980_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 2,
+      "query": "What is the recommended VPN for remote access?",
+      "alpha_v1": 0.7589902877807617,
+      "alpha_v2_guarded": 0.7589902877807617,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000",
+        "docx_9a251b5c8ee31cc4_chunk_0000",
+        "pdf_a44e1a83a9f94ec1_chunk_0000",
+        "html_10425e686fd5682e_chunk_0000",
+        "html_3e71e0d8812be106_chunk_0000",
+        "docx_7b696e7843f30166_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000",
+        "docx_9a251b5c8ee31cc4_chunk_0000",
+        "pdf_a44e1a83a9f94ec1_chunk_0000",
+        "html_10425e686fd5682e_chunk_0000",
+        "html_3e71e0d8812be106_chunk_0000",
+        "docx_7b696e7843f30166_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 3,
+      "query": "Who reviews the recovery drills?",
+      "alpha_v1": 0.6968894004821777,
+      "alpha_v2_guarded": 0.6968894004821777,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_47d9d920804eed1b_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_47d9d920804eed1b_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_47d9d920804eed1b_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000",
+        "docx_a38978667980eb5f_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "pdf_a63b0c4b937d1310_chunk_0000",
+        "html_a998e6054e739de2_chunk_0000",
+        "pdf_f051f13625b02a4a_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_47d9d920804eed1b_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000",
+        "docx_a38978667980eb5f_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "pdf_a63b0c4b937d1310_chunk_0000",
+        "html_a998e6054e739de2_chunk_0000",
+        "pdf_f051f13625b02a4a_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 4,
+      "query": "Which policies should be read in conjunction with the IT Asset Management Policy?",
+      "alpha_v1": 0.892406702041626,
+      "alpha_v2_guarded": 0.892406702041626,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e5a6f408d9c53ee2_chunk_0000",
+        "pdf_ca680be8bfbc1868_chunk_0001",
+        "html_3e71e0d8812be106_chunk_0001"
+      ],
+      "v2_top10_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e5a6f408d9c53ee2_chunk_0000",
+        "pdf_ca680be8bfbc1868_chunk_0001",
+        "html_3e71e0d8812be106_chunk_0001"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 5,
+      "query": "When do enrollment windows for the Employee Stock Purchase Plan open?",
+      "alpha_v1": 0.929863452911377,
+      "alpha_v2_guarded": 0.929863452911377,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_3189f627f0d71c66_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_3189f627f0d71c66_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_3189f627f0d71c66_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "docx_8a299618020a5d5f_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "docx_6f280819f7923d7b_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000",
+        "html_3189f627f0d71c66_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "docx_8a299618020a5d5f_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "docx_6f280819f7923d7b_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 6,
+      "query": "What is the name of the VPN client used by employees to connect to internal systems?",
+      "alpha_v1": 0.7444667220115662,
+      "alpha_v2_guarded": 0.7444667220115662,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "pdf_b7e41a6a78581634_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "html_10425e686fd5682e_chunk_0000",
+        "docx_f2904cc5d16ee394_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "pdf_b7e41a6a78581634_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "html_10425e686fd5682e_chunk_0000",
+        "docx_f2904cc5d16ee394_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 7,
+      "query": "Who is the Chief Information Security Officer of the Information Security department?",
+      "alpha_v1": 0.6093749403953552,
+      "alpha_v2_guarded": 0.6093749403953552,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "information security department|requires_training|bitwarden enterprise",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "pdf_a44e1a83a9f94ec1_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "information security department|requires_training|bitwarden enterprise",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "pdf_a44e1a83a9f94ec1_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "information security department|requires_training|bitwarden enterprise",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "pdf_a44e1a83a9f94ec1_chunk_0000",
+        "pdf_09933584f8b49f70_chunk_0000",
+        "html_10425e686fd5682e_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "project nimbus|uses|bitwarden enterprise",
+        "systems and tools\nproject nimbus|uses|bitwarden enterprise"
+      ],
+      "v2_top10_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "information security department|requires_training|bitwarden enterprise",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "pdf_a44e1a83a9f94ec1_chunk_0000",
+        "pdf_09933584f8b49f70_chunk_0000",
+        "html_10425e686fd5682e_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "project nimbus|uses|bitwarden enterprise",
+        "systems and tools\nproject nimbus|uses|bitwarden enterprise"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 8,
+      "query": "Who does Li Wei report to in the department?",
+      "alpha_v1": 0.4076542556285858,
+      "alpha_v2_guarded": 0.5,
+      "alpha_floor": 0.5,
+      "alpha_changed": true,
+      "v1_top5_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_86fced5ed6ce348c_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_86fced5ed6ce348c_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_86fced5ed6ce348c_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "pdf_b7635adcc66996eb_chunk_0001",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001"
+      ],
+      "v2_top10_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_86fced5ed6ce348c_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "pdf_b7635adcc66996eb_chunk_0001",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 9,
+      "query": "What is the name of the HRMS system used for core human resources management?",
+      "alpha_v1": 0.801655650138855,
+      "alpha_v2_guarded": 0.801655650138855,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_04c0484539531646_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_04c0484539531646_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_04c0484539531646_chunk_0000",
+        "docx_8cc8d233a064ae60_chunk_0000",
+        "docx_26dc127694170080_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_09933584f8b49f70_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "docx_04c0484539531646_chunk_0000",
+        "docx_8cc8d233a064ae60_chunk_0000",
+        "docx_26dc127694170080_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_09933584f8b49f70_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 10,
+      "query": "Who leads the Human Resources department that administers benefits?",
+      "alpha_v1": 0.8279187679290771,
+      "alpha_v2_guarded": 0.8279187679290771,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "docx_39b33da404525e76_chunk_0001",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_39b33da404525e76_chunk_0001",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "docx_39b33da404525e76_chunk_0001",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "html_e1756e88592e4f9e_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "docx_39b33da404525e76_chunk_0001",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "html_e1756e88592e4f9e_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 11,
+      "query": "What is the expected outcome of the Project Phoenix finance systems consolidation project?",
+      "alpha_v1": 0.8093822002410889,
+      "alpha_v2_guarded": 0.8093822002410889,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "project phoenix|uses|coupa",
+        "project phoenix|uses|sap concur",
+        "project phoenix|uses|workday hrms"
+      ],
+      "v2_top5_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "project phoenix|uses|coupa",
+        "project phoenix|uses|sap concur",
+        "project phoenix|uses|workday hrms"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "project phoenix|uses|coupa",
+        "project phoenix|uses|sap concur",
+        "project phoenix|uses|workday hrms",
+        "pdf_b7635adcc66996eb_chunk_0000",
+        "html_528f666cef2741f0_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "project titan|uses|coupa"
+      ],
+      "v2_top10_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "project phoenix|uses|coupa",
+        "project phoenix|uses|sap concur",
+        "project phoenix|uses|workday hrms",
+        "pdf_b7635adcc66996eb_chunk_0000",
+        "html_528f666cef2741f0_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "project titan|uses|coupa"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 12,
+      "query": "What type of cost centers allow cross-department expense tracking?",
+      "alpha_v1": 0.9272217750549316,
+      "alpha_v2_guarded": 0.9272217750549316,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "html_f0be6dda8429499c_chunk_0000",
+        "pdf_ebe53a66ce68722e_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "html_f0be6dda8429499c_chunk_0000",
+        "pdf_ebe53a66ce68722e_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "html_f0be6dda8429499c_chunk_0000",
+        "pdf_ebe53a66ce68722e_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_003e3de2d340b467_chunk_0000",
+        "docx_a02ca9435c61ddf2_chunk_0000",
+        "docx_976352d9eb16e70c_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "html_f0be6dda8429499c_chunk_0000",
+        "pdf_ebe53a66ce68722e_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_003e3de2d340b467_chunk_0000",
+        "docx_a02ca9435c61ddf2_chunk_0000",
+        "docx_976352d9eb16e70c_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 13,
+      "query": "Who is accountable for the overall administration of the Bring Your Own Device (BYOD) Policy?",
+      "alpha_v1": 0.8801755309104919,
+      "alpha_v2_guarded": 0.8801755309104919,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_85b8e03ad66e4f60_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "html_a9ebaefb16ab09a8_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_85b8e03ad66e4f60_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 14,
+      "query": "What is the benefit of using project-based cost centers?",
+      "alpha_v1": 0.8312978744506836,
+      "alpha_v2_guarded": 0.8312978744506836,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "html_b5b2ed5ec4fada14_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "html_b5b2ed5ec4fada14_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "html_b5b2ed5ec4fada14_chunk_0000",
+        "project|uses|systems",
+        "html_bd5fefab5f8ab053_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "html_528f666cef2741f0_chunk_0000",
+        "pdf_82442a0fa9087e8a_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000",
+        "html_b5b2ed5ec4fada14_chunk_0000",
+        "project|uses|systems",
+        "html_bd5fefab5f8ab053_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "html_528f666cef2741f0_chunk_0000",
+        "pdf_82442a0fa9087e8a_chunk_0000"
+      ],
+      "top10_changed": false
+    },
+    {
+      "query_index": 15,
+      "query": "Who collects the retired IT assets?",
+      "alpha_v1": 0.8163171410560608,
+      "alpha_v2_guarded": 0.8163171410560608,
+      "alpha_floor": 0.5,
+      "alpha_changed": false,
+      "v1_top5_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "pdf_4590aaf9e821b64c_chunk_0000",
+        "pdf_09933584f8b49f70_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "pdf_4590aaf9e821b64c_chunk_0000",
+        "pdf_09933584f8b49f70_chunk_0000"
+      ],
+      "top5_changed": false,
+      "v1_top10_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "pdf_4590aaf9e821b64c_chunk_0000",
+        "pdf_09933584f8b49f70_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1398782c2cf254a_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "html_e1287a3f1a06974d_chunk_0000"
+      ],
+      "v2_top10_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "pdf_4590aaf9e821b64c_chunk_0000",
+        "pdf_09933584f8b49f70_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1398782c2cf254a_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "html_e1287a3f1a06974d_chunk_0000"
+      ],
+      "top10_changed": false
+    }
+  ]
+}

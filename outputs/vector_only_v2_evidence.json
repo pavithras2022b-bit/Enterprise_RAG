@@ -1,0 +1,841 @@
+{
+  "evaluation_type": "vector_only_v2_evidence_ablation",
+  "experimental_change": "V1 adaptive hybrid retrieval was replaced by vector-only retrieval. The embedding model, vector database, retrieval depth, cross-encoder reranker, top-k evidence size, query set, generation models, prompting, citation validation, and generation evaluation methodology remain unchanged.",
+  "summary": {
+    "queries_evaluated": 15,
+    "v1_architecture": "learned adaptive hybrid vector + knowledge graph retrieval",
+    "v2_architecture": "vector-only retrieval followed by the same cross-encoder reranker",
+    "top_k": 5,
+    "initial_vector_depth": 10,
+    "identical_top5_order_queries": 12,
+    "changed_top5_queries": 3,
+    "average_top5_set_overlap": 0.9466666666666668
+  },
+  "per_query_results": [
+    {
+      "query_index": 1,
+      "query": "Where are campaign assets published?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "docx_425411ca30659917_chunk_0000",
+          "text": "Marketing Campaign Approval Process\nMeridian Dynamics Inc. — Internal Document\nProcess\nCampaign proposals, such as those under Project Falcon, are drafted by Radhika Pillai, Marketing Manager, Digital, and reviewed by Sneha Bhattacharya, Director of Marketing, before budget approval from Finance.\na digital brand relaunch campaign across web, social and partner channels Campaign assets are published through Salesforce and Microsoft 365 collaboration tools.",
+          "rerank_score": 3.973342180252075,
+          "rank": 1
+        },
+        {
+          "candidate_id": "docx_5b3f959418c997e4_chunk_0000",
+          "text": "Marketing Department Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Marketing department at Meridian Dynamics Inc. is headquartered in Austin, Texas, USA (Americas Regional Office) and is identified internally by the department code MKT. The department is led by Sneha Bhattacharya, who holds the title of Director of Marketing and reports to Ananya Raghunathan.\nMarketing operates as one of the 13 core departments of Meridian Dynamics Inc., alongside Human Resources, Information Technology, Information Security, Finance and other functions, and coordinates closely with these departments on cross-functional initiatives.\nTeam Structure\nThe Marketing department currently comprises 3 employees on record, including:\n- Radhika Pillai (Marketing Manager, Digital, Marketing department, based in Austin) reports to Sneha Bhattacharya.\n- James O'Connor (Content Strategist, Marketing department, based in Austin) reports to Radhika Pillai.\nProjects Owned\nMarketing manages Project Falcon, a digital brand relaunch campaign across web, social and partner channels. The project is sponsored by Sneha Bhattacharya and led by Radhika Pillai, with contributions from James O'Connor. Project Falcon relies on Salesforce, Microsoft 365 as its primary systems.\nContact and Escalation\nFor matters concerning Marketing, employees should first contact their reporting manager or Sneha Bhattacharya directly. Escalations that cannot be resolved within the department are routed to the office of the Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai, Tamil Nadu, India (Global Headquarters).",
+          "rerank_score": -9.970985412597656,
+          "rank": 2
+        },
+        {
+          "candidate_id": "pdf_310a3c06435dc26e_chunk_0000",
+          "text": "Project Falcon: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Falcon is a digital brand relaunch campaign across web, social and partner channels. The project\nis owned by the Marketing department and sponsored by Sneha Bhattacharya.\nRadhika Pillai serves as the project lead, coordinating a team consisting of James O'Connor.\nSystems and Tools\nProject Falcon relies on Salesforce, Microsoft 365 as its core systems. Salesforce is maintained by the\nSales department. Microsoft 365 is maintained by the Information Technology department.\nStatus and Governance\nProgress on Project Falcon is reviewed monthly by Sneha Bhattacharya and reported to the Marketing\ndepartment's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira\nwhere applicable.",
+          "rerank_score": -10.29353141784668,
+          "rank": 3
+        },
+        {
+          "candidate_id": "pdf_689ba27adba4384c_chunk_0000",
+          "text": "IT Asset Disposal Procedure\nMeridian Dynamics Inc. — Internal Document\nProcedure\nRetired IT assets are collected by the Facilities department and securely wiped by Information Technology\nin accordance with the Data Classification and Handling Policy (POL-SEC-003) before disposal or\ndonation.",
+          "rerank_score": -10.527961730957031,
+          "rank": 4
+        },
+        {
+          "candidate_id": "html_acfe131390d012ac_chunk_0000",
+          "text": "Project Vega: Project Charter\nProject Vega: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Vega is an enterprise accounts expansion initiative targeting the North American market. The project is owned by the Sales department and sponsored by Arjun Menon.\nAnand Krishnan serves as the project lead, coordinating a team consisting of Laura Bennett, Michael Chen.\nSystems and Tools\nProject Vega relies on Salesforce as its core systems. Salesforce is maintained by the Sales department.\nStatus and Governance\nProgress on Project Vega is reviewed monthly by Arjun Menon and reported to the Sales department's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira where applicable.",
+          "rerank_score": -11.177141189575195,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 2,
+      "query": "What is the recommended VPN for remote access?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "html_fae89871be5aa117_chunk_0000",
+          "text": "Remote Work Technology FAQ\nRemote Work Technology FAQ\nMeridian Dynamics Inc. — Internal Document\nFAQ\nQ: What VPN should I use when working remotely? A: The Meridian VPN Gateway, mandatory for all remote access.\nQ: Who do I contact for home office equipment? A: Submit a request via ServiceNow to Information Technology.",
+          "rerank_score": 4.678969383239746,
+          "rank": 1
+        },
+        {
+          "candidate_id": "pdf_84af94a294001996_chunk_0000",
+          "text": "Remote Access VPN Setup Guide\nMeridian Dynamics Inc. — Internal Document\nSetup Steps\nEmployees connect to internal systems while off-site through the Meridian VPN Gateway, maintained\njointly by Information Technology and Information Security.\nStep 1: Authenticate using Okta SSO with multi-factor authentication. Step 2: Launch the VPN client and\nselect the nearest regional gateway (Chennai, Bangalore, Pune, Austin, London, Singapore). Step 3:\nReport connectivity issues to the Service Desk via ServiceNow.",
+          "rerank_score": 2.224198818206787,
+          "rank": 2
+        },
+        {
+          "candidate_id": "pdf_452544b4224d7971_chunk_0000",
+          "text": "Work From Home Security Guidelines\nMeridian Dynamics Inc. — Internal Document\nGuidelines\nRemote employees must connect through the Meridian VPN Gateway for all access to internal systems\nand must not use public Wi-Fi without VPN enabled.\nCompany laptops must remain updated with the latest security patches, pushed automatically by the\nInformation Technology department; employees should not disable automatic updates.",
+          "rerank_score": 1.969224214553833,
+          "rank": 3
+        },
+        {
+          "candidate_id": "html_c4b99b49f8dfe568_chunk_0000",
+          "text": "Work From Home Program Overview\nWork From Home Program Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nMeridian Dynamics Inc.'s Work From Home program, governed by POL-HR-008, allows eligible employees in Engineering, Information Technology, Customer Support, Marketing and Finance to work remotely up to 3 days per week.\nThe program is jointly overseen by Human Resources under Divya Ramaswamy and Information Security under Meera Krishnan, who ensures remote access complies with the Information Security Policy (POL-SEC-001).",
+          "rerank_score": -6.615056037902832,
+          "rank": 4
+        },
+        {
+          "candidate_id": "html_1b9f8ac3cc062e96_chunk_0000",
+          "text": "Network Operations Overview\nNetwork Operations Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Network Operations team, led by Ravi Shankar and reporting to Suresh Pillai, manages connectivity across all Meridian Dynamics Inc. offices including Chennai, Tamil Nadu, India (Global Headquarters), Bangalore, Karnataka, India (Engineering Campus), Pune, Maharashtra, India (Delivery Center), Austin, Texas, USA (Americas Regional Office), London, United Kingdom (EMEA Regional Office) and Singapore (APAC Regional Office).\nThe team maintains the Meridian VPN Gateway in coordination with the Information Security department and supports Project Orion's data center consolidation effort.",
+          "rerank_score": -10.04415512084961,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 3,
+      "query": "Who reviews the recovery drills?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_a63b0c4b937d1310_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000",
+        "html_a998e6054e739de2_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_a63b0c4b937d1310_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000",
+        "html_a998e6054e739de2_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "pdf_ec26ff0520cae2e0_chunk_0000",
+          "text": "Data Backup and Recovery Procedure\nMeridian Dynamics Inc. — Internal Document\nProcedure\nProduction databases hosted on AWS are backed up nightly, managed by Deepak Nair's Infrastructure\nteam in coordination with Engineering. Recovery drills are conducted quarterly and reviewed by the\nInformation Security department for the Data Classification and Handling Policy (POL-SEC-003).",
+          "rerank_score": 6.533810615539551,
+          "rank": 1
+        },
+        {
+          "candidate_id": "pdf_a63b0c4b937d1310_chunk_0000",
+          "text": "Quarterly Access Review Procedure\nMeridian Dynamics Inc. — Internal Document\nProcedure\nAnjali Krishnamurthy, Security Operations Manager, leads a quarterly review of all Okta SSO and AWS\naccess grants. Department Directors confirm continued business need for each team member's access.\nAccess for employees who have changed departments or roles is revoked and re-provisioned according to\nthe new role, coordinated with the Information Technology department.",
+          "rerank_score": -7.875263690948486,
+          "rank": 2
+        },
+        {
+          "candidate_id": "pdf_67483c18990597a7_chunk_0000",
+          "text": "Production Incident Postmortem Process\nMeridian Dynamics Inc. — Internal Document\nProcess\nFollowing any production incident, the Engineering team, coordinated by Karthik Iyer, Director of\nEngineering, publishes a postmortem document in Confluence within 5 business days, including root\ncause, impact and remediation owners.\nIncidents with a security dimension are jointly reviewed with the Information Security department under\nMeera Krishnan.",
+          "rerank_score": -8.464784622192383,
+          "rank": 3
+        },
+        {
+          "candidate_id": "pdf_af24128f772af4f2_chunk_0000",
+          "text": "Vendor Management Best Practices Notes\nMeridian Dynamics Inc. — Internal Document\nNotes\nPreeti Chawla's Vendor Relations team conducts an annual performance review of strategic vendors,\nassessing delivery quality, cost and security posture, in coordination with the Information Security\ndepartment.",
+          "rerank_score": -9.49183464050293,
+          "rank": 4
+        },
+        {
+          "candidate_id": "html_a998e6054e739de2_chunk_0000",
+          "text": "Engineering Release Management Process\nEngineering Release Management Process\nMeridian Dynamics Inc. — Internal Document\nProcess\nEngineering releases follow a two-week sprint cycle tracked in Jira. Release candidates for Project Atlas are reviewed by Fatima Sheikh, QA Lead, before deployment to AWS production environments by Siddharth Rao, DevOps Engineer.\nAll releases require sign-off from the Engineering Manager (Vishal Choudhary for Platform, Meenakshi Sundaram for Backend) and are documented in Confluence.",
+          "rerank_score": -9.709076881408691,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 4,
+      "query": "Which policies should be read in conjunction with the IT Asset Management Policy?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "pdf_ca680be8bfbc1868_chunk_0001",
+        "html_3e71e0d8812be106_chunk_0001"
+      ],
+      "v2_top5_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "pdf_ca680be8bfbc1868_chunk_0001",
+        "html_3e71e0d8812be106_chunk_0001"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "pdf_a329b3aad73104bd_chunk_0000",
+          "text": "IT Asset Management Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the IT Asset Management Policy (POL-IT-002) of Meridian Dynamics Inc.. The\npolicy is owned and maintained by the Information Technology department under the direction of Suresh\nPillai. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments\nacross Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and\noperational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and\ninterns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore\nare expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nAll IT assets (laptops, monitors, mobile devices) are tagged and tracked in ServiceNow by the Information\nTechnology department under Deepak Nair. Assets must be returned to Facilities within 5 business days of\nan employee's last working day.\nRoles and Responsibilities\nSuresh Pillai is accountable for the overall administration of this policy within Information Technology.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for\nescalating exceptions to Information Technology.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of\nemployment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Acceptable Use of IT Resources Policy (POL-IT-001)\nand the Software Procurement and Licensing Policy (POL-IT-003).",
+          "rerank_score": 6.04384708404541,
+          "rank": 1
+        },
+        {
+          "candidate_id": "html_a6f09478775ee8d2_chunk_0000",
+          "text": "Acceptable Use of IT Resources Policy\nAcceptable Use of IT Resources Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the Acceptable Use of IT Resources Policy (POL-IT-001) of Meridian Dynamics Inc.. The policy is owned and maintained by the Information Technology department under the direction of Suresh Pillai. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments across Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and operational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and interns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore are expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nCompany-issued laptops, accounts and network access are provided for business purposes. Employees must not install unlicensed software; all software requests are routed through ServiceNow to the Information Technology department for review under the Software Procurement and Licensing Policy (POL-IT-003).\nRoles and Responsibilities\nSuresh Pillai is accountable for the overall administration of this policy within Information Technology.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Information Technology.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the IT Asset Management Policy (POL-IT-002) and the Software Procurement and Licensing Policy (POL-IT-003).",
+          "rerank_score": 4.823897361755371,
+          "rank": 2
+        },
+        {
+          "candidate_id": "docx_6bef6b8e2fbedfac_chunk_0000",
+          "text": "Software Procurement and Licensing Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the Software Procurement and Licensing Policy (POL-IT-003) of Meridian Dynamics Inc.. The policy is owned and maintained by the Information Technology department under the direction of Suresh Pillai. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to Engineering, Information Technology, ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and operational obligations.\nScope\nThis policy applies to Engineering, Information Technology. All employees, contractors and interns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore are expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nNew software purchases above INR 50,000 require a purchase requisition in Coupa, approval from the requesting department Director, and a security review by the Information Security department before procurement is finalized by Ramesh Gopalakrishnan's Procurement team.\nRoles and Responsibilities\nSuresh Pillai is accountable for the overall administration of this policy within Information Technology.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Information Technology.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Acceptable Use of IT Resources Policy (POL-IT-001) and the IT Asset Management Policy (POL-IT-002).",
+          "rerank_score": 3.8552005290985107,
+          "rank": 3
+        },
+        {
+          "candidate_id": "pdf_ca680be8bfbc1868_chunk_0001",
+          "text": "All employees are responsible for reading, understanding and adhering to this policy as a condition of\nemployment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Leave and Attendance Policy (POL-HR-001) and the\nEmployee Benefits Policy (POL-HR-002).",
+          "rerank_score": 2.432765007019043,
+          "rank": 4
+        },
+        {
+          "candidate_id": "html_3e71e0d8812be106_chunk_0001",
+          "text": "All employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Leave and Attendance Policy (POL-HR-001) and the Employee Benefits Policy (POL-HR-002).",
+          "rerank_score": 2.432765007019043,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 5,
+      "query": "When do enrollment windows for the Employee Stock Purchase Plan open?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "html_e796e61824a75c45_chunk_0000",
+          "text": "Employee Stock Purchase Plan Guide\nEmployee Stock Purchase Plan Guide\nMeridian Dynamics Inc. — Internal Document\nPlan Guide\neligible employees may purchase company stock at a 15% discount twice a year. Enrollment windows open in January and July each year and are administered jointly by Human Resources and the Finance department under Rohit Malhotra, Chief Financial Officer.",
+          "rerank_score": 9.20355224609375,
+          "rank": 1
+        },
+        {
+          "candidate_id": "html_8af798d055d68b89_chunk_0000",
+          "text": "Benefits Enrollment Procedure\nBenefits Enrollment Procedure\nMeridian Dynamics Inc. — Internal Document\nProcedure\nNew employees complete benefits enrollment within 30 days of their joining date through Workday HRMS, guided by their onboarding buddy and the Human Resources Business Partner assigned to their department.\nAnnual open enrollment occurs each November, during which employees may revise elections for the following calendar year.",
+          "rerank_score": -2.4536452293395996,
+          "rank": 2
+        },
+        {
+          "candidate_id": "pdf_710a1cb0ae33d2d7_chunk_0000",
+          "text": "General Benefits FAQ\nMeridian Dynamics Inc. — Internal Document\nFAQ\nQ: When can I change my benefits elections? A: During annual open enrollment each November, or within\n30 days of a qualifying life event.\nQ: Who administers benefits? A: The Human Resources department, led operationally by Sanjay Verma,\nSenior Manager, Compensation & Benefits.",
+          "rerank_score": -6.630459308624268,
+          "rank": 3
+        },
+        {
+          "candidate_id": "pdf_7cd174d150c40e93_chunk_0000",
+          "text": "Employee Benefits FAQ\nMeridian Dynamics Inc. — Internal Document\nFAQ\nQ: When does my health insurance start? A: Coverage begins on your date of joining.\nQ: Can I add my parents to my health plan? A: The standard Group Health Insurance covers spouse and\nup to two dependent children; parental coverage can be purchased as a voluntary top-up through Human\nResources.\nQ: Who do I contact for benefits questions? A: Sanjay Verma, Senior Manager, Compensation & Benefits,\nor your assigned HR Business Partner.",
+          "rerank_score": -9.72727108001709,
+          "rank": 4
+        },
+        {
+          "candidate_id": "docx_e31c7f77460bdd38_chunk_0000",
+          "text": "New Hire Onboarding Checklist\nMeridian Dynamics Inc. — Internal Document\nChecklist\n1. Offer accepted and start date confirmed in Workday HRMS.\n2. Background verification completed.\n3. IT provisioning completed by Information Technology (laptop, Okta SSO, Microsoft 365).\n4. Benefits enrollment completed within 30 days via Workday HRMS.\n5. Security awareness training completed within 30 days, tracked by Information Security.\n6. 3-month and 5-month probation check-ins conducted by the reporting manager.",
+          "rerank_score": -9.833979606628418,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 6,
+      "query": "What is the name of the VPN client used by employees to connect to internal systems?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_fae89871be5aa117_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_fae89871be5aa117_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "pdf_84af94a294001996_chunk_0000",
+          "text": "Remote Access VPN Setup Guide\nMeridian Dynamics Inc. — Internal Document\nSetup Steps\nEmployees connect to internal systems while off-site through the Meridian VPN Gateway, maintained\njointly by Information Technology and Information Security.\nStep 1: Authenticate using Okta SSO with multi-factor authentication. Step 2: Launch the VPN client and\nselect the nearest regional gateway (Chennai, Bangalore, Pune, Austin, London, Singapore). Step 3:\nReport connectivity issues to the Service Desk via ServiceNow.",
+          "rerank_score": 5.795429229736328,
+          "rank": 1
+        },
+        {
+          "candidate_id": "pdf_452544b4224d7971_chunk_0000",
+          "text": "Work From Home Security Guidelines\nMeridian Dynamics Inc. — Internal Document\nGuidelines\nRemote employees must connect through the Meridian VPN Gateway for all access to internal systems\nand must not use public Wi-Fi without VPN enabled.\nCompany laptops must remain updated with the latest security patches, pushed automatically by the\nInformation Technology department; employees should not disable automatic updates.",
+          "rerank_score": 4.74188232421875,
+          "rank": 2
+        },
+        {
+          "candidate_id": "html_fae89871be5aa117_chunk_0000",
+          "text": "Remote Work Technology FAQ\nRemote Work Technology FAQ\nMeridian Dynamics Inc. — Internal Document\nFAQ\nQ: What VPN should I use when working remotely? A: The Meridian VPN Gateway, mandatory for all remote access.\nQ: Who do I contact for home office equipment? A: Submit a request via ServiceNow to Information Technology.",
+          "rerank_score": -0.8815226554870605,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_3ab47e2c940bc35b_chunk_0000",
+          "text": "IT Service Catalog\nMeridian Dynamics Inc. — Internal Document\nSystems Catalog\nWorkday HRMS: owned by Human Resources, used for core human resources management, leave, payroll and benefits administration.\nServiceNow: owned by Information Technology, used for IT service management, incident tickets and asset tracking.\nOkta SSO: owned by Information Security, used for single sign-on and identity and access management.\nSAP Concur: owned by Finance, used for travel booking and expense reimbursement.\nJira: owned by Engineering, used for software project and issue tracking.\nConfluence: owned by Engineering, used for internal documentation and knowledge sharing.\nSalesforce: owned by Sales, used for customer relationship management and sales pipeline tracking.\nAWS: owned by Engineering, used for cloud infrastructure hosting production and staging environments.\nZoom: owned by Information Technology, used for video conferencing for meetings and interviews.\nMicrosoft 365: owned by Information Technology, used for email, calendar and office productivity.\nMeridian VPN Gateway: owned by Information Security, used for secure remote access to internal networks.\nSplunk SIEM: owned by Information Security, used for security information and event monitoring.\nCoupa: owned by Procurement, used for purchase requisitions and vendor invoice management.\nGreytHR Self-Service Portal: owned by Human Resources, used for employee self-service for leave requests and payslips.\nBitwarden Enterprise: owned by Information Security, used for enterprise password management.",
+          "rerank_score": -4.4300031661987305,
+          "rank": 4
+        },
+        {
+          "candidate_id": "html_1b9f8ac3cc062e96_chunk_0000",
+          "text": "Network Operations Overview\nNetwork Operations Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Network Operations team, led by Ravi Shankar and reporting to Suresh Pillai, manages connectivity across all Meridian Dynamics Inc. offices including Chennai, Tamil Nadu, India (Global Headquarters), Bangalore, Karnataka, India (Engineering Campus), Pune, Maharashtra, India (Delivery Center), Austin, Texas, USA (Americas Regional Office), London, United Kingdom (EMEA Regional Office) and Singapore (APAC Regional Office).\nThe team maintains the Meridian VPN Gateway in coordination with the Information Security department and supports Project Orion's data center consolidation effort.",
+          "rerank_score": -5.291783332824707,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 7,
+      "query": "Who is the Chief Information Security Officer of the Information Security department?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "information security department|requires_training|bitwarden enterprise",
+        "docx_30750e625f371eb2_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_30750e625f371eb2_chunk_0000",
+        "pdf_a44e1a83a9f94ec1_chunk_0000"
+      ],
+      "exact_order_match": false,
+      "shared_top5_count": 4,
+      "top5_overlap_ratio": 0.8,
+      "v2_evidence": [
+        {
+          "candidate_id": "html_e1287a3f1a06974d_chunk_0000",
+          "text": "Information Security Department Overview\nInformation Security Department Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Information Security department at Meridian Dynamics Inc. is headquartered in Bangalore, Karnataka, India (Engineering Campus) and is identified internally by the department code INFOSEC. The department is led by Meera Krishnan, who holds the title of Chief Information Security Officer and reports to Vikram Suresh. Information Security operates as one of the 13 core departments of Meridian Dynamics Inc., alongside Human Resources, Information Technology, Finance, Procurement and other functions, and coordinates closely with these departments on cross-functional initiatives. Team Structure\nThe Information Security department currently comprises 4 employees on record, including:\n- Anjali Krishnamurthy (Security Operations Manager, Information Security department, based in Bangalore) reports to Meera Krishnan. - Tarun Sethi (Security Compliance Lead, Information Security department, based in Bangalore) reports to Meera Krishnan. - Ishita Banerjee (Incident Response Lead, Information Security department, based in Bangalore) reports to Meera Krishnan. Projects Owned\nInformation Security manages Project Nimbus, a zero-trust security architecture rollout across all regional offices. The project is sponsored by Meera Krishnan and led by Anjali Krishnamurthy, with contributions from Tarun Sethi, Ishita Banerjee. Project Nimbus relies on Splunk SIEM, Okta SSO, Bitwarden Enterprise as its primary systems. Systems Maintained\nOkta SSO is maintained by the Information Security department and is used for single sign-on and identity and access management. Meridian VPN Gateway is maintained by the Information Security department and is used for secure remote access to internal networks. Splunk SIEM is maintained by the Information Security department and is used for security information and event monitoring. Bitwarden Enterprise is maintained by the Information Security department and is used for enterprise password management. Policies Owned\nInformation Security Policy (POL-SEC-001) is owned by Information Security and applies to all departments.",
+          "rerank_score": 7.842265605926514,
+          "rank": 1
+        },
+        {
+          "candidate_id": "docx_0d5991863da15ac6_chunk_0000",
+          "text": "Information Security Department Roster\nMeridian Dynamics Inc. — Internal Document\nDepartment Roster\nThe following is the current employee roster for the Information Security department at Meridian Dynamics Inc., maintained in Workday HRMS by the Human Resources department:\n- Meera Krishnan (Chief Information Security Officer, Information Security department, based in Bangalore) reports to Vikram Suresh.\n- Anjali Krishnamurthy (Security Operations Manager, Information Security department, based in Bangalore) reports to Meera Krishnan.\n- Tarun Sethi (Security Compliance Lead, Information Security department, based in Bangalore) reports to Meera Krishnan.\n- Ishita Banerjee (Incident Response Lead, Information Security department, based in Bangalore) reports to Meera Krishnan.",
+          "rerank_score": 7.716716289520264,
+          "rank": 2
+        },
+        {
+          "candidate_id": "html_e1287a3f1a06974d_chunk_0001",
+          "text": "Password and Access Management Policy (POL-SEC-002) is owned by Information Security and applies to all departments. Data Classification and Handling Policy (POL-SEC-003) is owned by Information Security and applies to all departments. Incident Response Policy (POL-SEC-004) is owned by Information Security and applies to Information Technology, Engineering, Information Security. Bring Your Own Device (BYOD) Policy (POL-SEC-005) is owned by Information Security and applies to all departments. Contact and Escalation\nFor matters concerning Information Security, employees should first contact their reporting manager or Meera Krishnan directly. Escalations that cannot be resolved within the department are routed to the office of the Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai, Tamil Nadu, India (Global Headquarters).",
+          "rerank_score": 3.9680094718933105,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_30750e625f371eb2_chunk_0000",
+          "text": "Project Nimbus: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Nimbus is a zero-trust security architecture rollout across all regional offices. The project is owned by the Information Security department and sponsored by Meera Krishnan.\nAnjali Krishnamurthy serves as the project lead, coordinating a team consisting of Tarun Sethi, Ishita Banerjee.\nSystems and Tools\nProject Nimbus relies on Splunk SIEM, Okta SSO, Bitwarden Enterprise as its core systems. Splunk SIEM is maintained by the Information Security department. Okta SSO is maintained by the Information Security department. Bitwarden Enterprise is maintained by the Information Security department.\nStatus and Governance\nProgress on Project Nimbus is reviewed monthly by Meera Krishnan and reported to the Information Security department's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira where applicable.",
+          "rerank_score": -0.46843594312667847,
+          "rank": 4
+        },
+        {
+          "candidate_id": "pdf_a44e1a83a9f94ec1_chunk_0000",
+          "text": "Information Security Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the Information Security Policy (POL-SEC-001) of Meridian Dynamics Inc.. The\npolicy is owned and maintained by the Information Security department under the direction of Meera\nKrishnan. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January\n2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments\nacross Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and\noperational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and\ninterns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore\nare expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nAll employees must complete mandatory security awareness training within 30 days of joining and\nannually thereafter, administered by Tarun Sethi, Security Compliance Lead.\nAccess to production systems, including AWS and internal databases, requires multi-factor authentication\nthrough Okta SSO and is reviewed quarterly by Anjali Krishnamurthy, Security Operations Manager.\nSecurity incidents must be reported immediately to the Information Security department via ServiceNow or\nby contacting Ishita Banerjee, Incident Response Lead, who coordinates the response per the Incident\nResponse Policy (POL-SEC-004).\nRoles and Responsibilities\nMeera Krishnan is accountable for the overall administration of this policy within Information Security.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for\nescalating exceptions to Information Security.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of\nemployment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Password and Access Management Policy\n(POL-SEC-002) and the Data Classification and Handling Policy (POL-SEC-003).",
+          "rerank_score": -0.6976104974746704,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 8,
+      "query": "Who does Li Wei report to in the department?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_b7635adcc66996eb_chunk_0001"
+      ],
+      "v2_top5_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_b7635adcc66996eb_chunk_0001"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "html_5237ecb87da4b1c2_chunk_0000",
+          "text": "Customer Support Department Overview\nCustomer Support Department Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Customer Support department at Meridian Dynamics Inc. is headquartered in Singapore (APAC Regional Office) and is identified internally by the department code CS. The department is led by Wei Ling Tan, who holds the title of Director of Customer Support and reports to Ananya Raghunathan.\nCustomer Support operates as one of the 13 core departments of Meridian Dynamics Inc., alongside Human Resources, Information Technology, Information Security, Finance and other functions, and coordinates closely with these departments on cross-functional initiatives.\nTeam Structure\nThe Customer Support department currently comprises 3 employees on record, including:\n- Li Wei (Customer Support Manager, Customer Support department, based in Singapore) reports to Wei Ling Tan.\n- Priyanka Das (Customer Support Specialist, Customer Support department, based in Singapore) reports to Li Wei.\nContact and Escalation\nFor matters concerning Customer Support, employees should first contact their reporting manager or Wei Ling Tan directly. Escalations that cannot be resolved within the department are routed to the office of the Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai, Tamil Nadu, India (Global Headquarters).",
+          "rerank_score": 4.89658260345459,
+          "rank": 1
+        },
+        {
+          "candidate_id": "docx_8d9a887db2dcd017_chunk_0000",
+          "text": "Security Incident Handling Procedure\nMeridian Dynamics Inc. — Internal Document\nProcedure\nEmployees who suspect a security incident (phishing email, lost device, unauthorized access) must report it immediately via ServiceNow or by contacting Ishita Banerjee, Incident Response Lead.\nThe Information Security department triages the incident within 1 hour and classifies severity per the Incident Response Policy (POL-SEC-004). Critical incidents trigger notification to the CISO and Legal department.",
+          "rerank_score": -7.655332565307617,
+          "rank": 2
+        },
+        {
+          "candidate_id": "docx_0d5991863da15ac6_chunk_0000",
+          "text": "Information Security Department Roster\nMeridian Dynamics Inc. — Internal Document\nDepartment Roster\nThe following is the current employee roster for the Information Security department at Meridian Dynamics Inc., maintained in Workday HRMS by the Human Resources department:\n- Meera Krishnan (Chief Information Security Officer, Information Security department, based in Bangalore) reports to Vikram Suresh.\n- Anjali Krishnamurthy (Security Operations Manager, Information Security department, based in Bangalore) reports to Meera Krishnan.\n- Tarun Sethi (Security Compliance Lead, Information Security department, based in Bangalore) reports to Meera Krishnan.\n- Ishita Banerjee (Incident Response Lead, Information Security department, based in Bangalore) reports to Meera Krishnan.",
+          "rerank_score": -8.100454330444336,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_fd57f0907dcbda1a_chunk_0001",
+          "text": "Software Procurement and Licensing Policy (POL-IT-003) is owned by Information Technology and applies to Engineering, Information Technology. Contact and Escalation\nFor matters concerning Information Technology, employees should first contact their reporting manager or Suresh Pillai directly. Escalations that cannot be resolved within the department are routed to the office of the Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai, Tamil Nadu, India (Global Headquarters).",
+          "rerank_score": -8.24829387664795,
+          "rank": 4
+        },
+        {
+          "candidate_id": "pdf_b7635adcc66996eb_chunk_0001",
+          "text": "Escalations that cannot be resolved within the department are routed to the office of\nthe Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai, Tamil Nadu,\nIndia (Global Headquarters).",
+          "rerank_score": -8.860363006591797,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 9,
+      "query": "What is the name of the HRMS system used for core human resources management?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0001"
+      ],
+      "v2_top5_ids": [
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0001"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "docx_3ab47e2c940bc35b_chunk_0000",
+          "text": "IT Service Catalog\nMeridian Dynamics Inc. — Internal Document\nSystems Catalog\nWorkday HRMS: owned by Human Resources, used for core human resources management, leave, payroll and benefits administration.\nServiceNow: owned by Information Technology, used for IT service management, incident tickets and asset tracking.\nOkta SSO: owned by Information Security, used for single sign-on and identity and access management.\nSAP Concur: owned by Finance, used for travel booking and expense reimbursement.\nJira: owned by Engineering, used for software project and issue tracking.\nConfluence: owned by Engineering, used for internal documentation and knowledge sharing.\nSalesforce: owned by Sales, used for customer relationship management and sales pipeline tracking.\nAWS: owned by Engineering, used for cloud infrastructure hosting production and staging environments.\nZoom: owned by Information Technology, used for video conferencing for meetings and interviews.\nMicrosoft 365: owned by Information Technology, used for email, calendar and office productivity.\nMeridian VPN Gateway: owned by Information Security, used for secure remote access to internal networks.\nSplunk SIEM: owned by Information Security, used for security information and event monitoring.\nCoupa: owned by Procurement, used for purchase requisitions and vendor invoice management.\nGreytHR Self-Service Portal: owned by Human Resources, used for employee self-service for leave requests and payslips.\nBitwarden Enterprise: owned by Information Security, used for enterprise password management.",
+          "rerank_score": 4.739399433135986,
+          "rank": 1
+        },
+        {
+          "candidate_id": "pdf_efdc37f55373ec96_chunk_0000",
+          "text": "Human Resources Department Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Human Resources department at Meridian Dynamics Inc. is headquartered in Chennai, Tamil Nadu,\nIndia (Global Headquarters) and is identified internally by the department code HR. The department is led\nby Divya Ramaswamy, who holds the title of Director of Human Resources and reports to Priya Chandran. Human Resources operates as one of the 13 core departments of Meridian Dynamics Inc., alongside\nInformation Technology, Information Security, Finance, Procurement and other functions, and coordinates\nclosely with these departments on cross-functional initiatives. Team Structure\nThe Human Resources department currently comprises 6 employees on record, including:\n- Priya Chandran (Chief Human Resources Officer, Human Resources department, based in Chennai)\nreports to Ananya Raghunathan. - Neha Kapoor (Senior Manager, Talent Acquisition, Human Resources department, based in Chennai)\nreports to Divya Ramaswamy. - Sanjay Verma (Senior Manager, Compensation & Benefits, Human Resources department, based in\nChennai) reports to Divya Ramaswamy. - Kavya Reddy (HR Business Partner, Human Resources department, based in Bangalore) reports to\nDivya Ramaswamy. - Arvind Balasubramanian (Learning & Development Manager, Human Resources department, based in\nChennai) reports to Divya Ramaswamy. Systems Maintained\nWorkday HRMS is maintained by the Human Resources department and is used for core human\nresources management, leave, payroll and benefits administration. GreytHR Self-Service Portal is maintained by the Human Resources department and is used for employee\nself-service for leave requests and payslips. Policies Owned\nLeave and Attendance Policy (POL-HR-001) is owned by Human Resources and applies to all\nEmployee Benefits Policy (POL-HR-002) is owned by Human Resources and applies to all departments.",
+          "rerank_score": 1.9297305345535278,
+          "rank": 2
+        },
+        {
+          "candidate_id": "html_ecb328f9a096fd40_chunk_0001",
+          "text": "Benefits enrollment and management is administered by the Human Resources department through Workday HRMS, and eligibility questions should be directed to Sanjay Verma, Senior Manager, Compensation & Benefits. Roles and Responsibilities\nDivya Ramaswamy is accountable for the overall administration of this policy within Human Resources. Department Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Human Resources. All employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Leave and Attendance Policy (POL-HR-001) and the Recruitment and Onboarding Policy (POL-HR-003).",
+          "rerank_score": -1.8434834480285645,
+          "rank": 3
+        },
+        {
+          "candidate_id": "pdf_ff8f53d904329460_chunk_0000",
+          "text": "Human Resources Department Roster\nMeridian Dynamics Inc. — Internal Document\nDepartment Roster\nThe following is the current employee roster for the Human Resources department at Meridian Dynamics\nInc., maintained in Workday HRMS by the Human Resources department:\n- Priya Chandran (Chief Human Resources Officer, Human Resources department, based in Chennai)\nreports to Ananya Raghunathan.\n- Divya Ramaswamy (Director of Human Resources, Human Resources department, based in Chennai)\nreports to Priya Chandran.\n- Neha Kapoor (Senior Manager, Talent Acquisition, Human Resources department, based in Chennai)\nreports to Divya Ramaswamy.\n- Sanjay Verma (Senior Manager, Compensation & Benefits, Human Resources department, based in\nChennai) reports to Divya Ramaswamy.\n- Kavya Reddy (HR Business Partner, Human Resources department, based in Bangalore) reports to\nDivya Ramaswamy.\n- Arvind Balasubramanian (Learning & Development Manager, Human Resources department, based in\nChennai) reports to Divya Ramaswamy.",
+          "rerank_score": -3.837902069091797,
+          "rank": 4
+        },
+        {
+          "candidate_id": "pdf_efdc37f55373ec96_chunk_0001",
+          "text": "Recruitment and Onboarding Policy (POL-HR-003) is owned by Human Resources and applies to all\nPerformance Management Policy (POL-HR-004) is owned by Human Resources and applies to all\nCode of Conduct Policy (POL-HR-005) is owned by Human Resources and applies to all departments. Anti-Harassment and Grievance Redressal Policy (POL-HR-006) is owned by Human Resources and\napplies to all departments. Exit and Separation Policy (POL-HR-007) is owned by Human Resources and applies to all departments. Work From Home Policy (POL-HR-008) is owned by Human Resources and applies to Engineering,\nInformation Technology, Customer Support, Marketing, Finance. Contact and Escalation\nFor matters concerning Human Resources, employees should first contact their reporting manager or\nDivya Ramaswamy directly. Escalations that cannot be resolved within the department are routed to the\noffice of the Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai,\nTamil Nadu, India (Global Headquarters).",
+          "rerank_score": -4.294970512390137,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 10,
+      "query": "Who leads the Human Resources department that administers benefits?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "pdf_710a1cb0ae33d2d7_chunk_0000",
+          "text": "General Benefits FAQ\nMeridian Dynamics Inc. — Internal Document\nFAQ\nQ: When can I change my benefits elections? A: During annual open enrollment each November, or within\n30 days of a qualifying life event.\nQ: Who administers benefits? A: The Human Resources department, led operationally by Sanjay Verma,\nSenior Manager, Compensation & Benefits.",
+          "rerank_score": 8.20821762084961,
+          "rank": 1
+        },
+        {
+          "candidate_id": "html_ecb328f9a096fd40_chunk_0001",
+          "text": "Benefits enrollment and management is administered by the Human Resources department through Workday HRMS, and eligibility questions should be directed to Sanjay Verma, Senior Manager, Compensation & Benefits. Roles and Responsibilities\nDivya Ramaswamy is accountable for the overall administration of this policy within Human Resources. Department Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Human Resources. All employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Leave and Attendance Policy (POL-HR-001) and the Recruitment and Onboarding Policy (POL-HR-003).",
+          "rerank_score": 6.123355865478516,
+          "rank": 2
+        },
+        {
+          "candidate_id": "pdf_efdc37f55373ec96_chunk_0000",
+          "text": "Human Resources Department Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Human Resources department at Meridian Dynamics Inc. is headquartered in Chennai, Tamil Nadu,\nIndia (Global Headquarters) and is identified internally by the department code HR. The department is led\nby Divya Ramaswamy, who holds the title of Director of Human Resources and reports to Priya Chandran. Human Resources operates as one of the 13 core departments of Meridian Dynamics Inc., alongside\nInformation Technology, Information Security, Finance, Procurement and other functions, and coordinates\nclosely with these departments on cross-functional initiatives. Team Structure\nThe Human Resources department currently comprises 6 employees on record, including:\n- Priya Chandran (Chief Human Resources Officer, Human Resources department, based in Chennai)\nreports to Ananya Raghunathan. - Neha Kapoor (Senior Manager, Talent Acquisition, Human Resources department, based in Chennai)\nreports to Divya Ramaswamy. - Sanjay Verma (Senior Manager, Compensation & Benefits, Human Resources department, based in\nChennai) reports to Divya Ramaswamy. - Kavya Reddy (HR Business Partner, Human Resources department, based in Bangalore) reports to\nDivya Ramaswamy. - Arvind Balasubramanian (Learning & Development Manager, Human Resources department, based in\nChennai) reports to Divya Ramaswamy. Systems Maintained\nWorkday HRMS is maintained by the Human Resources department and is used for core human\nresources management, leave, payroll and benefits administration. GreytHR Self-Service Portal is maintained by the Human Resources department and is used for employee\nself-service for leave requests and payslips. Policies Owned\nLeave and Attendance Policy (POL-HR-001) is owned by Human Resources and applies to all\nEmployee Benefits Policy (POL-HR-002) is owned by Human Resources and applies to all departments.",
+          "rerank_score": 4.315486431121826,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_39b33da404525e76_chunk_0001",
+          "text": "Roles and Responsibilities\nDivya Ramaswamy is accountable for the overall administration of this policy within Human Resources. Department Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Human Resources. All employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Employee Benefits Policy (POL-HR-002) and the Recruitment and Onboarding Policy (POL-HR-003).",
+          "rerank_score": 0.8713901042938232,
+          "rank": 4
+        },
+        {
+          "candidate_id": "pdf_ff8f53d904329460_chunk_0000",
+          "text": "Human Resources Department Roster\nMeridian Dynamics Inc. — Internal Document\nDepartment Roster\nThe following is the current employee roster for the Human Resources department at Meridian Dynamics\nInc., maintained in Workday HRMS by the Human Resources department:\n- Priya Chandran (Chief Human Resources Officer, Human Resources department, based in Chennai)\nreports to Ananya Raghunathan.\n- Divya Ramaswamy (Director of Human Resources, Human Resources department, based in Chennai)\nreports to Priya Chandran.\n- Neha Kapoor (Senior Manager, Talent Acquisition, Human Resources department, based in Chennai)\nreports to Divya Ramaswamy.\n- Sanjay Verma (Senior Manager, Compensation & Benefits, Human Resources department, based in\nChennai) reports to Divya Ramaswamy.\n- Kavya Reddy (HR Business Partner, Human Resources department, based in Bangalore) reports to\nDivya Ramaswamy.\n- Arvind Balasubramanian (Learning & Development Manager, Human Resources department, based in\nChennai) reports to Divya Ramaswamy.",
+          "rerank_score": 0.38884755969047546,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 11,
+      "query": "What is the expected outcome of the Project Phoenix finance systems consolidation project?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "systems and tools\nproject phoenix|uses|sap concur",
+        "project phoenix|uses|sap concur",
+        "pdf_b7635adcc66996eb_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "pdf_b7635adcc66996eb_chunk_0000",
+        "docx_a02ca9435c61ddf2_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "exact_order_match": false,
+      "shared_top5_count": 3,
+      "top5_overlap_ratio": 0.6,
+      "v2_evidence": [
+        {
+          "candidate_id": "pdf_7742d8a01b85b320_chunk_0000",
+          "text": "Project Phoenix Finance Systems Consolidation Brief\nMeridian Dynamics Inc. — Internal Document\nOverview\na finance systems consolidation project unifying payroll, procurement and expense platforms The project is\nsponsored by Rohit Malhotra and led by Lakshmi Narayanan, with contributions from Harish\nVenkataraman, Swati Kulkarni, Manoj Tiwari.\nProject Phoenix consolidates SAP Concur, Coupa, Workday HRMS into a single finance data model,\nreducing reconciliation effort between Payroll, Procurement and Travel expense reporting.",
+          "rerank_score": 4.860937118530273,
+          "rank": 1
+        },
+        {
+          "candidate_id": "docx_73f297db3c80fc75_chunk_0000",
+          "text": "Project Phoenix: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Phoenix is a finance systems consolidation project unifying payroll, procurement and expense platforms. The project is owned by the Finance department and sponsored by Rohit Malhotra.\nLakshmi Narayanan serves as the project lead, coordinating a team consisting of Harish Venkataraman, Swati Kulkarni, Manoj Tiwari.\nSystems and Tools\nProject Phoenix relies on SAP Concur, Coupa, Workday HRMS as its core systems. SAP Concur is maintained by the Finance department. Coupa is maintained by the Procurement department. Workday HRMS is maintained by the Human Resources department.\nStatus and Governance\nProgress on Project Phoenix is reviewed monthly by Rohit Malhotra and reported to the Finance department's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira where applicable.",
+          "rerank_score": 3.636018991470337,
+          "rank": 2
+        },
+        {
+          "candidate_id": "pdf_b7635adcc66996eb_chunk_0000",
+          "text": "Finance Department Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Finance department at Meridian Dynamics Inc. is headquartered in Chennai, Tamil Nadu, India\n(Global Headquarters) and is identified internally by the department code FIN. The department is led by\nLakshmi Narayanan, who holds the title of Director of Finance and reports to Rohit Malhotra. Finance operates as one of the 13 core departments of Meridian Dynamics Inc., alongside Human\nResources, Information Technology, Information Security, Procurement and other functions, and\ncoordinates closely with these departments on cross-functional initiatives. Team Structure\nThe Finance department currently comprises 5 employees on record, including:\n- Rohit Malhotra (Chief Financial Officer, Finance department, based in Chennai) reports to Ananya\nRaghunathan. - Harish Venkataraman (Finance Manager, Accounts Payable, Finance department, based in Chennai)\nreports to Lakshmi Narayanan. - Swati Kulkarni (Finance Manager, Payroll, Finance department, based in Chennai) reports to Lakshmi\nNarayanan. - Manoj Tiwari (Financial Analyst, Finance department, based in Chennai) reports to Lakshmi Narayanan. Projects Owned\nFinance manages Project Phoenix, a finance systems consolidation project unifying payroll, procurement\nand expense platforms. The project is sponsored by Rohit Malhotra and led by Lakshmi Narayanan, with\ncontributions from Harish Venkataraman, Swati Kulkarni, Manoj Tiwari. Project Phoenix relies on SAP\nConcur, Coupa, Workday HRMS as its primary systems. Systems Maintained\nSAP Concur is maintained by the Finance department and is used for travel booking and expense\nreimbursement. Policies Owned\nTravel and Expense Policy (POL-FIN-001) is owned by Finance and applies to all departments. Purchase Requisition and Approval Policy (POL-FIN-003) is owned by Finance and applies to all\ndepartments. Expense Reimbursement Policy (POL-FIN-004) is owned by Finance and applies to all departments. Contact and Escalation\nFor matters concerning Finance, employees should first contact their reporting manager or Lakshmi\nNarayanan directly.",
+          "rerank_score": -3.636733293533325,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_a02ca9435c61ddf2_chunk_0000",
+          "text": "Budget Approval Matrix\nMeridian Dynamics Inc. — Internal Document\nMatrix\nDepartment budgets are proposed annually by each Director and consolidated by Lakshmi Narayanan, Director of Finance, for approval by Lakshmi Narayanan, Chief Financial Officer, and final sign-off by Ananya Raghunathan, Chief Executive Officer.\nMid-year budget revisions require justification submitted through the Finance department's planning process and are reviewed quarterly.",
+          "rerank_score": -10.625680923461914,
+          "rank": 4
+        },
+        {
+          "candidate_id": "html_acfe131390d012ac_chunk_0000",
+          "text": "Project Vega: Project Charter\nProject Vega: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Vega is an enterprise accounts expansion initiative targeting the North American market. The project is owned by the Sales department and sponsored by Arjun Menon.\nAnand Krishnan serves as the project lead, coordinating a team consisting of Laura Bennett, Michael Chen.\nSystems and Tools\nProject Vega relies on Salesforce as its core systems. Salesforce is maintained by the Sales department.\nStatus and Governance\nProgress on Project Vega is reviewed monthly by Arjun Menon and reported to the Sales department's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira where applicable.",
+          "rerank_score": -10.6359224319458,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 12,
+      "query": "What type of cost centers allow cross-department expense tracking?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "docx_26dc127694170080_chunk_0000",
+          "text": "Cost Center Structure Guide\nMeridian Dynamics Inc. — Internal Document\nGuide\nEach department maintains its own cost center in Workday HRMS and Coupa, used for expense attribution, budget tracking and payroll allocation. Project-based cost centers, such as those for Project Atlas and Project Phoenix, allow cross-department expense tracking for shared initiatives.",
+          "rerank_score": 8.65424633026123,
+          "rank": 1
+        },
+        {
+          "candidate_id": "html_4e5965db05d19b2c_chunk_0000",
+          "text": "Travel and Expense Policy\nTravel and Expense Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the Travel and Expense Policy (POL-FIN-001) of Meridian Dynamics Inc.. The policy is owned and maintained by the Finance department under the direction of Lakshmi Narayanan. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments across Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and operational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and interns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore are expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nAll business travel must be booked through SAP Concur. Domestic economy class is standard for trips under 6 hours; international travel over 6 hours permits premium economy with Director-level approval.\nPer diem rates are INR 3,500 for domestic travel and USD 90 for international travel. Expense claims must be submitted within 15 days of travel completion and are approved by the employee's reporting manager, then processed by Harish Venkataraman's Accounts Payable team.\nRoles and Responsibilities\nLakshmi Narayanan is accountable for the overall administration of this policy within Finance.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Finance.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Purchase Requisition and Approval Policy (POL-FIN-003) and the Expense Reimbursement Policy (POL-FIN-004).",
+          "rerank_score": -9.263919830322266,
+          "rank": 2
+        },
+        {
+          "candidate_id": "html_2dc6dcf3c10855ee_chunk_0000",
+          "text": "Expense Reimbursement Policy\nExpense Reimbursement Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the Expense Reimbursement Policy (POL-FIN-004) of Meridian Dynamics Inc.. The policy is owned and maintained by the Finance department under the direction of Lakshmi Narayanan. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments across Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and operational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and interns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore are expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nReimbursable expenses are submitted through SAP Concur with itemized receipts. Manoj Tiwari and the Finance team audit a sample of claims monthly for policy compliance.\nRoles and Responsibilities\nLakshmi Narayanan is accountable for the overall administration of this policy within Finance.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Finance.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Travel and Expense Policy (POL-FIN-001) and the Purchase Requisition and Approval Policy (POL-FIN-003).",
+          "rerank_score": -9.628170013427734,
+          "rank": 3
+        },
+        {
+          "candidate_id": "pdf_3b2af4c4141b582a_chunk_0000",
+          "text": "Quarterly Expense Audit Procedure\nMeridian Dynamics Inc. — Internal Document\nProcedure\nManoj Tiwari, Financial Analyst, audits a random sample of SAP Concur expense claims each quarter for\ncompliance with the Travel and Expense Policy (POL-FIN-001), reporting findings to Lakshmi Narayanan,\nDirector of Finance.",
+          "rerank_score": -9.636219024658203,
+          "rank": 4
+        },
+        {
+          "candidate_id": "pdf_7742d8a01b85b320_chunk_0000",
+          "text": "Project Phoenix Finance Systems Consolidation Brief\nMeridian Dynamics Inc. — Internal Document\nOverview\na finance systems consolidation project unifying payroll, procurement and expense platforms The project is\nsponsored by Rohit Malhotra and led by Lakshmi Narayanan, with contributions from Harish\nVenkataraman, Swati Kulkarni, Manoj Tiwari.\nProject Phoenix consolidates SAP Concur, Coupa, Workday HRMS into a single finance data model,\nreducing reconciliation effort between Payroll, Procurement and Travel expense reporting.",
+          "rerank_score": -10.578157424926758,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 13,
+      "query": "Who is accountable for the overall administration of the Bring Your Own Device (BYOD) Policy?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_39b33da404525e76_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_39b33da404525e76_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "docx_8ae60c3aff12bb07_chunk_0000",
+          "text": "Bring Your Own Device (BYOD) Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the Bring Your Own Device (BYOD) Policy (POL-SEC-005) of Meridian Dynamics Inc.. The policy is owned and maintained by the Information Security department under the direction of Meera Krishnan. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments across Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and operational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and interns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore are expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nPersonal devices used to access company email or Microsoft 365 must be enrolled in the company's mobile device management system, administered by the Information Technology department under Deepak Nair, and must have disk encryption and a passcode enabled.\nRoles and Responsibilities\nMeera Krishnan is accountable for the overall administration of this policy within Information Security.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Information Security.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Information Security Policy (POL-SEC-001) and the Password and Access Management Policy (POL-SEC-002).",
+          "rerank_score": 7.146602630615234,
+          "rank": 1
+        },
+        {
+          "candidate_id": "html_e1287a3f1a06974d_chunk_0001",
+          "text": "Password and Access Management Policy (POL-SEC-002) is owned by Information Security and applies to all departments. Data Classification and Handling Policy (POL-SEC-003) is owned by Information Security and applies to all departments. Incident Response Policy (POL-SEC-004) is owned by Information Security and applies to Information Technology, Engineering, Information Security. Bring Your Own Device (BYOD) Policy (POL-SEC-005) is owned by Information Security and applies to all departments. Contact and Escalation\nFor matters concerning Information Security, employees should first contact their reporting manager or Meera Krishnan directly. Escalations that cannot be resolved within the department are routed to the office of the Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai, Tamil Nadu, India (Global Headquarters).",
+          "rerank_score": 3.577667713165283,
+          "rank": 2
+        },
+        {
+          "candidate_id": "docx_39b33da404525e76_chunk_0001",
+          "text": "Roles and Responsibilities\nDivya Ramaswamy is accountable for the overall administration of this policy within Human Resources. Department Directors are responsible for ensuring compliance within their respective teams and for escalating exceptions to Human Resources. All employees are responsible for reading, understanding and adhering to this policy as a condition of employment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Employee Benefits Policy (POL-HR-002) and the Recruitment and Onboarding Policy (POL-HR-003).",
+          "rerank_score": 1.2378002405166626,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_9e484f3848b0821a_chunk_0000",
+          "text": "BYOD Enrollment Guide\nMeridian Dynamics Inc. — Internal Document\nGuide\nEmployees wishing to access company email on a personal device must enroll it through the mobile device management console maintained by Deepak Nair's Infrastructure team, in accordance with the BYOD Policy (POL-SEC-005).",
+          "rerank_score": -0.4966323673725128,
+          "rank": 4
+        },
+        {
+          "candidate_id": "pdf_a329b3aad73104bd_chunk_0000",
+          "text": "IT Asset Management Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the IT Asset Management Policy (POL-IT-002) of Meridian Dynamics Inc.. The\npolicy is owned and maintained by the Information Technology department under the direction of Suresh\nPillai. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments\nacross Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and\noperational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and\ninterns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore\nare expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nAll IT assets (laptops, monitors, mobile devices) are tagged and tracked in ServiceNow by the Information\nTechnology department under Deepak Nair. Assets must be returned to Facilities within 5 business days of\nan employee's last working day.\nRoles and Responsibilities\nSuresh Pillai is accountable for the overall administration of this policy within Information Technology.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for\nescalating exceptions to Information Technology.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of\nemployment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Acceptable Use of IT Resources Policy (POL-IT-001)\nand the Software Procurement and Licensing Policy (POL-IT-003).",
+          "rerank_score": -4.228344917297363,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 14,
+      "query": "What is the benefit of using project-based cost centers?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "project|uses|systems",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "pdf_82442a0fa9087e8a_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000"
+      ],
+      "v2_top5_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "pdf_82442a0fa9087e8a_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "docx_a8dac8815d7d2064_chunk_0000"
+      ],
+      "exact_order_match": false,
+      "shared_top5_count": 4,
+      "top5_overlap_ratio": 0.8,
+      "v2_evidence": [
+        {
+          "candidate_id": "docx_26dc127694170080_chunk_0000",
+          "text": "Cost Center Structure Guide\nMeridian Dynamics Inc. — Internal Document\nGuide\nEach department maintains its own cost center in Workday HRMS and Coupa, used for expense attribution, budget tracking and payroll allocation. Project-based cost centers, such as those for Project Atlas and Project Phoenix, allow cross-department expense tracking for shared initiatives.",
+          "rerank_score": 5.055874824523926,
+          "rank": 1
+        },
+        {
+          "candidate_id": "pdf_7742d8a01b85b320_chunk_0000",
+          "text": "Project Phoenix Finance Systems Consolidation Brief\nMeridian Dynamics Inc. — Internal Document\nOverview\na finance systems consolidation project unifying payroll, procurement and expense platforms The project is\nsponsored by Rohit Malhotra and led by Lakshmi Narayanan, with contributions from Harish\nVenkataraman, Swati Kulkarni, Manoj Tiwari.\nProject Phoenix consolidates SAP Concur, Coupa, Workday HRMS into a single finance data model,\nreducing reconciliation effort between Payroll, Procurement and Travel expense reporting.",
+          "rerank_score": -9.512086868286133,
+          "rank": 2
+        },
+        {
+          "candidate_id": "pdf_82442a0fa9087e8a_chunk_0000",
+          "text": "Project Orion: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Orion is an infrastructure modernization project consolidating regional data centers into a unified\ncloud network. The project is owned by the Information Technology department and sponsored by Suresh\nPillai.\nDeepak Nair serves as the project lead, coordinating a team consisting of Ravi Shankar, Pooja Agarwal.\nSystems and Tools\nProject Orion relies on ServiceNow, Okta SSO, Meridian VPN Gateway as its core systems. ServiceNow is\nmaintained by the Information Technology department. Okta SSO is maintained by the Information\nSecurity department. Meridian VPN Gateway is maintained by the Information Security department.\nStatus and Governance\nProgress on Project Orion is reviewed monthly by Suresh Pillai and reported to the Information Technology\ndepartment's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira\nwhere applicable.",
+          "rerank_score": -9.533280372619629,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_73f297db3c80fc75_chunk_0000",
+          "text": "Project Phoenix: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Phoenix is a finance systems consolidation project unifying payroll, procurement and expense platforms. The project is owned by the Finance department and sponsored by Rohit Malhotra.\nLakshmi Narayanan serves as the project lead, coordinating a team consisting of Harish Venkataraman, Swati Kulkarni, Manoj Tiwari.\nSystems and Tools\nProject Phoenix relies on SAP Concur, Coupa, Workday HRMS as its core systems. SAP Concur is maintained by the Finance department. Coupa is maintained by the Procurement department. Workday HRMS is maintained by the Human Resources department.\nStatus and Governance\nProgress on Project Phoenix is reviewed monthly by Rohit Malhotra and reported to the Finance department's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira where applicable.",
+          "rerank_score": -9.963445663452148,
+          "rank": 4
+        },
+        {
+          "candidate_id": "docx_a8dac8815d7d2064_chunk_0000",
+          "text": "Project Atlas: Project Charter\nMeridian Dynamics Inc. — Internal Document\nProject Overview\nProject Atlas is a platform migration initiative moving the core order-management system to a microservices architecture on AWS. The project is owned by the Engineering department and sponsored by Karthik Iyer.\nVishal Choudhary serves as the project lead, coordinating a team consisting of Rachel Fernandes, Nikita Joshi, Siddharth Rao, Fatima Sheikh.\nSystems and Tools\nProject Atlas relies on Jira, Confluence, AWS as its core systems. Jira is maintained by the Engineering department. Confluence is maintained by the Engineering department. AWS is maintained by the Engineering department.\nStatus and Governance\nProgress on Project Atlas is reviewed monthly by Karthik Iyer and reported to the Engineering department's leadership team. Documentation is maintained in Confluence and tasks are tracked in Jira where applicable.",
+          "rerank_score": -10.657517433166504,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_index": 15,
+      "query": "Who collects the retired IT assets?",
+      "v1_architecture": "adaptive_hybrid",
+      "v2_architecture": "vector_only",
+      "v1_top5_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001"
+      ],
+      "v2_top5_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001"
+      ],
+      "exact_order_match": true,
+      "shared_top5_count": 5,
+      "top5_overlap_ratio": 1.0,
+      "v2_evidence": [
+        {
+          "candidate_id": "pdf_689ba27adba4384c_chunk_0000",
+          "text": "IT Asset Disposal Procedure\nMeridian Dynamics Inc. — Internal Document\nProcedure\nRetired IT assets are collected by the Facilities department and securely wiped by Information Technology\nin accordance with the Data Classification and Handling Policy (POL-SEC-003) before disposal or\ndonation.",
+          "rerank_score": 7.983078479766846,
+          "rank": 1
+        },
+        {
+          "candidate_id": "pdf_a329b3aad73104bd_chunk_0000",
+          "text": "IT Asset Management Policy\nMeridian Dynamics Inc. — Internal Document\nPurpose\nThis document defines the IT Asset Management Policy (POL-IT-002) of Meridian Dynamics Inc.. The\npolicy is owned and maintained by the Information Technology department under the direction of Suresh\nPillai. It was last reviewed on 15 January 2026 and is scheduled for its next review on 15 January 2027.\nThe purpose of this policy is to establish consistent, enforceable standards that apply to all departments\nacross Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and\noperational obligations.\nScope\nThis policy applies to all departments across Meridian Dynamics Inc.. All employees, contractors and\ninterns of Meridian Dynamics Inc. operating out of Chennai, Bangalore, Pune, Austin, London, Singapore\nare expected to comply with this policy as a condition of continued engagement with the company.\nPolicy Details\nAll IT assets (laptops, monitors, mobile devices) are tagged and tracked in ServiceNow by the Information\nTechnology department under Deepak Nair. Assets must be returned to Facilities within 5 business days of\nan employee's last working day.\nRoles and Responsibilities\nSuresh Pillai is accountable for the overall administration of this policy within Information Technology.\nDepartment Directors are responsible for ensuring compliance within their respective teams and for\nescalating exceptions to Information Technology.\nAll employees are responsible for reading, understanding and adhering to this policy as a condition of\nemployment at Meridian Dynamics Inc..\nRelated Policies\nThis policy should be read in conjunction with the Acceptable Use of IT Resources Policy (POL-IT-001)\nand the Software Procurement and Licensing Policy (POL-IT-003).",
+          "rerank_score": -4.406654357910156,
+          "rank": 2
+        },
+        {
+          "candidate_id": "docx_fd57f0907dcbda1a_chunk_0000",
+          "text": "Information Technology Department Overview\nMeridian Dynamics Inc. — Internal Document\nOverview\nThe Information Technology department at Meridian Dynamics Inc. is headquartered in Bangalore, Karnataka, India (Engineering Campus) and is identified internally by the department code IT. The department is led by Suresh Pillai, who holds the title of Director of Information Technology and reports to Vikram Suresh. Information Technology operates as one of the 13 core departments of Meridian Dynamics Inc., alongside Human Resources, Information Security, Finance, Procurement and other functions, and coordinates closely with these departments on cross-functional initiatives. Team Structure\nThe Information Technology department currently comprises 4 employees on record, including:\n- Deepak Nair (IT Infrastructure Manager, Information Technology department, based in Bangalore) reports to Suresh Pillai. - Pooja Agarwal (Service Desk Manager, Information Technology department, based in Pune) reports to Suresh Pillai. - Ravi Shankar (Network Operations Lead, Information Technology department, based in Bangalore) reports to Suresh Pillai. Projects Owned\nInformation Technology manages Project Orion, an infrastructure modernization project consolidating regional data centers into a unified cloud network. The project is sponsored by Suresh Pillai and led by Deepak Nair, with contributions from Ravi Shankar, Pooja Agarwal. Project Orion relies on ServiceNow, Okta SSO, Meridian VPN Gateway as its primary systems. Systems Maintained\nServiceNow is maintained by the Information Technology department and is used for IT service management, incident tickets and asset tracking. Zoom is maintained by the Information Technology department and is used for video conferencing for meetings and interviews. Microsoft 365 is maintained by the Information Technology department and is used for email, calendar and office productivity. Policies Owned\nAcceptable Use of IT Resources Policy (POL-IT-001) is owned by Information Technology and applies to all departments. IT Asset Management Policy (POL-IT-002) is owned by Information Technology and applies to all departments.",
+          "rerank_score": -7.507774353027344,
+          "rank": 3
+        },
+        {
+          "candidate_id": "docx_3ab47e2c940bc35b_chunk_0000",
+          "text": "IT Service Catalog\nMeridian Dynamics Inc. — Internal Document\nSystems Catalog\nWorkday HRMS: owned by Human Resources, used for core human resources management, leave, payroll and benefits administration.\nServiceNow: owned by Information Technology, used for IT service management, incident tickets and asset tracking.\nOkta SSO: owned by Information Security, used for single sign-on and identity and access management.\nSAP Concur: owned by Finance, used for travel booking and expense reimbursement.\nJira: owned by Engineering, used for software project and issue tracking.\nConfluence: owned by Engineering, used for internal documentation and knowledge sharing.\nSalesforce: owned by Sales, used for customer relationship management and sales pipeline tracking.\nAWS: owned by Engineering, used for cloud infrastructure hosting production and staging environments.\nZoom: owned by Information Technology, used for video conferencing for meetings and interviews.\nMicrosoft 365: owned by Information Technology, used for email, calendar and office productivity.\nMeridian VPN Gateway: owned by Information Security, used for secure remote access to internal networks.\nSplunk SIEM: owned by Information Security, used for security information and event monitoring.\nCoupa: owned by Procurement, used for purchase requisitions and vendor invoice management.\nGreytHR Self-Service Portal: owned by Human Resources, used for employee self-service for leave requests and payslips.\nBitwarden Enterprise: owned by Information Security, used for enterprise password management.",
+          "rerank_score": -7.745323181152344,
+          "rank": 4
+        },
+        {
+          "candidate_id": "docx_fd57f0907dcbda1a_chunk_0001",
+          "text": "Software Procurement and Licensing Policy (POL-IT-003) is owned by Information Technology and applies to Engineering, Information Technology. Contact and Escalation\nFor matters concerning Information Technology, employees should first contact their reporting manager or Suresh Pillai directly. Escalations that cannot be resolved within the department are routed to the office of the Chief Executive Officer, Chief Executive Officer Ananya Raghunathan, based in Chennai, Tamil Nadu, India (Global Headquarters).",
+          "rerank_score": -8.336997985839844,
+          "rank": 5
+        }
+      ]
+    }
+  ]
+}

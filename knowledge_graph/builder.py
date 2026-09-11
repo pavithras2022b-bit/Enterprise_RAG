@@ -140,10 +140,17 @@ class Neo4jGraphBuilder:
         self.create_node(relation.subject_entity)
         self.create_node(relation.object_entity)
 
-        set_clause = ""
-        if relation.properties:
-            assignments = ", ".join(f"r.{key} = ${key}" for key in relation.properties)
-            set_clause = f"ON CREATE SET {assignments} "
+        assignments = [
+            "r.source_chunk_id = coalesce(r.source_chunk_id, $source_chunk_id)",
+            "r.confidence = coalesce(r.confidence, $confidence)",
+        ]
+
+        assignments.extend(
+            f"r.{key} = ${key}"
+            for key in relation.properties
+        )
+
+        set_clause = "SET " + ", ".join(assignments) + " "
 
         query = (
             f"MATCH (s:{relation.subject_entity.entity_type.value} "
@@ -165,6 +172,8 @@ class Neo4jGraphBuilder:
                 if relation.object_entity.canonical_name is not None
                 else relation.object_entity.text
             ),
+            "source_chunk_id": relation.source_chunk_id,
+            "confidence": relation.confidence,
             **relation.properties,
         }
         try:
@@ -222,26 +231,45 @@ class Neo4jGraphBuilder:
         relationships_created = 0
         relationships_merged = 0
         errors: list[str] = []
+        connection_failed = False
 
         for entity in entities:
+            if connection_failed:
+                errors.append(f"entity {entity.text!r}: skipped due to Neo4j connection failure")
+                continue
             try:
                 if self.create_node(entity):
                     nodes_created += 1
                 else:
                     nodes_merged += 1
-            except (GraphSchemaError, GraphBuildError) as exc:
+            except GraphSchemaError as exc:
                 logger.error("Skipping entity %r: %s", entity.text, exc)
                 errors.append(f"entity {entity.text!r}: {exc}")
+            except GraphBuildError as exc:
+                logger.error("Skipping entity %r: %s", entity.text, exc)
+                errors.append(f"entity {entity.text!r}: {exc}")
+                if "Couldn't connect" in str(exc) or "refused" in str(exc) or "Failed to establish connection" in str(exc):
+                    connection_failed = True
+                    logger.warning("Neo4j connection is unavailable; skipping remaining graph writes.")
 
         for relation in relations:
+            if connection_failed:
+                errors.append(f"relation {relation}: skipped due to Neo4j connection failure")
+                continue
             try:
                 if self.create_relationship(relation):
                     relationships_created += 1
                 else:
                     relationships_merged += 1
-            except (GraphSchemaError, GraphBuildError) as exc:
+            except GraphSchemaError as exc:
                 logger.error("Skipping relation %r: %s", relation, exc)
                 errors.append(f"relation {relation}: {exc}")
+            except GraphBuildError as exc:
+                logger.error("Skipping relation %r: %s", relation, exc)
+                errors.append(f"relation {relation}: {exc}")
+                if "Couldn't connect" in str(exc) or "refused" in str(exc) or "Failed to establish connection" in str(exc):
+                    connection_failed = True
+                    logger.warning("Neo4j connection is unavailable; skipping remaining graph writes.")
 
         report = GraphBuildReport(
             nodes_created=nodes_created,

@@ -77,7 +77,7 @@ class AblationRunner:
 
         for item in examples:
             if use_adaptive and self.adaptive_engine is not None:
-                candidates = self.adaptive_engine.retrieve(query=item.query, k=k)
+                _, candidates = self.adaptive_engine.retrieve(query=item.query, k_vector=k, k_graph=k)
             else:
                 effective_alpha = 0.5 if alpha is None else alpha
                 candidates = self.hybrid_controller.retrieve(

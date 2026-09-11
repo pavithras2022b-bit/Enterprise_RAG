@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-08-31T07:40:20Z",
+  "ingestion": {
+    "documents_processed": 140,
+    "chunks_created": 149,
+    "entities_extracted": 2136,
+    "relations_extracted": 147,
+    "vector_store_count": 149,
+    "elapsed_seconds": 56.22575029998552
+  },
+  "ablation_retrieval": {
+    "vector_only": {
+      "hit_rate": 0.9090909090909091,
+      "mrr": 0.7836363636363637,
+      "ndcg": 0.8148219489011076
+    },
+    "graph_only": {
+      "hit_rate": 0.9090909090909091,
+      "mrr": 0.7124242424242424,
+      "ndcg": 0.7612562976531637
+    },
+    "static_hybrid": {
+      "hit_rate": 0.9090909090909091,
+      "mrr": 0.7836363636363637,
+      "ndcg": 0.8148219489011076
+    },
+    "rule_based_adaptive": {
+      "hit_rate": 0.9090909090909091,
+      "mrr": 0.7578787878787878,
+      "ndcg": 0.7953797045024419
+    },
+    "learned_adaptive": {
+      "hit_rate": 0.9090909090909091,
+      "mrr": 0.7715151515151515,
+      "ndcg": 0.8057310398101984
+    }
+  },
+  "negative_evaluation": {
+    "tested": 15,
+    "refusals": 15,
+    "refusal_rate": 1.0,
+    "unsupported_citations": 0
+  },
+  "sample_queries": [
+    {
+      "query": "What is the annual leave policy for full-time employees at Meridian Dynamics?",
+      "alpha_used": 0.9214219450950623,
+      "latency_ms": 48458.547200018074,
+      "citations": [
+        "docx_39b33da404525e76_chunk_0000"
+      ],
+      "answer_preview": "The annual leave policy for full-time employees at Meridian Dynamics includes:\n\n- Casual Leave: 12 days per calendar year, credited quarterly, for short-notice personal matters. [docx_39b33da404525e76..."
+    },
+    {
+      "query": "Which IT systems are governed by the Enterprise Security Policy?",
+      "alpha_used": 0.8814090490341187,
+      "latency_ms": 25038.86779997265,
+      "citations": [],
+      "answer_preview": "There is not enough information in the provided context to answer the question."
+    },
+    {
+      "query": "Who manages the Cloud Infrastructure engineering team?",
+      "alpha_used": 0.7637556791305542,
+      "latency_ms": 15848.772199999075,
+      "citations": [],
+      "answer_preview": "There is not enough information in the provided context to answer the question."
+    }
+  ]
+}

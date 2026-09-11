@@ -48,21 +48,38 @@ class LoRAAdapterManager:
     for different purposes but only serve one at a time.
     """
 
-    def __init__(self, base_model_name_or_path: str, device: str = "cpu") -> None:
+    def __init__(
+        self,
+        base_model_name_or_path: str = "Qwen/Qwen2.5-3B-Instruct",
+        device: Optional[str] = None,
+        torch_dtype: Optional[torch.dtype] = None,
+    ) -> None:
         """
         Args:
             base_model_name_or_path: A local checkpoint directory or
                 Hugging Face Hub model id for the base causal LM
-                (Section 12.3: Llama 3 / Qwen 2.5 / Mistral).
-            device: torch device string ("cpu" or "cuda").
+                (Section 12.3: Llama 3 / Qwen 2.5 / Mistral). Defaults
+                to "Qwen/Qwen2.5-3B-Instruct".
+            device: torch device string ("cpu" or "cuda"). If None,
+                automatically uses "cuda" if available, else "cpu".
+            torch_dtype: Optional torch data type for weights. Defaults
+                to float16 on CUDA and float32 on CPU.
 
         Raises:
             LoRAAdapterManagerError: If the base model or tokenizer
                 cannot be loaded.
         """
+        if device is None:
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+        self._device = torch.device(device)
+
+        if torch_dtype is None:
+            torch_dtype = torch.float16 if self._device.type == "cuda" else torch.float32
+
         try:
             self._tokenizer: PreTrainedTokenizerBase = AutoTokenizer.from_pretrained(
-                base_model_name_or_path
+                base_model_name_or_path,
+                trust_remote_code=True,
             )
         except Exception as exc:  # noqa: BLE001
             raise LoRAAdapterManagerError(
@@ -70,15 +87,22 @@ class LoRAAdapterManager:
             ) from exc
 
         try:
+            model_kwargs: dict[str, object] = {
+                "torch_dtype": torch_dtype,
+                "trust_remote_code": True,
+            }
+            if self._device.type == "cpu":
+                model_kwargs["low_cpu_mem_usage"] = True
+
             self._base_model: PreTrainedModel = AutoModelForCausalLM.from_pretrained(
-                base_model_name_or_path
+                base_model_name_or_path,
+                **model_kwargs,
             )
         except Exception as exc:  # noqa: BLE001
             raise LoRAAdapterManagerError(
                 f"Failed to load base model from {base_model_name_or_path!r}: {exc}"
             ) from exc
 
-        self._device = torch.device(device)
         self._base_model.to(self._device)
 
         self._adapter_paths: dict[str, str] = {}
@@ -202,3 +226,38 @@ class LoRAAdapterManager:
             raise LoRAAdapterManagerError(f"Generation failed: {exc}") from exc
 
         return self._tokenizer.decode(output_ids[0], skip_special_tokens=True)
+
+    def load_default_rag_adapter(
+        self,
+        name: str = "qwen2.5-3b-lora-ragqa",
+        adapter_path: Optional[str] = None,
+    ) -> str:
+        """
+        Convenience method to register and load the primary fine-tuned LoRA adapter
+        from outputs/qwen2.5-3b-lora-ragqa/final_adapter/ or outputs/qwen2.5-3b-lora-ragqa/.
+
+        Args:
+            name: Logical name to assign to the loaded adapter.
+            adapter_path: Explicit directory path. If None, resolves from standard paths.
+
+        Returns:
+            The loaded adapter name.
+        """
+        if adapter_path is None:
+            candidates = [
+                os.path.join("outputs", "qwen2.5-3b-lora-ragqa", "final_adapter"),
+                os.path.join("outputs", "qwen2.5-3b-lora-ragqa"),
+            ]
+            for cand in candidates:
+                if os.path.isdir(cand) and os.path.isfile(os.path.join(cand, "adapter_config.json")):
+                    adapter_path = cand
+                    break
+
+        if adapter_path is None or not os.path.isdir(adapter_path):
+            raise LoRAAdapterManagerError(
+                "Fine-tuned LoRA adapter checkpoint not found in outputs/qwen2.5-3b-lora-ragqa/"
+            )
+
+        self.register_adapter(name, adapter_path)
+        self.load_adapter(name)
+        return name

@@ -1,0 +1,832 @@
+{
+  "evaluation_type": "vector_only_v2_generation_model_comparison",
+  "architecture": "vector-only retrieval + cross-encoder reranking + grounded LLM generation",
+  "experimental_change_from_v1": "Knowledge-graph retrieval and learned adaptive hybrid fusion are removed. Vector retrieval, cross-encoder reranking, Top-5 evidence size, PromptBuilder, temperature=0.2, citation validation, query set, reference answers, and scoring methodology remain controlled.",
+  "evidence_file": "C:\\Users\\shanm\\OneDrive\\Documents\\Enterprise-Retrieval-Augmented-Generation\\outputs\\vector_only_v2_evidence.json",
+  "models": {
+    "llama3.2:3b": {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "queries_attempted": 15,
+      "valid_generations": 15,
+      "runtime_failures": 0,
+      "token_f1": 0.5381592434277856,
+      "semantic_similarity": 0.6582046925334637,
+      "exact_match": 0.06666666666666667,
+      "faithfulness": 0.842531746031746,
+      "answer_relevance": 0.22934509934509933,
+      "citation_precision": 0.6666666666666666,
+      "citation_compliance": 0.6666666666666666,
+      "average_latency_ms": 20784.78450666492
+    },
+    "qwen2.5-3b-lora-ragqa": {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "queries_attempted": 15,
+      "valid_generations": 15,
+      "runtime_failures": 0,
+      "token_f1": 0.6268459847031276,
+      "semantic_similarity": 0.7403918457679964,
+      "exact_match": 0.26666666666666666,
+      "faithfulness": 0.8614590964590965,
+      "answer_relevance": 0.2356750656750657,
+      "citation_precision": 0.7333333333333333,
+      "citation_compliance": 0.7333333333333333,
+      "average_latency_ms": 21979.51627332562
+    }
+  },
+  "per_query_results": [
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 1,
+      "query": "Where are campaign assets published?",
+      "reference_answer": "Campaign assets are published through Salesforce and Microsoft 365 collaboration tools. [docx_425411ca30659917_chunk_0000]",
+      "answer": "Salesforce and Microsoft 365 collaboration tools .",
+      "citations": [],
+      "valid_source_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "token_f1": 0.7058823529411764,
+      "semantic_similarity": 0.5444925835501886,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 35299.7170999879,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 2,
+      "query": "What is the recommended VPN for remote access?",
+      "reference_answer": "The Meridian VPN Gateway, mandatory for all remote access. [html_fae89871be5aa117_chunk_0000]",
+      "answer": "The Meridian VPN Gateway .",
+      "citations": [],
+      "valid_source_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "token_f1": 0.5454545454545454,
+      "semantic_similarity": 0.8667808770655752,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.25,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 13746.815399965271,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 3,
+      "query": "Who reviews the recovery drills?",
+      "reference_answer": "The Information Security department for the Data Classification and Handling Policy (POL-SEC-003). [pdf_ec26ff0520cae2e0_chunk_0000]",
+      "answer": "Information Security department [pdf_ec26ff0520cae2e0_chunk_0000].",
+      "citations": [
+        "pdf_ec26ff0520cae2e0_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_a63b0c4b937d1310_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000",
+        "html_a998e6054e739de2_chunk_0000"
+      ],
+      "token_f1": 0.4,
+      "semantic_similarity": 0.7478229162243843,
+      "exact_match": 0.0,
+      "faithfulness": 0.75,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 11637.57290004287,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 4,
+      "query": "Which policies should be read in conjunction with the IT Asset Management Policy?",
+      "reference_answer": "The Acceptable Use of IT Resources Policy (POL-IT-001) and the Software Procurement and Licensing Policy (POL-IT-003) [pdf_a329b3aad73104bd_chunk_0000]",
+      "answer": "The IT Asset Management Policy should be read in conjunction with the Acceptable Use of IT Resources Policy (POL-IT-001) and the Software Procurement and Licensing Policy (POL-IT-003).",
+      "citations": [],
+      "valid_source_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "pdf_ca680be8bfbc1868_chunk_0001",
+        "html_3e71e0d8812be106_chunk_0001"
+      ],
+      "token_f1": 0.782608695652174,
+      "semantic_similarity": 0.8516568842660202,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.8461538461538461,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 32706.945599988103,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 5,
+      "query": "When do enrollment windows for the Employee Stock Purchase Plan open?",
+      "reference_answer": "Enrollment windows open in January and July each year. [html_e796e61824a75c45_chunk_0000]",
+      "answer": "Enrollment windows for the Employee Stock Purchase Plan open in January and July each year. [html_e796e61824a75c45_chunk_0000]",
+      "citations": [
+        "html_e796e61824a75c45_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000"
+      ],
+      "token_f1": 0.782608695652174,
+      "semantic_similarity": 0.7883966497869767,
+      "exact_match": 0.0,
+      "faithfulness": 0.9375,
+      "answer_relevance": 0.8181818181818182,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 14229.820400010794,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 6,
+      "query": "What is the name of the VPN client used by employees to connect to internal systems?",
+      "reference_answer": "The VPN client used by employees is not specified in the passage. [pdf_84af94a294001996_chunk_0000]",
+      "answer": "The Meridian VPN Gateway [pdf_84af94a294001996_chunk_0000].",
+      "citations": [
+        "pdf_84af94a294001996_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_fae89871be5aa117_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "token_f1": 0.15384615384615383,
+      "semantic_similarity": 0.42193496715435314,
+      "exact_match": 0.0,
+      "faithfulness": 0.8,
+      "answer_relevance": 0.14285714285714285,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 13586.98879997246,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 7,
+      "query": "Who is the Chief Information Security Officer of the Information Security department?",
+      "reference_answer": "Meera Krishnan is the Chief Information Security Officer of the Information Security department. [html_e1287a3f1a06974d_chunk_0000]",
+      "answer": "Meera Krishnan [docx_0d5991863da15ac6_chunk_0000].",
+      "citations": [
+        "docx_0d5991863da15ac6_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_30750e625f371eb2_chunk_0000",
+        "pdf_a44e1a83a9f94ec1_chunk_0000"
+      ],
+      "token_f1": 0.3076923076923077,
+      "semantic_similarity": 0.7386373876684236,
+      "exact_match": 0.0,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 25612.377700046636,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 8,
+      "query": "Who does Li Wei report to in the department?",
+      "reference_answer": "Li Wei reports to Wei Ling Tan, who is the Director of Customer Support. [html_5237ecb87da4b1c2_chunk_0000]",
+      "answer": "Li Wei reports to Wei Ling Tan. [html_5237ecb87da4b1c2_chunk_0000]",
+      "citations": [
+        "html_5237ecb87da4b1c2_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_b7635adcc66996eb_chunk_0001"
+      ],
+      "token_f1": 0.7000000000000001,
+      "semantic_similarity": 0.8624613822632718,
+      "exact_match": 0.0,
+      "faithfulness": 0.8571428571428571,
+      "answer_relevance": 0.3333333333333333,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 14125.382300000638,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 9,
+      "query": "What is the name of the HRMS system used for core human resources management?",
+      "reference_answer": "Workday HRMS [pdf_efdc37f55373ec96_chunk_0000]",
+      "answer": "Workday HRMS [pdf_efdc37f55373ec96_chunk_0000].",
+      "citations": [
+        "pdf_efdc37f55373ec96_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0001"
+      ],
+      "token_f1": 1.0,
+      "semantic_similarity": 0.9762077840349994,
+      "exact_match": 1.0,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.07692307692307693,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 25150.5874999566,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 10,
+      "query": "Who leads the Human Resources department that administers benefits?",
+      "reference_answer": "Sanjay Verma, Senior Manager, Compensation & Benefits [pdf_710a1cb0ae33d2d7_chunk_0000]",
+      "answer": "Divya Ramaswamy [pdf_efdc37f55373ec96_chunk_0000].",
+      "citations": [
+        "pdf_efdc37f55373ec96_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000"
+      ],
+      "token_f1": 0.0,
+      "semantic_similarity": 0.15785708491200512,
+      "exact_match": 0.0,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 19112.044899957255,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 11,
+      "query": "What is the expected outcome of the Project Phoenix finance systems consolidation project?",
+      "reference_answer": "reducing reconciliation effort between Payroll, Procurement and Travel expense reporting [pdf_7742d8a01b85b320_chunk_0000]",
+      "answer": "Project Phoenix consolidates SAP Concur, Coupa, Workday HRMS into a single finance data model, reducing reconciliation effort between Payroll, Procurement and Travel expense reporting. [pdf_7742d8a01b85b320_chunk_0000]",
+      "citations": [
+        "pdf_7742d8a01b85b320_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "pdf_b7635adcc66996eb_chunk_0000",
+        "docx_a02ca9435c61ddf2_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "token_f1": 0.6060606060606061,
+      "semantic_similarity": 0.5036183180189067,
+      "exact_match": 0.0,
+      "faithfulness": 0.96,
+      "answer_relevance": 0.2727272727272727,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 22596.05970000848,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 12,
+      "query": "What type of cost centers allow cross-department expense tracking?",
+      "reference_answer": "Project-based cost centers, such as those for Project Atlas and Project Phoenix. [docx_26dc127694170080_chunk_0000]",
+      "answer": "Project-based cost centers, such as those for Project Atlas and Project Phoenix, allow cross-department expense tracking for shared initiatives.",
+      "citations": [],
+      "valid_source_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000"
+      ],
+      "token_f1": 0.7647058823529412,
+      "semantic_similarity": 0.8082381877248,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.7,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 21818.587200017646,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 13,
+      "query": "Who is accountable for the overall administration of the Bring Your Own Device (BYOD) Policy?",
+      "reference_answer": "The provided context does not contain enough information to answer this question.",
+      "answer": "Meera Krishnan [docx_8ae60c3aff12bb07_chunk_0000].",
+      "citations": [
+        "docx_8ae60c3aff12bb07_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_39b33da404525e76_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000"
+      ],
+      "token_f1": 0.0,
+      "semantic_similarity": 0.10624089146100654,
+      "exact_match": 0.0,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 21067.244000034407,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 14,
+      "query": "What is the benefit of using project-based cost centers?",
+      "reference_answer": "They allow for cross-department expense tracking for shared initiatives. [docx_26dc127694170080_chunk_0000]",
+      "answer": "Cross-department expense tracking for shared initiatives.",
+      "citations": [],
+      "valid_source_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "pdf_82442a0fa9087e8a_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "docx_a8dac8815d7d2064_chunk_0000"
+      ],
+      "token_f1": 0.8235294117647058,
+      "semantic_similarity": 0.9160969936248169,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 16126.233299961314,
+      "runtime_failure": false
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_label": "Llama 3.2-3B",
+      "query_index": 15,
+      "query": "Who collects the retired IT assets?",
+      "reference_answer": "The Facilities department collects the retired IT assets. [pdf_689ba27adba4384c_chunk_0000]",
+      "answer": "Facilities department [pdf_689ba27adba4384c_chunk_0000].",
+      "citations": [
+        "pdf_689ba27adba4384c_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001"
+      ],
+      "token_f1": 0.5,
+      "semantic_similarity": 0.5826274802462279,
+      "exact_match": 0.0,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 24955.39080002345,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 1,
+      "query": "Where are campaign assets published?",
+      "reference_answer": "Campaign assets are published through Salesforce and Microsoft 365 collaboration tools. [docx_425411ca30659917_chunk_0000]",
+      "answer": "through Salesforce and Microsoft 365 collaboration tools [docx_425411ca30659917_chunk_0000]",
+      "citations": [
+        "docx_425411ca30659917_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "docx_425411ca30659917_chunk_0000",
+        "docx_5b3f959418c997e4_chunk_0000",
+        "pdf_310a3c06435dc26e_chunk_0000",
+        "pdf_689ba27adba4384c_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "token_f1": 0.7777777777777778,
+      "semantic_similarity": 0.5505629698451062,
+      "exact_match": 0.0,
+      "faithfulness": 0.875,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 30999.458099948242,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 2,
+      "query": "What is the recommended VPN for remote access?",
+      "reference_answer": "The Meridian VPN Gateway, mandatory for all remote access. [html_fae89871be5aa117_chunk_0000]",
+      "answer": "The Meridian VPN Gateway [pdf_84af94a294001996_chunk_0000]",
+      "citations": [
+        "pdf_84af94a294001996_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "html_fae89871be5aa117_chunk_0000",
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_c4b99b49f8dfe568_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "token_f1": 0.5454545454545454,
+      "semantic_similarity": 0.8455718579020091,
+      "exact_match": 0.0,
+      "faithfulness": 0.8,
+      "answer_relevance": 0.25,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 13107.619200018235,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 3,
+      "query": "Who reviews the recovery drills?",
+      "reference_answer": "The Information Security department for the Data Classification and Handling Policy (POL-SEC-003). [pdf_ec26ff0520cae2e0_chunk_0000]",
+      "answer": "the Information Security department",
+      "citations": [],
+      "valid_source_ids": [
+        "pdf_ec26ff0520cae2e0_chunk_0000",
+        "pdf_a63b0c4b937d1310_chunk_0000",
+        "pdf_67483c18990597a7_chunk_0000",
+        "pdf_af24128f772af4f2_chunk_0000",
+        "html_a998e6054e739de2_chunk_0000"
+      ],
+      "token_f1": 0.4,
+      "semantic_similarity": 0.767492596719542,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.2,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 9526.915200054646,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 4,
+      "query": "Which policies should be read in conjunction with the IT Asset Management Policy?",
+      "reference_answer": "The Acceptable Use of IT Resources Policy (POL-IT-001) and the Software Procurement and Licensing Policy (POL-IT-003) [pdf_a329b3aad73104bd_chunk_0000]",
+      "answer": "The IT Asset Management Policy (POL-IT-002) should be read in conjunction with the Acceptable Use of IT Resources Policy (POL-IT-001) and the Software Procurement and Licensing Policy (POL-IT-003).",
+      "citations": [],
+      "valid_source_ids": [
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "html_a6f09478775ee8d2_chunk_0000",
+        "docx_6bef6b8e2fbedfac_chunk_0000",
+        "pdf_ca680be8bfbc1868_chunk_0001",
+        "html_3e71e0d8812be106_chunk_0001"
+      ],
+      "token_f1": 0.7346938775510204,
+      "semantic_similarity": 0.8466706545607554,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.8461538461538461,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 30406.540800002404,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 5,
+      "query": "When do enrollment windows for the Employee Stock Purchase Plan open?",
+      "reference_answer": "Enrollment windows open in January and July each year. [html_e796e61824a75c45_chunk_0000]",
+      "answer": "January and July each year [html_e796e61824a75c45_chunk_0000]",
+      "citations": [
+        "html_e796e61824a75c45_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "html_e796e61824a75c45_chunk_0000",
+        "html_8af798d055d68b89_chunk_0000",
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "pdf_7cd174d150c40e93_chunk_0000",
+        "docx_e31c7f77460bdd38_chunk_0000"
+      ],
+      "token_f1": 0.7142857142857143,
+      "semantic_similarity": 0.5652336495568923,
+      "exact_match": 0.0,
+      "faithfulness": 0.8333333333333334,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 12878.00090003293,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 6,
+      "query": "What is the name of the VPN client used by employees to connect to internal systems?",
+      "reference_answer": "The VPN client used by employees is not specified in the passage. [pdf_84af94a294001996_chunk_0000]",
+      "answer": "The Meridian VPN Gateway [pdf_84af94a294001996_chunk_0000]",
+      "citations": [
+        "pdf_84af94a294001996_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_84af94a294001996_chunk_0000",
+        "pdf_452544b4224d7971_chunk_0000",
+        "html_fae89871be5aa117_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "html_1b9f8ac3cc062e96_chunk_0000"
+      ],
+      "token_f1": 0.15384615384615383,
+      "semantic_similarity": 0.41850231282056993,
+      "exact_match": 0.0,
+      "faithfulness": 0.8,
+      "answer_relevance": 0.14285714285714285,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 17432.5040000258,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 7,
+      "query": "Who is the Chief Information Security Officer of the Information Security department?",
+      "reference_answer": "Meera Krishnan is the Chief Information Security Officer of the Information Security department. [html_e1287a3f1a06974d_chunk_0000]",
+      "answer": "Meera Krishnan",
+      "citations": [],
+      "valid_source_ids": [
+        "html_e1287a3f1a06974d_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_30750e625f371eb2_chunk_0000",
+        "pdf_a44e1a83a9f94ec1_chunk_0000"
+      ],
+      "token_f1": 0.3076923076923077,
+      "semantic_similarity": 0.7444857786312186,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 27954.95020004455,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 8,
+      "query": "Who does Li Wei report to in the department?",
+      "reference_answer": "Li Wei reports to Wei Ling Tan, who is the Director of Customer Support. [html_5237ecb87da4b1c2_chunk_0000]",
+      "answer": "Wei Ling Tan",
+      "citations": [],
+      "valid_source_ids": [
+        "html_5237ecb87da4b1c2_chunk_0000",
+        "docx_8d9a887db2dcd017_chunk_0000",
+        "docx_0d5991863da15ac6_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001",
+        "pdf_b7635adcc66996eb_chunk_0001"
+      ],
+      "token_f1": 0.375,
+      "semantic_similarity": 0.7163687016468009,
+      "exact_match": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.1111111111111111,
+      "citation_precision": 0.0,
+      "citation_compliance": 0.0,
+      "latency_ms": 14273.148199892603,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 9,
+      "query": "What is the name of the HRMS system used for core human resources management?",
+      "reference_answer": "Workday HRMS [pdf_efdc37f55373ec96_chunk_0000]",
+      "answer": "Workday HRMS [pdf_efdc37f55373ec96_chunk_0000]",
+      "citations": [
+        "pdf_efdc37f55373ec96_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000",
+        "pdf_efdc37f55373ec96_chunk_0001"
+      ],
+      "token_f1": 1.0,
+      "semantic_similarity": 0.9999999999999998,
+      "exact_match": 1.0,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.07692307692307693,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 31515.358499949798,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 10,
+      "query": "Who leads the Human Resources department that administers benefits?",
+      "reference_answer": "Sanjay Verma, Senior Manager, Compensation & Benefits [pdf_710a1cb0ae33d2d7_chunk_0000]",
+      "answer": "Sanjay Verma, Senior Manager, Compensation & Benefits [html_ecb328f9a096fd40_chunk_0001]",
+      "citations": [
+        "html_ecb328f9a096fd40_chunk_0001"
+      ],
+      "valid_source_ids": [
+        "pdf_710a1cb0ae33d2d7_chunk_0000",
+        "html_ecb328f9a096fd40_chunk_0001",
+        "pdf_efdc37f55373ec96_chunk_0000",
+        "docx_39b33da404525e76_chunk_0001",
+        "pdf_ff8f53d904329460_chunk_0000"
+      ],
+      "token_f1": 1.0,
+      "semantic_similarity": 1.0,
+      "exact_match": 1.0,
+      "faithfulness": 0.8571428571428571,
+      "answer_relevance": 0.1111111111111111,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 23299.87099999562,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 11,
+      "query": "What is the expected outcome of the Project Phoenix finance systems consolidation project?",
+      "reference_answer": "reducing reconciliation effort between Payroll, Procurement and Travel expense reporting [pdf_7742d8a01b85b320_chunk_0000]",
+      "answer": "The project is expected to unify payroll, procurement and expense platforms, reducing reconciliation effort between Payroll, Procurement and Travel expense reporting. [pdf_7742d8a01b85b320_chunk_0000]",
+      "citations": [
+        "pdf_7742d8a01b85b320_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "pdf_b7635adcc66996eb_chunk_0000",
+        "docx_a02ca9435c61ddf2_chunk_0000",
+        "html_acfe131390d012ac_chunk_0000"
+      ],
+      "token_f1": 0.6666666666666666,
+      "semantic_similarity": 0.735159363241034,
+      "exact_match": 0.0,
+      "faithfulness": 0.8333333333333334,
+      "answer_relevance": 0.36363636363636365,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 24826.039500068873,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 12,
+      "query": "What type of cost centers allow cross-department expense tracking?",
+      "reference_answer": "Project-based cost centers, such as those for Project Atlas and Project Phoenix. [docx_26dc127694170080_chunk_0000]",
+      "answer": "Project-based cost centers, such as those for Project Atlas and Project Phoenix [docx_26dc127694170080_chunk_0000]",
+      "citations": [
+        "docx_26dc127694170080_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "html_4e5965db05d19b2c_chunk_0000",
+        "html_2dc6dcf3c10855ee_chunk_0000",
+        "pdf_3b2af4c4141b582a_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000"
+      ],
+      "token_f1": 1.0,
+      "semantic_similarity": 0.989301505427581,
+      "exact_match": 1.0,
+      "faithfulness": 0.9166666666666666,
+      "answer_relevance": 0.2,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 25606.700400006957,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 13,
+      "query": "Who is accountable for the overall administration of the Bring Your Own Device (BYOD) Policy?",
+      "reference_answer": "The provided context does not contain enough information to answer this question.",
+      "answer": "Meera Krishnan [docx_8ae60c3aff12bb07_chunk_0000]",
+      "citations": [
+        "docx_8ae60c3aff12bb07_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "docx_8ae60c3aff12bb07_chunk_0000",
+        "html_e1287a3f1a06974d_chunk_0001",
+        "docx_39b33da404525e76_chunk_0001",
+        "docx_9e484f3848b0821a_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000"
+      ],
+      "token_f1": 0.0,
+      "semantic_similarity": 0.0988209795667486,
+      "exact_match": 0.0,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.0,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 23643.033299944364,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 14,
+      "query": "What is the benefit of using project-based cost centers?",
+      "reference_answer": "They allow for cross-department expense tracking for shared initiatives. [docx_26dc127694170080_chunk_0000]",
+      "answer": "Project-based cost centers allow cross-department expense tracking for shared initiatives. [docx_26dc127694170080_chunk_0000]",
+      "citations": [
+        "docx_26dc127694170080_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "docx_26dc127694170080_chunk_0000",
+        "pdf_7742d8a01b85b320_chunk_0000",
+        "pdf_82442a0fa9087e8a_chunk_0000",
+        "docx_73f297db3c80fc75_chunk_0000",
+        "docx_a8dac8815d7d2064_chunk_0000"
+      ],
+      "token_f1": 0.7272727272727272,
+      "semantic_similarity": 0.8277073166016885,
+      "exact_match": 0.0,
+      "faithfulness": 0.9230769230769231,
+      "answer_relevance": 0.4,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 17098.88909989968,
+      "runtime_failure": false
+    },
+    {
+      "model": "qwen2.5-3b-lora-ragqa",
+      "model_label": "Qwen2.5-3B + LoRA",
+      "query_index": 15,
+      "query": "Who collects the retired IT assets?",
+      "reference_answer": "The Facilities department collects the retired IT assets. [pdf_689ba27adba4384c_chunk_0000]",
+      "answer": "The Facilities department collects the retired IT assets. [pdf_689ba27adba4384c_chunk_0000]",
+      "citations": [
+        "pdf_689ba27adba4384c_chunk_0000"
+      ],
+      "valid_source_ids": [
+        "pdf_689ba27adba4384c_chunk_0000",
+        "pdf_a329b3aad73104bd_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0000",
+        "docx_3ab47e2c940bc35b_chunk_0000",
+        "docx_fd57f0907dcbda1a_chunk_0001"
+      ],
+      "token_f1": 1.0,
+      "semantic_similarity": 1.0,
+      "exact_match": 1.0,
+      "faithfulness": 0.75,
+      "answer_relevance": 0.8333333333333334,
+      "citation_precision": 1.0,
+      "citation_compliance": 1.0,
+      "latency_ms": 27123.715699999593,
+      "runtime_failure": false
+    }
+  ]
+}

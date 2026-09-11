@@ -9,6 +9,7 @@ from __future__ import annotations
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from api.pipeline import EnterpriseRAGPipeline
 from api.routes import get_pipeline, router, set_pipeline
@@ -47,6 +48,14 @@ app = FastAPI(
     description="Production-grade Hybrid Graph-Vector Enterprise RAG system API",
     version="1.0.0",
     lifespan=lifespan,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(router)

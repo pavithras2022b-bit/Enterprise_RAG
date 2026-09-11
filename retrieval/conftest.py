@@ -213,7 +213,7 @@ _RELATIONSHIP_MERGE_PATTERN = _re.compile(
     r"^MATCH \(s:(\w+) \{canonical_name: \$subject_name\}\), "
     r"\(o:(\w+) \{canonical_name: \$object_name\}\) "
     r"MERGE \(s\)-\[r:(\w+)\]->\(o\) "
-    r"(?:ON CREATE SET [^R]+)?"
+    r"(?:SET .+? )?"
     r"RETURN r$"
 )
 

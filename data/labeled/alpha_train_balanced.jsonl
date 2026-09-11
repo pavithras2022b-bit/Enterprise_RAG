@@ -1,0 +1,220 @@
+{"query": "Who has final signature authority for contracts above INR 50,00,000?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does George Mathew report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "George Mathew"}}
+{"query": "Who does Karthik Iyer report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Karthik Iyer"}}
+{"query": "Who can access the Employee Assistance Program?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What project is Meenakshi Sundaram working on?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meenakshi Sundaram", "predicate": "ASSIGNED_TO", "object": "Project Atlas"}}
+{"query": "How do I submit a request for additional headcount?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Swati Kulkarni report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Lakshmi Narayanan", "predicate": "MANAGES", "object": "Swati Kulkarni"}}
+{"query": "Who does Lakshmi Narayanan report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Rohit Malhotra", "predicate": "MANAGES", "object": "Lakshmi Narayanan"}}
+{"query": "How many employees are currently part of the Customer Support department?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What type of data should never be sent over unencrypted email or personal messaging apps?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Nikita Joshi?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vishal Choudhary", "predicate": "MANAGES", "object": "Nikita Joshi"}}
+{"query": "What is the expected timeline for completing benefits enrollment?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Which departments are currently eligible for work from home under POL-HR-008?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How long does the hiring process typically take from requisition approval to offer acceptance?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Is the usage of the Employee Assistance Program reported to management?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Vishal Choudhary report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Karthik Iyer", "predicate": "MANAGES", "object": "Vishal Choudhary"}}
+{"query": "Who manages Pooja Agarwal?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Suresh Pillai", "predicate": "MANAGES", "object": "Pooja Agarwal"}}
+{"query": "Who manages Ravi Shankar?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Suresh Pillai", "predicate": "MANAGES", "object": "Ravi Shankar"}}
+{"query": "Who approves the hiring Director's approval?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Lakshmi Narayanan?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Rohit Malhotra", "predicate": "MANAGES", "object": "Lakshmi Narayanan"}}
+{"query": "Who does Nandini Krishnan report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Aditi Deshmukh", "predicate": "MANAGES", "object": "Nandini Krishnan"}}
+{"query": "Who does Pooja Agarwal report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Suresh Pillai", "predicate": "MANAGES", "object": "Pooja Agarwal"}}
+{"query": "What is the name of the policy that governs BYOD?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Vidya Raman report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Nithya Subramania", "predicate": "MANAGES", "object": "Vidya Raman"}}
+{"query": "Who manages Laura Bennett?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Anand Krishnan", "predicate": "MANAGES", "object": "Laura Bennett"}}
+{"query": "Who does Abhishek Ghosh report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meenakshi Sundaram", "predicate": "MANAGES", "object": "Abhishek Ghosh"}}
+{"query": "How many days of casual leave are credited quarterly?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the purpose of the Home Office Equipment Request Procedure?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Which regional offices are considered internal travel destinations?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How long does it take for the Finance department to process my reimbursement claim?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who maintains Jira and Confluence?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How many employees are currently part of the Facilities department?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Ayesha Siddiqui report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Karan Malhotra", "predicate": "MANAGES", "object": "Ayesha Siddiqui"}}
+{"query": "Who is the owner of the Software Procurement and Licensing Policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What system is used to submit vendor invoices?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What happens to unused Compensatory Off?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Anjali Krishnamurthy report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meera Krishnan", "predicate": "MANAGES", "object": "Anjali Krishnamurthy"}}
+{"query": "Who does Sneha Bhattacharya report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Sneha Bhattacharya"}}
+{"query": "What is the sum insured for a family under Group Health Insurance?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Ishita Banerjee report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meera Krishnan", "predicate": "MANAGES", "object": "Ishita Banerjee"}}
+{"query": "Who is responsible for the mobile device management console?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Meera Krishnan?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Meera Krishnan"}}
+{"query": "What is the typical timeline for receiving a laptop before starting work?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How do I submit a request for new software?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Preeti Chawla report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ramesh Gopalakrishnan", "predicate": "MANAGES", "object": "Preeti Chawla"}}
+{"query": "Who is the owner and maintainer of the Leave and Attendance Policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Anjali Krishnamurthy?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meera Krishnan", "predicate": "MANAGES", "object": "Anjali Krishnamurthy"}}
+{"query": "Where are campaign assets published?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the condition for sharing Confidential or Restricted data with new vendors?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Priya Chandran?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Priya Chandran"}}
+{"query": "Who manages Farhan Ahmed?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Farhan Ahmed"}}
+{"query": "Who manages Karan Malhotra?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Farhan Ahmed", "predicate": "MANAGES", "object": "Karan Malhotra"}}
+{"query": "How do I submit a purchase requisition?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Laura Bennett report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Anand Krishnan", "predicate": "MANAGES", "object": "Laura Bennett"}}
+{"query": "How is access for contractors and vendors managed?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How must Compensatory Off be requested?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who drafts and reviews campaign proposals?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Nikita Joshi report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vishal Choudhary", "predicate": "MANAGES", "object": "Nikita Joshi"}}
+{"query": "Who manages Harish Venkataraman?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Lakshmi Narayanan", "predicate": "MANAGES", "object": "Harish Venkataraman"}}
+{"query": "Who manages Vishal Choudhary?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Karthik Iyer", "predicate": "MANAGES", "object": "Vishal Choudhary"}}
+{"query": "Who is accountable for the overall administration of the IT Asset Management Policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the standard class of travel for trips under 6 hours?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who is the Director of Human Resources and to whom does she report?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Suresh Pillai?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Suresh Pillai"}}
+{"query": "Who manages Karthik Iyer?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Karthik Iyer"}}
+{"query": "Who is the Director of Engineering, and to whom do they report?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Where is the Information Security department headquartered?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the purpose of the Meridian VPN Gateway?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages George Mathew?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "George Mathew"}}
+{"query": "Who does Deepak Nair report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Suresh Pilla", "predicate": "MANAGES", "object": "Deepak Nair"}}
+{"query": "What is the purpose of this policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages James O'Connor?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Radhika Pillai", "predicate": "MANAGES", "object": "James O'Connor"}}
+{"query": "What is the name of the policy that governs work from home eligibility?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Sarah Thompson report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Nithya Subramaniam", "predicate": "MANAGES", "object": "Sarah Thompson"}}
+{"query": "What system does Project Falcon use?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Falcon", "predicate": "USES", "object": "Microsoft 365"}}
+{"query": "How do department directors and project leads determine the capacity of employees for project assignments?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Michael Chen?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Anand Krishnan", "predicate": "MANAGES", "object": "Michael Chen"}}
+{"query": "Who does Sanjay Verma report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Sanjay Verma"}}
+{"query": "Who is leading the migration?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Harish Venkataraman report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Lakshmi Narayanan", "predicate": "MANAGES", "object": "Harish Venkataraman"}}
+{"query": "Who manages Wei Ling Tan?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Wei Ling Tan"}}
+{"query": "What system does Project Phoenix use?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Phoenix", "predicate": "USES", "object": "Coupa"}}
+{"query": "Who manages Aditi Deshmukh?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Aditi Deshmukh"}}
+{"query": "Who administers the Employee Assistance Program?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Where is project documentation stored alongside task tracking?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Meenakshi Sundaram?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Karthik Iyer", "predicate": "MANAGES", "object": "Meenakshi Sundaram"}}
+{"query": "Who manages Ishita Banerjee?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meera Krishnan", "predicate": "MANAGES", "object": "Ishita Banerjee"}}
+{"query": "What policy is referenced for secure wiping of IT assets?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How do employees obtain approval for exceptions to the standard hybrid schedule?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Tarun Sethi?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meera Krishnan", "predicate": "MANAGES", "object": "Tarun Sethi"}}
+{"query": "Who manages Nandini Krishnan?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Aditi Deshmukh", "predicate": "MANAGES", "object": "Nandini Krishnan"}}
+{"query": "Who manages Swati Kulkarni?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Lakshmi Narayanan", "predicate": "MANAGES", "object": "Swati Kulkarni"}}
+{"query": "How are employee absences tracked?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who prioritizes the research proposals against the quarterly research roadmap?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the purpose of Compensatory Off?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the discount offered to eligible employees for purchasing company stock under the Employee Stock Purchase Plan?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who maintains Confluence?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who is the project lead for Project Helios?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the benefit of using project-based cost centers?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What software is used by Project Phoenix?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Phoenix", "predicate": "USES", "object": "Coupa"}}
+{"query": "What system does Project Nimbus use?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Nimbus", "predicate": "USES", "object": "Bitwarden Enterprise"}}
+{"query": "Who manages Ayesha Siddiqui?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Karan Malhotra", "predicate": "MANAGES", "object": "Ayesha Siddiqui"}}
+{"query": "Who should employees traveling between regional offices coordinate with for visa and immigration guidance?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What system does Project Titan use?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Titan", "predicate": "USES", "object": "Coupa"}}
+{"query": "What project is Vishal Choudhary working on?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vishal Choudhary", "predicate": "ASSIGNED_TO", "object": "Project Atlas"}}
+{"query": "What is the primary method by which an employee submits a leave request?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Vikram Suresh?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Vikram Suresh"}}
+{"query": "What software is used by Project Orion?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Orion", "predicate": "USES", "object": "Meridian VPN Gateway"}}
+{"query": "What system does Project Orion use?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Orion", "predicate": "USES", "object": "Meridian VPN Gateway"}}
+{"query": "What is the maximum hotel booking cap per night for international trips?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Kavya Reddy?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Kavya Reddy"}}
+{"query": "Who is accountable for the overall administration of the Data Classification and Handling Policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Rachel Fernandes report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vishal Cho", "predicate": "MANAGES", "object": "Rachel Fernandes"}}
+{"query": "Who does Radhika Pillai report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Sneha Bhattacharya", "predicate": "MANAGES", "object": "Radhika Pillai"}}
+{"query": "How often do payment runs occur?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What type of cost centers allow cross-department expense tracking?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the name of the single sign-on (SSO) tool used in the architecture?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Dinesh Kumar report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ramesh Gopalakrishnan", "predicate": "MANAGES", "object": "Dinesh Kumar"}}
+{"query": "What software is used by Project Falcon?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Falcon", "predicate": "USES", "object": "Microsoft 365"}}
+{"query": "Who is the point of contact for submitting learning and development stipend requests?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Where is the Marketing department headquartered?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How much can I receive annually for gym memberships, fitness classes, or wellness apps?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Kavya Reddy report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Kavya Reddy"}}
+{"query": "Who is involved in the approval of a new job requisition?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the name of the department that maintains the employee roster?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Meenakshi Sundaram report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Karthik Iyer", "predicate": "MANAGES", "object": "Meenakshi Sundaram"}}
+{"query": "Who is the sponsor of the Project Nimbus Zero-Trust Architecture Brief?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How long does reimbursement take?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Suresh Pillai report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Suresh Pillai"}}
+{"query": "Who manages Radhika Pillai?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Sneha Bhattacharya", "predicate": "MANAGES", "object": "Radhika Pillai"}}
+{"query": "Who manages Arjun Menon?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Arjun Menon"}}
+{"query": "Who manages Neha Kapoor?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Neha Kapoor"}}
+{"query": "How long do employees have to enroll a second factor for Okta SSO logins?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Karan Malhotra report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Farhan Ahmed", "predicate": "MANAGES", "object": "Karan Malhotra"}}
+{"query": "Can a medical certificate be required for more than 2 consecutive days of sick leave?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Michael Chen report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Anand Krishnan", "predicate": "MANAGES", "object": "Michael Chen"}}
+{"query": "Who manages Siddharth Rao?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Fatima Sheikh", "predicate": "MANAGES", "object": "Siddharth Rao"}}
+{"query": "Who does Rohit Malhotra report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Rohit Malhotra"}}
+{"query": "Who manages Arvind Balasubramanian?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Arvind Balasubramanian"}}
+{"query": "What systems will an employee be granted access to after completing the onboarding process?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What software is used by Project Vega?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Vega", "predicate": "USES", "object": "Salesforce"}}
+{"query": "What is the purpose of the Employee Assistance Program?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Suresh Babu report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "George Mathew", "predicate": "MANAGES", "object": "Suresh Babu"}}
+{"query": "How many employees are currently part of the Marketing department?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who consolidates department budgets annually?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Ravi Shankar report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Suresh Pillai", "predicate": "MANAGES", "object": "Ravi Shankar"}}
+{"query": "Which project is Meenakshi Sundaram assigned to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meenakshi Sundaram", "predicate": "ASSIGNED_TO", "object": "Project Atlas"}}
+{"query": "Who does Arjun Menon report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Arjun Menon"}}
+{"query": "Who manages Dinesh Kumar?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ramesh Gopalakrishnan", "predicate": "MANAGES", "object": "Dinesh Kumar"}}
+{"query": "What system does Project Vega use?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Vega", "predicate": "USES", "object": "Salesforce"}}
+{"query": "Who does Vikram Suresh report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Vikram Suresh"}}
+{"query": "Who does Farhan Ahmed report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Farhan Ahmed"}}
+{"query": "Who manages Sarah Thompson?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Nithya Subramaniam", "predicate": "MANAGES", "object": "Sarah Thompson"}}
+{"query": "What is the condition of employment for reading, understanding and adhering to this policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How do sick leave requirements differ for absences of 2 consecutive days or less while working remotely?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "When are payslips published?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Where is the Research & Development department headquartered?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Meera Krishnan report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Meera Krishnan"}}
+{"query": "Who does Manoj Tiwari report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Lakshmi Narayanan", "predicate": "MANAGES", "object": "Manoj Tiwari"}}
+{"query": "How many paid public holidays does Meridian Dynamics Inc. observe each year?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How many Senior Managers are in the Human Resources department?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does James O'Connor report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Radhika Pillai", "predicate": "MANAGES", "object": "James O'Connor"}}
+{"query": "Who does Siddharth Rao report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Fatima Sheikh", "predicate": "MANAGES", "object": "Siddharth Rao"}}
+{"query": "Where is the holiday calendar published annually?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Anand Krishnan report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Arjun Menon", "predicate": "MANAGES", "object": "Anand Krishnan"}}
+{"query": "Who does Arvind Balasubramanian report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Arvind Balasubramanian"}}
+{"query": "Who is the project lead for Project Nimbus?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Sanjay Verma?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Sanjay Verma"}}
+{"query": "Who manages Anand Krishnan?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Arjun Menon", "predicate": "MANAGES", "object": "Anand Krishnan"}}
+{"query": "What is the purpose of encrypting Confidential and Restricted data?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who is the project lead for Project Titan?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the role of Procurement and Information Security in the onboarding process?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What happens to vendors handling Confidential or Restricted data?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Where is the Customer Support department headquartered?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How long does it take to resolve standard tickets?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who owns the Password and Access Management Policy, and which departments does it apply to?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Ramesh Gopalakrishnan report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Rohit Malhotra", "predicate": "MANAGES", "object": "Ramesh Gopalakrishnan"}}
+{"query": "What other policies should I read in conjunction with this policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Which departments apply the BYOD Policy?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Suresh Babu?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "George Mathew", "predicate": "MANAGES", "object": "Suresh Babu"}}
+{"query": "Who manages Preeti Chawla?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ramesh Gopalakrishnan", "predicate": "MANAGES", "object": "Preeti Chawla"}}
+{"query": "Who manages Rachel Fernandes?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vishal Cho", "predicate": "MANAGES", "object": "Rachel Fernandes"}}
+{"query": "Who manages Vidya Raman?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Nithya Subramania", "predicate": "MANAGES", "object": "Vidya Raman"}}
+{"query": "Who does Priya Chandran report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Priya Chandran"}}
+{"query": "Who does Aditi Deshmukh report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vikram Suresh", "predicate": "MANAGES", "object": "Aditi Deshmukh"}}
+{"query": "What is the required method of reporting a suspected security incident?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the purpose of a digital brand relaunch campaign?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What department reviews contracts involving Confidential or Restricted data?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Abhishek Ghosh?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meenakshi Sundaram", "predicate": "MANAGES", "object": "Abhishek Ghosh"}}
+{"query": "What is the role of the Information Technology department in contractor access?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How many employees are currently part of the Sales department?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Wei Ling Tan report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Wei Ling Tan"}}
+{"query": "Where are releases deployed to after being reviewed?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who oversees the Work From Home program?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What channels should be used for sending confidential data?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Which project is Vishal Choudhary assigned to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Vishal Choudhary", "predicate": "ASSIGNED_TO", "object": "Project Atlas"}}
+{"query": "Who manages Rohit Malhotra?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Rohit Malhotra"}}
+{"query": "What are the typical days designated for in-office work in a hybrid schedule?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who logs and investigates grievances?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What should I do if my home internet is unreliable?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Ramesh Gopalakrishnan?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Rohit Malhotra", "predicate": "MANAGES", "object": "Ramesh Gopalakrishnan"}}
+{"query": "How many people report directly to Suresh Pillai?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How are mid-year budget revisions justified?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who does Neha Kapoor report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Divya Ramaswamy", "predicate": "MANAGES", "object": "Neha Kapoor"}}
+{"query": "What software is used by Project Nimbus?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Nimbus", "predicate": "USES", "object": "Bitwarden Enterprise"}}
+{"query": "Who does Divya Ramaswamy report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Priya Chandran", "predicate": "MANAGES", "object": "Divya Ramaswamy"}}
+{"query": "Who does Tarun Sethi report to?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Meera Krishnan", "predicate": "MANAGES", "object": "Tarun Sethi"}}
+{"query": "Who leads the Human Resources department that administers benefits?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who is the project sponsor of Project Orion?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Where are unresolved Tier 2 issues with a product defect escalated?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "Who manages Manoj Tiwari?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Lakshmi Narayanan", "predicate": "MANAGES", "object": "Manoj Tiwari"}}
+{"query": "Who manages Divya Ramaswamy?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Priya Chandran", "predicate": "MANAGES", "object": "Divya Ramaswamy"}}
+{"query": "Who manages Deepak Nair?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Suresh Pilla", "predicate": "MANAGES", "object": "Deepak Nair"}}
+{"query": "What is the requirement for employees to access company email on a personal device?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "How long do new employees have to complete benefits enrollment?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the purpose of reading this policy in conjunction with other policies?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What is the requirement for making a payment to a vendor?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}
+{"query": "What software is used by Project Titan?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Project Titan", "predicate": "USES", "object": "Coupa"}}
+{"query": "Who manages Sneha Bhattacharya?", "label": "GRAPH_FAVORING", "source": "neo4j_relation", "relation": {"subject": "Ananya Raghunathan", "predicate": "MANAGES", "object": "Sneha Bhattacharya"}}
+{"query": "Where are escalations for Human Resources matters routed if they cannot be resolved within the department?", "label": "VECTOR_FAVORING", "source": "distant_supervision"}

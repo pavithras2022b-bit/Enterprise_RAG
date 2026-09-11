@@ -14,8 +14,7 @@ from typing import Any, Optional
 import numpy as np
 
 from adaptive_retrieval.fusion import AdaptiveFusionEngine
-from adaptive_retrieval.rules import RuleBasedAlphaClassifier
-from config_loader import create_llm_client
+from config_loader import create_alpha_classifier, create_llm_client
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -79,7 +78,7 @@ class EnterpriseRAGPipeline:
         except Exception as e:
             logger.warning(f"Failed to initialize EntityLinker (Neo4j may be unavailable): {e}")
             self.entity_linker = EntityLinker(neo4j_connection, refresh_on_init=False)
-        
+
         self.hybrid_controller = HybridRetrievalController(
             vector_store=self.vector_store,
             graph_connection=self.neo4j_connection,
@@ -90,7 +89,7 @@ class EnterpriseRAGPipeline:
             controller=self.hybrid_controller,
             embedding_model=self.embedding_model,
             entity_linker=self.entity_linker,
-            classifier=RuleBasedAlphaClassifier(),
+            classifier=create_alpha_classifier(),
         )
 
     def ingest_files(self, file_paths: list[str]) -> IngestResponse:
@@ -157,8 +156,8 @@ class EnterpriseRAGPipeline:
 
             graph_builder = Neo4jGraphBuilder(connection=self.neo4j_connection)
             report = graph_builder.build_graph(all_entities, all_relations)
-            entities_count = report.nodes_created
-            relations_count = report.relationships_created
+            entities_count = len(all_entities)
+            relations_count = len(all_relations)
 
         # Refresh entity linker index for graph search (gracefully handle Neo4j unavailability)
         try:

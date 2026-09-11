@@ -39,11 +39,17 @@ class RelationType(str, Enum):
     FOLLOWS = "FOLLOWS"                # Department -> Policy
     MANAGES = "MANAGES"                # Employee -> Employee (reporting line)
     ASSIGNED_TO = "ASSIGNED_TO"        # Employee -> Project
-    USES = "USES"                      # Project -> Software
+    USES = "USES"                      # Project -> Software / System
     REQUIRES_ACCESS = "REQUIRES_ACCESS"  # Role -> NetworkResource
     ELIGIBLE_FOR = "ELIGIBLE_FOR"      # Employee -> LeaveType
-    GOVERNS = "GOVERNS"                # Policy -> LeaveType
+    GOVERNS = "GOVERNS"                # Policy -> LeaveType / Department
     REQUIRES_TRAINING = "REQUIRES_TRAINING"  # Department/Role -> Software
+    REPORTS_TO = "REPORTS_TO"          # Employee -> Employee
+    OWNS_SYSTEM = "OWNS_SYSTEM"        # Department/Employee -> System
+    WORKS_ON = "WORKS_ON"              # Employee -> Project
+    GOVERNED_BY = "GOVERNED_BY"        # Department/System -> Policy
+    APPLIES_TO = "APPLIES_TO"          # Policy -> Department/Employee
+
 
 
 class SchemaValidationError(Exception):

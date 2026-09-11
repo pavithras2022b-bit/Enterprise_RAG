@@ -34,6 +34,32 @@ def map_generic_label_to_enterprise_type(
         # The graph schema has no physical-location label.
         return EntityType.NETWORK_RESOURCE
 
+    mention = span_text.lower().strip()
+
+    # Enterprise-specific overrides for the generic CoNLL NER checkpoint.
+    if re.search(r"\b(project|initiative|programme|program)\b", mention):
+        return EntityType.PROJECT
+
+    known_software = {
+        "servicenow",
+        "coupa",
+        "workday",
+        "workday hrms",
+        "sap concur",
+        "salesforce",
+        "microsoft 365",
+        "confluence",
+        "jira",
+        "okta sso",
+        "bitwarden enterprise",
+        "greythr",
+        "greythr self-service portal",
+        "meridian vpn gateway",
+    }
+
+    if mention in known_software:
+        return EntityType.SOFTWARE
+
     # Use the mention plus a local window, rather than the entire chunk. A
     # policy chunk often mentions projects, policies, and leave in separate
     # sentences; whole-chunk keyword matching would misclassify every MISC
@@ -94,8 +120,9 @@ def _merge_adjacent_entity_fragments(entities: list[Entity], text: str) -> list[
                     previous.confidence * previous.span_length
                     + entity.confidence * entity.span_length
                 ) / total_length
+            merged_text = re.sub(r"\s+", " ", text[previous.start_offset : entity.end_offset]).strip()
             merged.append(Entity(
-                text=text[previous.start_offset : entity.end_offset],
+                text=merged_text,
                 entity_type=previous.entity_type,
                 start_offset=previous.start_offset,
                 end_offset=entity.end_offset,
@@ -105,6 +132,46 @@ def _merge_adjacent_entity_fragments(entities: list[Entity], text: str) -> list[
         else:
             merged.append(entity)
     return merged
+
+
+def _filter_obvious_generic_ner_noise(entities: list[Entity]) -> list[Entity]:
+    """Remove only clearly malformed fragments produced by the generic NER model."""
+    filtered: list[Entity] = []
+
+    for entity in entities:
+        name = re.sub(r"\s+", " ", entity.text).strip()
+
+        if not name:
+            continue
+
+        # Single-character fragments are never useful enterprise entities.
+        if len(name) == 1:
+            continue
+
+        # Very short alphabetic fragments are usually tokenizer/NER truncations.
+        # Keep common legitimate enterprise abbreviations.
+        safe_short_names = {
+            "HR",
+            "IT",
+            "AI",
+            "R&D",
+            "AWS",
+            "SAP",
+            "USA",
+            "CISO",
+            "HRMS",
+        }
+
+        if (
+            len(name) <= 4
+            and name not in safe_short_names
+            and name.isalpha()
+        ):
+            continue
+
+        filtered.append(entity)
+
+    return filtered
 
 
 class EntityExtractor:
@@ -160,7 +227,10 @@ class EntityExtractor:
             confidence_threshold=confidence_threshold,
             entity_type_mapper=self._entity_type_mapper,
         )
-        return _merge_adjacent_entity_fragments(entities, text) if self._entity_type_mapper else entities
+        if self._entity_type_mapper:
+            entities = _merge_adjacent_entity_fragments(entities, text)
+            entities = _filter_obvious_generic_ner_noise(entities)
+        return entities
 
     def extract_entities_from_chunk(
         self,
@@ -183,8 +253,7 @@ class EntityExtractor:
             confidence_threshold=confidence_threshold,
             entity_type_mapper=self._entity_type_mapper,
         )
-        return (
-            _merge_adjacent_entity_fragments(entities, chunk.text)
-            if self._entity_type_mapper
-            else entities
-        )
+        if self._entity_type_mapper:
+            entities = _merge_adjacent_entity_fragments(entities, chunk.text)
+            entities = _filter_obvious_generic_ner_noise(entities)
+        return entities

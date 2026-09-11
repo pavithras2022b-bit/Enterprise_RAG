@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Dynamics — Enterprise Knowledge Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Primary */
+    --maroon: #6B1F2A;
+    --burgundy: #7D2838;
+    --wine: #8C3145;
+
+
+    /* Backgrounds */
+    --cream: #F8F4EE;
+    --ivory: #FCFAF7;
+    --sand: #F2ECE3;
+
+    /* Neutrals */
+    --charcoal: #2C2C2C;
+    --slate: #5E5E5E;
+    --border: #D9D0C7;
+
+    /* Semantic accents */
+    --emerald: #4F7D60;
+    --gold: #B88A44;
+    --vector-blue: #3E6B96;
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 9px;
+
+    --shadow-soft: 0 1px 2px rgba(44,44,44,0.04), 0 8px 24px rgba(107,31,42,0.06);
+    --shadow-lift: 0 2px 4px rgba(44,44,44,0.05), 0 16px 40px rgba(107,31,42,0.10);
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: var(--sand);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: rgba(107,31,42,0.15); }
+
+  /* ---------- Top Navigation ---------- */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: rgba(252, 250, 247, 0.86);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--maroon), var(--wine));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(107,31,42,0.28);
+    flex-shrink: 0;
+  }
+  .brand-mark svg { width: 18px; height: 18px; }
+  .brand-name {
+    font-weight: 700;
+    font-size: 15.5px;
+    letter-spacing: -0.01em;
+    color: var(--charcoal);
+    line-height: 1.1;
+  }
+  .brand-sub {
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 0.02em;
+  }
+  .nav-center {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--wine);
+    letter-spacing: 0.02em;
+    display: none;
+  }
+  .nav-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--slate);
+  }
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--emerald);
+    box-shadow: 0 0 0 3px rgba(79,125,96,0.16);
+    animation: pulse-dot 2.4s var(--ease) infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(79,125,96,0.16); }
+    50% { box-shadow: 0 0 0 5px rgba(79,125,96,0.08); }
+  }
+
+  @media (min-width: 760px) {
+    .nav-center { display: block; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 64px 24px 40px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 700px 300px at 18% -10%, rgba(107,31,42,0.10), transparent 60%),
+      radial-gradient(ellipse 600px 280px at 85% 0%, rgba(184,138,68,0.12), transparent 55%),
+      var(--sand);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(107,31,42,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(107,31,42,0.035) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(ellipse 700px 340px at 50% 0%, black, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 700px 340px at 50% 0%, black, transparent 75%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--wine);
+    background: rgba(140,49,69,0.08);
+    border: 1px solid rgba(140,49,69,0.18);
+    padding: 5px 13px;
+    border-radius: 100px;
+    margin-bottom: 22px;
+    letter-spacing: 0.02em;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    margin: 0 0 14px;
+    color: var(--maroon);
+  }
+  .hero p.lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--slate);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .hero-tagline {
+    margin-top: 18px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---------- Search ---------- */
+  .search-wrap {
+    max-width: 700px;
+    margin: 8px auto 0;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+  .search-card {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 10px;
+    box-shadow: var(--shadow-lift);
+  }
+  .search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ivory);
+    border-radius: var(--radius-md);
+  }
+  .search-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 12px;
+    color: var(--slate);
+  }
+  input[type="text"]#queryInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 15px 6px;
+    font-size: 15.5px;
+    font-family: inherit;
+    color: var(--charcoal);
+  }
+  input[type="text"]#queryInput::placeholder { color: #A79E93; }
+
+  button#askBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: linear-gradient(135deg, var(--maroon), var(--wine));
+    color: var(--ivory);
+    border: none;
+    padding: 12px 22px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(107,31,42,0.28);
+    transition: transform 180ms var(--ease), box-shadow 180ms var(--ease), filter 180ms var(--ease);
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+  button#askBtn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(107,31,42,0.38), 0 0 0 4px rgba(184,138,68,0.10);
+    filter: brightness(1.04);
+  }
+  button#askBtn:active:not(:disabled) { transform: translateY(0); }
+  button#askBtn:disabled { opacity: 0.55; cursor: default; box-shadow: none; }
+  button#askBtn svg { width: 15px; height: 15px; }
+
+  /* Developer / endpoint settings — kept functional, tucked away */
+  .dev-settings {
+    margin-top: 8px;
+    padding: 0 10px;
+  }
+  .dev-settings summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 11.5px;
+    color: var(--slate);
+    padding: 6px 4px;
+    user-select: none;
+  }
+  .dev-settings summary::-webkit-details-marker { display: none; }
+  .dev-settings summary:hover { color: var(--wine); }
+  .endpoint-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 4px 8px;
+  }
+  .endpoint-row label { color: var(--slate); font-size: 11.5px; }
+  .endpoint-row input {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--slate);
+    font-size: 11.5px;
+    padding: 5px 8px;
+    flex: 1;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  /* ---------- Quick Suggestions ---------- */
+  .suggestions {
+    max-width: 700px;
+    margin: 18px auto 0;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .suggestion-chip {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--wine);
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    padding: 7px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 200ms var(--ease);
+  }
+  .suggestion-chip:hover {
+    background: var(--maroon);
+    border-color: var(--maroon);
+    color: var(--ivory);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(107,31,42,0.22);
+  }
+
+  /* ---------- Main content area ---------- */
+  .main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 36px 24px 90px;
+  }
+
+  .status {
+    text-align: center;
+    color: var(--slate);
+    font-size: 13px;
+    min-height: 20px;
+    margin-bottom: 18px;
+  }
+  .status.error { color: var(--maroon); font-weight: 500; }
+
+  /* ---------- Loading sequence ---------- */
+  .loading-panel {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+  }
+  .loading-ring {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    border-top-color: var(--maroon);
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-msg {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--charcoal);
+    min-height: 20px;
+    transition: opacity 260ms var(--ease);
+  }
+  .loading-sub {
+    font-size: 12px;
+    color: var(--slate);
+    margin-top: 6px;
+  }
+
+  /* ---------- Cards (shared) ---------- */
+  .card {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 26px 28px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: card-in 480ms var(--ease) forwards;
+  }
+  .card:nth-of-type(1) { animation-delay: 0ms; }
+  .card:nth-of-type(2) { animation-delay: 90ms; }
+  .card:nth-of-type(3) { animation-delay: 180ms; }
+  .card:nth-of-type(4) { animation-delay: 270ms; }
+  @keyframes card-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .card h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--slate);
+    margin: 0;
+    font-weight: 700;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, rgba(107,31,42,0.10), rgba(184,138,68,0.12));
+    color: var(--wine);
+    border: 1px solid rgba(140,49,69,0.16);
+  }
+  .badge .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+
+  .answer-text {
+    font-size: 17px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    color: var(--charcoal);
+  }
+  .answer-text .type-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--wine);
+    margin-left: 1px;
+    vertical-align: text-bottom;
+    animation: cursor-blink 800ms steps(1) infinite;
+  }
+  @keyframes cursor-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  /* ---------- Retrieval Intelligence panel ---------- */
+  .intel-title-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 560px) {
+    .kpi-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .kpi {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 14px;
+  }
+  .kpi-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .kpi-value {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--charcoal);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  .kpi-value.strategy { font-size: 13.5px; font-family: 'Inter', sans-serif; }
+
+  .fusion-scale {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+  }
+  .fusion-scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .fusion-scale-labels .vec-label { color: var(--vector-blue); }
+  .fusion-scale-labels .graph-label { color: var(--gold); }
+  .fusion-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 100px;
+    overflow: hidden;
+    background: var(--border);
+  }
+  .fusion-bar .vec-fill {
+    background: linear-gradient(90deg, #4C82AC, var(--vector-blue));
+    transition: width 500ms var(--ease);
+  }
+  .fusion-bar .graph-fill {
+    background: linear-gradient(90deg, var(--gold), #A67A3B);
+    transition: width 500ms var(--ease);
+  }
+
+  /* ---------- Citations ---------- */
+  .citations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    background: var(--cream);
+    border: 1px solid var(--maroon);
+    color: var(--maroon);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 7px;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    transition: all 200ms var(--ease);
+    cursor: default;
+  }
+  .chip:hover {
+    background: var(--maroon);
+    color: var(--ivory);
+    transform: translateY(-1px);
+  }
+  .no-citations {
+    font-size: 13px;
+    color: var(--slate);
+    font-style: italic;
+  }
+
+  /* ---------- Source candidates ---------- */
+  .candidate {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 15px 16px;
+    margin-bottom: 12px;
+    transition: box-shadow 200ms var(--ease), border-color 200ms var(--ease);
+  }
+  .candidate:hover { box-shadow: 0 4px 14px rgba(44,44,44,0.06); }
+  .candidate:last-child { margin-bottom: 0; }
+  .candidate.src-VECTOR { border-left-color: var(--vector-blue); }
+  .candidate.src-GRAPH { border-left-color: var(--gold); }
+  .candidate.src-BOTH { border-left-color: var(--emerald); }
+
+  .candidate-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .source-tag {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+    border-radius: 100px;
+  }
+  .source-tag.VECTOR { background: rgba(62,107,150,0.12); color: var(--vector-blue); }
+  .source-tag.GRAPH  { background: rgba(184,138,68,0.15); color: #8F6A34; }
+  .source-tag.BOTH   { background: rgba(79,125,96,0.14); color: var(--emerald); }
+
+  .candidate-score {
+    font-size: 11px;
+    color: var(--slate);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  .candidate-id {
+    font-size: 10.5px;
+    color: var(--slate);
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    margin-bottom: 8px;
+    word-break: break-all;
+    opacity: 0.85;
+  }
+  .candidate-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    max-height: 140px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+  }
+  .candidate-text::-webkit-scrollbar { width: 6px; }
+  .candidate-text::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* ---------- Empty state ---------- */
+  .empty-state {
+    text-align: center;
+    padding: 56px 28px;
+    background: var(--ivory);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .empty-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 18px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(107,31,42,0.08), rgba(184,138,68,0.10));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .empty-icon svg { width: 24px; height: 24px; color: var(--wine); }
+  .empty-state h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 8px;
+  }
+  .empty-state p {
+    font-size: 13.5px;
+    color: var(--slate);
+    max-width: 380px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+
+  /* ---------- Final demo polish ---------- */
+  .hero { padding-bottom: 34px; }
+  .hero-inner { max-width: 760px; }
+  .search-wrap { margin-top: 0; }
+  .search-card { border-color: rgba(107,31,42,0.16); }
+  .main { max-width: 860px; padding-top: 30px; }
+  .answer-card { position:relative; overflow:hidden; border-color:rgba(107,31,42,0.16); box-shadow:var(--shadow-lift); }
+  .answer-card::before { content:''; position:absolute; inset:0 auto 0 0; width:4px; background:linear-gradient(180deg,var(--maroon),var(--gold)); }
+  .answer-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .answer-text { font-size:17.5px; line-height:1.78; letter-spacing:-0.005em; }
+  .confidence-pill { display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border-radius:100px; font-size:10.5px; font-weight:700; background:rgba(79,125,96,0.10); color:var(--emerald); border:1px solid rgba(79,125,96,0.20); }
+  .confidence-pill.warn { background:rgba(184,138,68,0.10); color:#8F6A34; border-color:rgba(184,138,68,0.24); }
+  .details-card { padding:0; overflow:hidden; }
+  .details-card summary { list-style:none; cursor:pointer; padding:18px 22px; display:flex; align-items:center; justify-content:space-between; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--slate); user-select:none; }
+  .details-card summary::-webkit-details-marker { display:none; }
+  .details-card summary::after { content:'+'; font-size:18px; font-weight:500; color:var(--wine); }
+  .details-card details[open] summary::after { content:'−'; }
+  .details-body { padding:0 22px 22px; border-top:1px solid var(--border); }
+  .details-body .kpi-grid { margin-top:18px; }
+  .source-summary { display:flex; align-items:center; gap:9px; padding:12px 14px; background:var(--sand); border:1px solid var(--border); border-radius:10px; font-size:12.5px; color:var(--slate); margin:18px 0 12px; }
+  .source-summary strong { color:var(--charcoal); }
+  .source-dot { width:8px; height:8px; border-radius:50%; background:var(--emerald); flex:0 0 auto; }
+  .source-dot-warn { background:var(--gold); }
+  .citation-chip { display:inline-flex; align-items:center; gap:7px; background:var(--cream); border:1px solid rgba(107,31,42,0.18); color:var(--wine); font-size:11.5px; font-weight:600; padding:7px 11px; border-radius:9px; }
+  .citation-chip svg { width:13px; height:13px; flex:0 0 auto; }
+  .status.success { color:var(--emerald); }
+  .empty-state { box-shadow:var(--shadow-soft); background:rgba(252,250,247,0.78); }
+  .empty-state h3 { color:var(--maroon); }
+
+
+  /* ---------- Knowledge relationship visualization ---------- */
+  .relationship-map {
+    margin-top: 16px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background:
+      radial-gradient(circle at 50% 45%, rgba(184,138,68,0.08), transparent 42%),
+      var(--cream);
+    overflow-x: auto;
+  }
+  .relationship-map-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .relationship-map-title {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+  .relationship-map-note { font-size: 11px; color: var(--slate); }
+  .relationship-row {
+    min-width: 520px;
+    display: grid;
+    grid-template-columns: minmax(120px,1fr) 150px minmax(120px,1fr);
+    align-items: center;
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .relationship-node {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: var(--shadow-soft);
+  }
+  .relationship-node.subject { border-color: rgba(107,31,42,.28); color: var(--maroon); }
+  .relationship-node.object { border-color: rgba(184,138,68,.38); }
+  .relationship-edge {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(107,31,42,.45), var(--gold));
+  }
+  .relationship-edge::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: -4px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    transform: rotate(45deg);
+  }
+  .relationship-label {
+    position: absolute;
+    left: 50%;
+    top: -18px;
+    transform: translateX(-50%);
+    background: var(--cream);
+    padding: 2px 7px;
+    border-radius: 100px;
+    color: #8F6A34;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+
+  /* ---------- Accessibility & motion ---------- */
+  button:focus-visible,
+  input:focus-visible,
+  .suggestion-chip:focus-visible {
+    outline: 2px solid var(--wine);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 44px 18px 30px; }
+    .card { padding: 20px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="#FCFAF7" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12l9-5M12 12v10M12 12L3 7" stroke="#FCFAF7" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <div class="brand-name">Meridian Dynamics Inc.</div>
+      <div class="brand-sub">Enterprise Intelligence. Unified.</div>
+    </div>
+  </div>
+  <div class="nav-center">Enterprise Knowledge Assistant</div>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    <span>System Online</span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">◆ Adaptive Enterprise Intelligence</span>
+    <h1>Meridian Dynamics Enterprise RAG</h1>
+    <p class="lead">Ask naturally. Get concise, evidence-grounded answers from Meridian Dynamics enterprise knowledge.</p>
+  </div>
+</header>
+
+<div class="search-wrap">
+  <div class="search-card">
+    <div class="search-row">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="queryInput" placeholder="Ask about policies, compliance, HR procedures, benefits, departments, reporting structures…" />
+      <button id="askBtn" onclick="runQuery()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        Ask
+      </button>
+    </div>
+    <details class="dev-settings">
+      <summary>⚙ Developer settings</summary>
+      <div class="endpoint-row">
+        <label>Endpoint:</label>
+        <input type="text" id="endpointInput" value="http://localhost:8000/api/v1/query" />
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="suggestions">
+  <span class="suggestion-chip"
+        onclick="askSuggestion('How many Casual Leave days are available per calendar year?')">
+    Leave Policy
+  </span>
+
+  <span class="suggestion-chip"
+        onclick="askSuggestion('How should employees request leave while working remotely?')">
+    Remote Work Guidelines
+  </span>
+
+  <span class="suggestion-chip"
+        onclick="askSuggestion('How are travel expense claims approved?')">
+    Expense Reimbursement
+  </span>
+
+  <span class="suggestion-chip"
+        onclick="askSuggestion('What employee benefits are available?')">
+    Employee Benefits
+  </span>
+
+  <span class="suggestion-chip"
+        onclick="askSuggestion('Who manages Priyanka Das?')">
+    Reporting Structure
+  </span>
+
+  <span class="suggestion-chip"
+        onclick="askSuggestion('What security compliance requirements must employees follow?')">
+    Security Compliance
+  </span>
+</div>
+<main class="main">
+  <div class="status" id="status"></div>
+
+  <div id="results">
+    <div class="empty-state">
+      <div class="empty-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3"/></svg>
+      </div>
+      <h3>What would you like to know?</h3>
+      <p>Ask about policies, people, projects, compliance, benefits, procedures, or organizational knowledge. Answers are grounded in retrieved enterprise evidence.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+const LOADING_MESSAGES = [
+  'Understanding your question…',
+  'Searching enterprise knowledge…',
+  'Ranking the strongest evidence…',
+  'Preparing a grounded answer…'
+];
+
+function askSuggestion(text) {
+  document.getElementById('queryInput').value = text;
+  runQuery();
+}
+
+let loadingInterval = null;
+
+function startLoadingSequence() {
+  const resultsEl = document.getElementById('results');
+  let i = 0;
+  resultsEl.innerHTML = `
+    <div class="loading-panel">
+      <div class="loading-ring"></div>
+      <div class="loading-msg" id="loadingMsg">${LOADING_MESSAGES[0]}</div>
+      <div class="loading-sub">Searching verified enterprise sources. This may take a few moments on local inference.</div>
+    </div>
+  `;
+  loadingInterval = setInterval(() => {
+    i = (i + 1) % LOADING_MESSAGES.length;
+    const msgEl = document.getElementById('loadingMsg');
+    if (msgEl) {
+      msgEl.style.opacity = 0;
+      setTimeout(() => {
+        msgEl.textContent = LOADING_MESSAGES[i];
+        msgEl.style.opacity = 1;
+      }, 200);
+    }
+  }, 1800);
+}
+
+function stopLoadingSequence() {
+  if (loadingInterval) {
+    clearInterval(loadingInterval);
+    loadingInterval = null;
+  }
+}
+
+async function runQuery() {
+  const query = document.getElementById('queryInput').value.trim();
+  const endpoint = document.getElementById('endpointInput').value.trim();
+  const statusEl = document.getElementById('status');
+  const resultsEl = document.getElementById('results');
+  const btn = document.getElementById('askBtn');
+
+  if (!query) {
+    statusEl.textContent = 'Type a question first.';
+    statusEl.className = 'status error';
+    return;
+  }
+
+  btn.disabled = true;
+  statusEl.className = 'status';
+  statusEl.textContent = '';
+  startLoadingSequence();
+
+  const startTime = performance.now();
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query })
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`HTTP ${res.status}: ${text}`);
+    }
+
+    const data = await res.json();
+    stopLoadingSequence();
+    render(data);
+    statusEl.textContent = `Answer ready · ${((performance.now() - startTime) / 1000).toFixed(1)}s`;
+    statusEl.className = 'status success';
+  } catch (err) {
+    stopLoadingSequence();
+    statusEl.textContent = 'I couldn’t reach the enterprise knowledge service. Please verify that the local API is running.';
+    statusEl.className = 'status error';
+    resultsEl.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+        </div>
+        <h3>Knowledge service unavailable</h3>
+        <p>The interface is ready, but the local RAG API could not be reached. Start the FastAPI service and try again.</p>
+      </div>
+    `;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str ?? '';
+  return div.innerHTML;
+}
+
+function isGraphEvidenceId(value) {
+  return typeof value === 'string' && value.includes('|');
+}
+
+function cleanAnswerForDisplay(answer) {
+  if (!answer) return '';
+  return answer
+    .replace(/\s*\[[^\[\]]*\|[^\[\]]*\|[^\[\]]*\]/g, '')
+    .replace(/[ \t]+([.,;:!?])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function isInsufficientAnswer(answer) {
+  const text = (answer || '').toLowerCase();
+  return ['insufficient information','not enough information','cannot determine',"can't determine",'not provided in the','not available in the','no relevant information'].some(p => text.includes(p));
+}
+
+function friendlyCitation(citation, index) {
+  return isGraphEvidenceId(citation) ? `Structured knowledge ${index + 1}` : `Source ${index + 1}`;
+}
+
+
+function titleCaseRelationship(value) {
+  return String(value ?? '')
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, ch => ch.toUpperCase());
+}
+
+function parseGraphRelationship(candidate) {
+  if (!candidate || candidate.source !== 'GRAPH') return null;
+  const raw = String(candidate.candidate_id ?? '').trim();
+  const parts = raw.split('|').map(x => x.trim()).filter(Boolean);
+  if (parts.length !== 3) return null;
+  return { subject: parts[0], relation: parts[1], object: parts[2] };
+}
+
+function relationshipMapHtml(candidates) {
+  const seen = new Set();
+  const relationships = (candidates || [])
+    .map(parseGraphRelationship)
+    .filter(Boolean)
+    .filter(r => {
+      const key = `${r.subject}|${r.relation}|${r.object}`.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+  if (!relationships.length) return '';
+
+  return `
+    <div class="card details-card">
+      <details>
+        <summary>Knowledge relationships <span style="font-weight:500;color:var(--slate)">(${relationships.length})</span></summary>
+        <div class="details-body">
+          <div class="relationship-map">
+            <div class="relationship-map-head">
+              <div class="relationship-map-title">Graph evidence used for this answer</div>
+              <div class="relationship-map-note">Readable view of retrieved Neo4j relationships</div>
+            </div>
+            ${relationships.map(r => `
+              <div class="relationship-row">
+                <div class="relationship-node subject">${escapeHtml(titleCaseRelationship(r.subject))}</div>
+                <div class="relationship-edge">
+                  <span class="relationship-label">${escapeHtml(String(r.relation).replace(/_/g, ' ').toUpperCase())}</span>
+                </div>
+                <div class="relationship-node object">${escapeHtml(titleCaseRelationship(r.object))}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </details>
+    </div>`;
+}
+
+function render(data) {
+  const resultsEl = document.getElementById('results');
+  const alpha = typeof data.alpha_used === 'number' ? data.alpha_used : 0;
+  const vecPct = Math.round(alpha * 100);
+  const graphPct = 100 - vecPct;
+  const strategy = alpha >= 0.66 ? 'Vector-favored' : (alpha <= 0.33 ? 'Graph-favored' : 'Balanced fusion');
+  const latencyDisplay = typeof data.latency_ms === 'number' ? (data.latency_ms / 1000).toFixed(1) + 's' : (data.latency_ms ?? '—');
+
+  const rawAnswer = data.answer ?? '';
+  const displayAnswer = cleanAnswerForDisplay(rawAnswer);
+  const insufficient = isInsufficientAnswer(displayAnswer);
+  const citations = Array.isArray(data.citations) ? data.citations : [];
+  const candidates = Array.isArray(data.source_candidates) ? data.source_candidates : [];
+  const vectorCandidates = candidates.filter(c => c.source === 'VECTOR' || c.source === 'BOTH');
+  const graphCandidates = candidates.filter(c => c.source === 'GRAPH' || c.source === 'BOTH');
+
+  const evidenceState = insufficient
+    ? '<span class="confidence-pill warn">Limited evidence</span>'
+    : (citations.length > 0 ? '<span class="confidence-pill">Evidence grounded</span>' : '<span class="confidence-pill warn">Answer returned</span>');
+
+  const citationsHtml = citations.length > 0
+    ? `<div class="citations">${citations.map((c, i) => `<span class="citation-chip" title="${escapeHtml(c)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>${friendlyCitation(c, i)}</span>`).join('')}</div>`
+    : `<div class="no-citations">${insufficient ? 'No citation attached because the available evidence was insufficient.' : 'No citation returned for this response.'}</div>`;
+
+  const vectorSourcesHtml = vectorCandidates.map((c, i) => `
+    <div class="candidate src-${escapeHtml(c.source)}">
+      <div class="candidate-head">
+        <span class="source-tag ${escapeHtml(c.source)}">DOCUMENT</span>
+        <span class="candidate-score">relevance: ${typeof c.fused_score === 'number' ? c.fused_score.toFixed(3) : escapeHtml(c.fused_score)}</span>
+      </div>
+      <div class="candidate-id">Source ${i + 1} · ${escapeHtml(c.candidate_id)}</div>
+      <div class="candidate-text">${escapeHtml(c.text)}</div>
+    </div>`).join('');
+
+  const relationshipsHtml = relationshipMapHtml(candidates);
+
+  const sourceSummary = candidates.length > 0
+    ? `<div class="source-summary"><span class="source-dot"></span><span><strong>${candidates.length} evidence item${candidates.length === 1 ? '' : 's'}</strong> considered · ${vectorCandidates.length} document source${vectorCandidates.length === 1 ? '' : 's'}${graphCandidates.length ? ' · structured knowledge also contributed' : ''}</span></div>`
+    : `<div class="source-summary"><span class="source-dot source-dot-warn"></span><span>No supporting evidence candidates were returned.</span></div>`;
+
+  resultsEl.innerHTML = `
+    <div class="card answer-card">
+      <div class="card-head"><h2>Answer</h2><div class="answer-meta">${evidenceState}<span class="badge"><span class="dot"></span>Qwen2.5-3B · LoRA</span></div></div>
+      <div class="answer-text" id="answerText"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Evidence</h2></div>
+      ${citationsHtml}
+    </div>
+
+    <div class="card details-card">
+      <details>
+        <summary>Retrieval details</summary>
+        <div class="details-body">
+          <div class="kpi-grid">
+            <div class="kpi"><div class="kpi-label">Vector Weight</div><div class="kpi-value">${alpha.toFixed(3)}</div></div>
+            <div class="kpi"><div class="kpi-label">Graph Weight</div><div class="kpi-value">${(1 - alpha).toFixed(3)}</div></div>
+            <div class="kpi"><div class="kpi-label">Latency</div><div class="kpi-value">${latencyDisplay}</div></div>
+            <div class="kpi"><div class="kpi-label">Strategy</div><div class="kpi-value strategy">${strategy}</div></div>
+          </div>
+          <div class="fusion-scale">
+            <div class="fusion-scale-labels"><span class="vec-label">Vector · ${vecPct}%</span><span class="graph-label">Graph · ${graphPct}%</span></div>
+            <div class="fusion-bar"><div class="vec-fill" style="width:${vecPct}%"></div><div class="graph-fill" style="width:${graphPct}%"></div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    ${relationshipsHtml}
+
+    <div class="card details-card">
+      <details>
+        <summary>Supporting sources</summary>
+        <div class="details-body">${sourceSummary}${vectorSourcesHtml || '<div class="no-citations">No document excerpts to display. Structured graph evidence is intentionally kept internal.</div>'}</div>
+      </details>
+    </div>`;
+
+  typeAnswer(displayAnswer);
+}
+
+const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function typeAnswer(fullText) {
+  const el = document.getElementById('answerText');
+  if (!el) return;
+
+  if (REDUCE_MOTION || !fullText) {
+    el.textContent = fullText;
+    return;
+  }
+
+  const cursor = document.createElement('span');
+  cursor.className = 'type-cursor';
+
+  let i = 0;
+  // Reveal in small chunks rather than one char at a time, so long answers
+  // finish in a natural ~600-900ms regardless of length.
+  const chunkSize = Math.max(1, Math.round(fullText.length / 90));
+  const stepMs = 12;
+
+
+  el.textContent = '';
+  el.appendChild(cursor);
+
+  const interval = setInterval(() => {
+    i += chunkSize;
+    el.textContent = fullText.slice(0, i);
+    el.appendChild(cursor);
+    el.scrollTop = el.scrollHeight;
+    if (i >= fullText.length) {
+      clearInterval(interval);
+      cursor.remove();
+    }
+  }, stepMs);
+}
+
+document.getElementById('queryInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') runQuery();
+});
+</script>
+</body>
+</html>

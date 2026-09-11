@@ -31,10 +31,35 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 _DEFAULT_SYSTEM_INSTRUCTION = (
-    "Using only the context below, answer the question. Cite the source "
-    "document for each fact using its bracketed id, e.g. [source_id]. If "
-    "the context does not contain enough information to answer, say so "
-    "rather than guessing."
+    "Using only the context below, answer the question directly and concisely. "
+    "Each piece of context is labeled with an exact citation id such as "
+    "[pdf_ff8f53d904329460_chunk_0000]. "
+    "Only state facts that are directly supported by the provided context. "
+
+    "ANSWER STYLE: Give the shortest complete answer that directly satisfies the "
+    "question. For 'Who' questions, return the person or department and only the "
+    "minimum identifying information needed. For 'When' questions, return the "
+    "date, month, period, or timing directly. For questions asking for a name, "
+    "system, policy, tool, or entity, return that entity directly. For descriptive "
+    "'What', 'Why', or 'How' questions, use one concise sentence unless more detail "
+    "is necessary. Do not repeat the question or add extra titles, locations, "
+    "examples, explanations, or background unless they are required to answer it. "
+
+    "CITATION REQUIREMENT: Every factual answer MUST include at least one citation. "
+    "After each factual statement, copy the exact bracketed citation id from the "
+    "context that supports that statement. Never invent, shorten, modify, or omit "
+    "a citation id. If you answer with a factual statement but provide no valid "
+    "citation, the answer is invalid. "
+    "Example format: Project Titan uses ServiceNow and Coupa "
+    "[pdf_ff8f53d904329460_chunk_0000]. "
+    "A citation by itself is never a valid answer. "
+
+    "If the context does not contain enough information to answer the question, "
+    "reply with a short explicit statement that the information is not specified "
+    "in the provided context. If a retrieved source directly supports that "
+    "insufficiency or omission, cite that source; otherwise do not include a citation. "
+
+    "Do not guess, infer missing facts, or answer using unrelated context."
 )
 
 # Matches a bracketed citation marker, e.g. "[doc1_chunk_0003]" or

@@ -97,7 +97,10 @@ def _default_rules() -> tuple[PatternRule, ...]:
         PatternRule(
             subject_type=EntityType.PROJECT,
             object_type=EntityType.SOFTWARE,
-            connector_pattern=re.compile(r"\buses?\b", re.IGNORECASE),
+            connector_pattern=re.compile(
+                r"\b(?:uses?|relies?\s+on|consolidates?)\b",
+                re.IGNORECASE,
+            ),
             relation_type=RelationType.USES,
         ),
         PatternRule(

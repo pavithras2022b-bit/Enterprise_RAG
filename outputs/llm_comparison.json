@@ -1,0 +1,106 @@
+[
+  {
+    "model": "llama3.2:3b",
+    "model_label": "Llama 3.2 3B",
+    "question": "What systems does Project Titan use?",
+    "answer": "Project Titan uses ServiceNow and Coupa .",
+    "citations": [],
+    "alpha": 0.45442911982536316,
+    "latency_ms": 16652.729300000145
+  },
+  {
+    "model": "llama3.2:3b",
+    "model_label": "Llama 3.2 3B",
+    "question": "Who manages Priyanka Das?",
+    "answer": "Priyanka Das is managed by Li Wei [li wei|manages|priyanka das].",
+    "citations": [
+      "li wei|manages|priyanka das"
+    ],
+    "alpha": 0.2091130018234253,
+    "latency_ms": 13944.030599999905
+  },
+  {
+    "model": "llama3.2:3b",
+    "model_label": "Llama 3.2 3B",
+    "question": "What is the annual leave policy for full-time employees at Meridian Dynamics?",
+    "answer": "The annual leave policy for full-time employees at Meridian Dynamics includes:\n- Casual Leave: 12 days per calendar year, credited quarterly, for short-notice personal matters. [pdf_3a43baec4985aba3_chunk_0000]\n- Sick Leave: 10 days per calendar year, may require a medical certificate beyond 2 consecutive days. [pdf_3a43baec4985aba3_chunk_0000]\n- Earned Leave: 18 days per calendar year, accrued monthly and eligible for encashment up to 10 days annually. [pdf_3a43baec4985aba3_chunk_0000]\n- Maternity Leave: 26 weeks of paid leave as per statutory requirements. [pdf_3a43baec4985aba3_chunk_0000]\n- Paternity Leave: 2 weeks of paid leave within 3 months of the child's birth or adoption. [pdf_3a43baec4985aba3_chunk_0000]\n- Bereavement Leave: 5 days of paid leave in the event of the death of an immediate family member. [pdf_3a43baec4985aba3_chunk_0000]\n- Sabbatical Leave: unpaid leave of up to 6 months available to employees with 5 or more years of tenure. [pdf_3a43baec4985aba3_chunk_0000]",
+    "citations": [
+      "pdf_3a43baec4985aba3_chunk_0000"
+    ],
+    "alpha": 0.9214219450950623,
+    "latency_ms": 45773.275199999945
+  },
+  {
+    "model": "llama3.2:3b",
+    "model_label": "Llama 3.2 3B",
+    "question": "How should employees submit reimbursement claims?",
+    "answer": "Employees should submit reimbursement claims through SAP Concur with itemized receipts .",
+    "citations": [],
+    "alpha": 0.8993530869483948,
+    "latency_ms": 19438.66109999999
+  },
+  {
+    "model": "llama3.2:3b",
+    "model_label": "Llama 3.2 3B",
+    "question": "What is the purpose of the Employee Benefits policy?",
+    "answer": "The purpose of the Employee Benefits Policy is to establish consistent, enforceable standards that apply to all departments across Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and operational obligations. [html_ecb328f9a096fd40_chunk_0000]",
+    "citations": [
+      "html_ecb328f9a096fd40_chunk_0000"
+    ],
+    "alpha": 0.9156425595283508,
+    "latency_ms": 20980.338000000076
+  },
+  {
+    "model": "qwen2.5-3b-lora-ragqa",
+    "model_label": "Qwen2.5 3B + LoRA",
+    "question": "What systems does Project Titan use?",
+    "answer": "Project Titan uses ServiceNow and Coupa. [html_bd5fefab5f8ab053_chunk_0000]",
+    "citations": [
+      "html_bd5fefab5f8ab053_chunk_0000"
+    ],
+    "alpha": 0.45442911982536316,
+    "latency_ms": 17433.7094
+  },
+  {
+    "model": "qwen2.5-3b-lora-ragqa",
+    "model_label": "Qwen2.5 3B + LoRA",
+    "question": "Who manages Priyanka Das?",
+    "answer": "Li Wei manages Priyanka Das. [html_5237ecb87da4b1c2_chunk_0000]",
+    "citations": [
+      "html_5237ecb87da4b1c2_chunk_0000"
+    ],
+    "alpha": 0.2091130018234253,
+    "latency_ms": 17120.626499999846
+  },
+  {
+    "model": "qwen2.5-3b-lora-ragqa",
+    "model_label": "Qwen2.5 3B + LoRA",
+    "question": "What is the annual leave policy for full-time employees at Meridian Dynamics?",
+    "answer": "The annual leave policy for full-time employees at Meridian Dynamics is 18 days per calendar year, which is accrued monthly and eligible for encashment up to 10 days annually.",
+    "citations": [],
+    "alpha": 0.9214219450950623,
+    "latency_ms": 27329.639000000043
+  },
+  {
+    "model": "qwen2.5-3b-lora-ragqa",
+    "model_label": "Qwen2.5 3B + LoRA",
+    "question": "How should employees submit reimbursement claims?",
+    "answer": "Employees should submit reimbursement claims through SAP Concur with itemized receipts. [html_2dc6dcf3c10855ee_chunk_0000]",
+    "citations": [
+      "html_2dc6dcf3c10855ee_chunk_0000"
+    ],
+    "alpha": 0.8993530869483948,
+    "latency_ms": 20275.966999999808
+  },
+  {
+    "model": "qwen2.5-3b-lora-ragqa",
+    "model_label": "Qwen2.5 3B + LoRA",
+    "question": "What is the purpose of the Employee Benefits policy?",
+    "answer": "The purpose of the Employee Benefits policy is to establish consistent, enforceable standards that apply to all departments across Meridian Dynamics Inc., ensuring alignment with Meridian Dynamics Inc.'s legal, regulatory and operational obligations. [html_ecb328f9a096fd40_chunk_0001]",
+    "citations": [
+      "html_ecb328f9a096fd40_chunk_0001"
+    ],
+    "alpha": 0.9156425595283508,
+    "latency_ms": 22160.580699999853
+  }
+]
