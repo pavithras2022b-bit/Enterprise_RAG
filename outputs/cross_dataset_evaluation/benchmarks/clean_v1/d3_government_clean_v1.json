@@ -1,0 +1,235 @@
+{
+  "dataset_id": "D3",
+  "dataset_name": "NIST / UK Policy Corpus",
+  "collection_name": "goverment_policy_d3",
+  "eval_query_count": 20,
+  "eval_queries": [
+    {
+      "query_id": "d3_prop_q1",
+      "query": "Pursuant to which statutory act were the Cabinet Office 2024-25 accounts presented to the House of Commons?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_37d316e91d22a2ea_chunk_0000"
+      ],
+      "reference_answer": "Accounts were presented pursuant to Section 6 (4) of the Government Resources and Accounts Act 2000.",
+      "evidence_snippet": "Accounts presented to the House of Commons pursuant to Section 6 (4) of the Government Resources and Accounts Act 2000.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q2",
+      "query": "Which recruitment scheme supports candidates with disabilities, and under what condition are they offered an interview?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_37d316e91d22a2ea_chunk_0132"
+      ],
+      "reference_answer": "The Disability Confident Scheme encourages candidates with disabilities to apply; candidates who declare a disability and meet the minimum standards for a job are offered an interview.",
+      "evidence_snippet": "The Cabinet Office applies the Recruitment Principles of the Civil Service Commission, appointing candidates based on merit through fair and open competition. The Cabinet Office is a member of the Business Disability Forum.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q3",
+      "query": "What is the dual purpose of the Downing Street estate regarding ministerial use and operations?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_37d316e91d22a2ea_chunk_0169"
+      ],
+      "reference_answer": "The Downing Street estate operates as a working building as well as containing two ministerial residences.",
+      "evidence_snippet": "5.6. Expenditure on official residences The Downing Street estate is a working building, as well as containing two ministerial residences.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q4",
+      "query": "Which department presented the AI Opportunities Action Plan Government Response to Parliament in January 2025?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_bc586580b66b7e29_chunk_0000"
+      ],
+      "reference_answer": "The report was presented by the Secretary of State for Science, Innovation and Technology by Command of His Majesty.",
+      "evidence_snippet": "Presented to Parliament by the Secretary of State for Science, Innovation and Technology by Command of His Majesty January 2025 CP 1242.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q5",
+      "query": "What is the government response to Recommendation 13 regarding private dataset curation incentives?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_bc586580b66b7e29_chunk_0009"
+      ],
+      "reference_answer": "The government partially agreed with Recommendation 13 concerning incentives for researchers and industry to unlock private datasets.",
+      "evidence_snippet": "Recommendation 13 Partially agree. Further (NDL) Actively incentivise and reward researchers and industry to curate and unlock private data sets.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q6",
+      "query": "What proposed mechanism is described in Recommendation 38 to improve government AI procurement?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_bc586580b66b7e29_chunk_0015"
+      ],
+      "reference_answer": "Recommendation 38 proposes a faster, multi-stage gated procurement process enabling rapid access to small-scale funding for AI pilots.",
+      "evidence_snippet": "Recommendation 38 Agree. DSIT will scope and understand options to improve AI procurement with a faster, multi-stage, gated process that enables easy and quick access to small-scale funding for pilots.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q7",
+      "query": "Under which license is the Civil Service People Plan 2024-2027 published?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_894e3f84a25c16b5_chunk_0000"
+      ],
+      "reference_answer": "The publication is licensed under the Open Government Licence v3.0.",
+      "evidence_snippet": "Civil Service People Plan 2024-2027 Crown copyright 2024 This publication is licensed under the terms of the Open Government Licence v3.0.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q8",
+      "query": "What approach is planned to streamline civil service back-office processes and cut red tape?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_894e3f84a25c16b5_chunk_0005"
+      ],
+      "reference_answer": "The government is using a cluster-based approach to automate mundane processes and transactional services.",
+      "evidence_snippet": "Strategy for Government to automate many mundane processes and transactional services... We will streamline services through a cluster based approach, modernising our systems.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q9",
+      "query": "What is the goal of the Future SCS Pay Framework in the Civil Service People Plan?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_894e3f84a25c16b5_chunk_0025"
+      ],
+      "reference_answer": "The framework aims to develop a clear leadership and pay structure for the Senior Civil Service that rewards delivery and capability.",
+      "evidence_snippet": "Future SCS Pay Framework develop a clear leadership and pay framework for the Senior Civil Service that rewards delivery.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q10",
+      "query": "On what date was the Department for Business and Trade 2024-2025 Annual Report ordered to be printed?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_b85880e01c84dcc0_chunk_0000"
+      ],
+      "reference_answer": "The report was ordered by the House of Commons to be printed on 15 September 2025.",
+      "evidence_snippet": "Department for Business and Trade Annual Report and Accounts 2024-2025 Ordered by the House of Commons to be printed on 15 September 2025 HC 1278.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q11",
+      "query": "How many Export Wins did the Department for Business and Trade support in 2024-25 and what was their combined value?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_b85880e01c84dcc0_chunk_0010"
+      ],
+      "reference_answer": "The Department supported businesses to deliver over 2,700 Export Wins with a combined value of almost £24 billion.",
+      "evidence_snippet": "The Department supported businesses to deliver over 2,700 Export Wins with a combined value of almost £24 billion.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q12",
+      "query": "What exclusion applies to the calculation of real increases in DBT pension values?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_b85880e01c84dcc0_chunk_0108"
+      ],
+      "reference_answer": "Real increase excludes increases due to inflation or any increase or decrease due to the transfer of pension rights.",
+      "evidence_snippet": "Real increase excludes increases due to inflation or any increase or decrease due to transfer of pension rights.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q13",
+      "query": "What role does the Secretary of State hold in Post Office Limited?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_b85880e01c84dcc0_chunk_0176"
+      ],
+      "reference_answer": "The Secretary of State is the sole shareholder in Post Office Limited.",
+      "evidence_snippet": "As the sole shareholder in Post Office Limited, the Secretary of State has undertaken to provide funding to Post Office Limited.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q14",
+      "query": "What is the Department for Environment, Food and Rural Affairs (Defra) report command paper number for 2024-25?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_f2c3964fb1fa19ff_chunk_0000"
+      ],
+      "reference_answer": "The Defra Annual Report and Accounts is numbered HC 1388.",
+      "evidence_snippet": "Department for Environment, Food and Rural Affairs Annual Report and Accounts 2024-25 HC 1388.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q15",
+      "query": "What was Defra's Net Resource Departmental Expenditure Limit (DEL) for 2024-25?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_f2c3964fb1fa19ff_chunk_0010"
+      ],
+      "reference_answer": "Defra's Net Resource DEL was £5.69 billion out of total DEL of £7.99 billion.",
+      "evidence_snippet": "Departmental Expenditure Limit (DEL) (including depreciation): £7.99 billion of which; Net Resource DEL: £5.69 billion.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q16",
+      "query": "How are key audit matters defined in the independent audit approach for Defra?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_f2c3964fb1fa19ff_chunk_0205"
+      ],
+      "reference_answer": "Key audit matters are those matters that in the auditor's professional judgment were of most significance in the audit of the financial statements.",
+      "evidence_snippet": "Key audit matters are those matters that, in my professional judgment, were of most significance in my audit of the financial statements of the current period.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q17",
+      "query": "What deficit was reported in the last triennial actuarial valuation of the BT Pension Scheme as of 30 June 2023?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_a6247af326f9ec58_chunk_0124"
+      ],
+      "reference_answer": "The deficit was valued at £3.7 billion.",
+      "evidence_snippet": "The last triennial actuarial valuation of the pension scheme as at 30 June 2023 valued the deficit at £3.7bn.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q18",
+      "query": "What is the purpose of the authority review in DWP technical governance?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_6c00ca990c5f7fad_chunk_0216"
+      ],
+      "reference_answer": "It allows technical experts to assess and raise concerns about technical risks, including security, data privacy, and architectural design, and to ensure suitable mitigations are in place.",
+      "evidence_snippet": "The authority review allows for technical experts to assess and raise any concerns around technical risks such as security, data.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q19",
+      "query": "What modification was made to Section 6.2.2.1 of NIST SP 800-57 Part 1 regarding key availability?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_cc32391022c1382a_chunk_0441"
+      ],
+      "reference_answer": "A paragraph was added to discuss a case where key availability is not desired and to reference a publication on cryptographic sanitization.",
+      "evidence_snippet": "In Section 6.2.2.1, a paragraph has been added to mention a case where the availability of a key is critical.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d3_prop_q20",
+      "query": "What wording change was made to the first sentence of Appendix B.3.3.1 in NIST SP 800-57 Part 1 Revision 5?",
+      "ground_truth_chunk_ids": [
+        "d3_goverment_pdf_cc32391022c1382a_chunk_0443"
+      ],
+      "reference_answer": "It was changed to use “verify the identity of the entity” instead of “verify the authenticity.”",
+      "evidence_snippet": "Section 8.2.2.2 to avoid duplication. 59. In Appendix B.3.3.1, the first sentence has been rewritten.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    }
+  ],
+  "out_of_corpus_queries": [
+    "What is the orbital trajectory calculation procedure for Mars Reconnaissance Orbiter?",
+    "What are the employee leave encashment rules at Meridian Dynamics Inc.?",
+    "What is the annual maintenance schedule for the Orbiter Down Period at JSC?",
+    "What were Meridian Dynamics Project Falcon marketing campaign approvals in 2025?",
+    "What is the specific impulse rating of the RS-25 rocket engine at sea level?"
+  ]
+}

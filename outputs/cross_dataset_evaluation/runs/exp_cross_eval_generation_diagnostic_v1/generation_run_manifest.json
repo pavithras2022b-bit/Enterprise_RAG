@@ -1,0 +1,59 @@
+{
+  "experiment_id": "exp_cross_eval_generation_diagnostic_v1",
+  "completed_utc": "2026-10-14T06:34:43.114052+00:00",
+  "model_endpoint": "http://localhost:11434",
+  "configured_model_tag": "qwen2.5-3b-lora-ragqa",
+  "temperature": 0.2,
+  "timeout_seconds": 180.0,
+  "served_model_metadata": {
+    "family": "qwen2",
+    "parameter_size": "3.1B",
+    "quantization": "Q4_K_M",
+    "context_length_reported": 32768,
+    "Ollama_model_tag_verified": true
+  },
+  "adapter_configuration": {
+    "configured_active_adapter": "qwen2.5-3b-lora-ragqa",
+    "configured_adapter_path": "outputs/qwen2.5-3b-lora-ragqa/final_adapter",
+    "adapter_files_present": true,
+    "adapter_model_file_sha256": "bba03dd56dd723a3d33ac03976f061acbf63b45f5e14dc34086f3a902331fbeb",
+    "Ollama_show_explicit_adapter_directive": false,
+    "note": "Served model tag is the configured LoRA-named tag; API metadata does not independently prove whether PEFT weights are merged into the served GGUF."
+  },
+  "context_regimes": {
+    "pass_a": "Top five reranked Phase 4 contexts, cross-encoder rank order.",
+    "pass_b": "Exact adjudicated indexed text for clean benchmark ground_truth_chunk_ids."
+  },
+  "generation_counts": {
+    "answerable_items": 60,
+    "answerable_passes": 120,
+    "refusal_candidates": 15,
+    "refusal_passes": 15,
+    "total_requests_expected": 135,
+    "answerable_rows_saved": 60,
+    "refusal_candidate_rows_saved": 15,
+    "answerable_generation_errors": 1,
+    "answerable_generation_error_ids": [
+      "d0_prop_q1"
+    ],
+    "successful_paired_answerable_items": 59
+  },
+  "metrics": {
+    "token_f1": "Multiset token overlap F1 with \\w+ lowercase tokens.",
+    "semantic_similarity": "Cosine similarity of normalized all-MiniLM-L6-v2 answer/reference embeddings.",
+    "citation_compliance": "Binary: at least one citation marker exactly matches a chunk ID in the supplied context.",
+    "citation_grounding_rate": "Valid supplied-context citation markers divided by all citation markers; zero if no markers.",
+    "evidence_token_grounding_rate": "Distinct generated answer tokens present in supplied evidence; lexical proxy, not entailment."
+  },
+  "refusal_scoring": "Keyword/phrase detector; label denotes approved refusal-test candidate only, not independently verified corpus-wide absence.",
+  "d0_claim_restriction": "D0 is a Validation-Derived Diagnostic Baseline, not an independent test set.",
+  "input_sha256": {
+    "clean_v1_manifest.json": "cc0cd2d58483d058602f5d08ad3b29664cd1bd545e32904a8291e26a12afde9d",
+    "cross_dataset_refusal_clean_v1.json": "b9f11a5f65937d0c91c0f5d07518717733bf06ee52c4949f6447d13c2f5261d5",
+    "d0_meridian_clean_v1.json": "4c1710eeeea211f8e2ec3f748ab449ce567c69f6d9604828a96bf60e616753c3",
+    "d2_nasa_clean_v1.json": "327be262c2d64683238c2d5de6837d13f038052ea4a4c8e5e4f605f505491bee",
+    "d3_government_clean_v1.json": "d05be224650b485d575b0d734a8b9854e79ed132b527348fe7d1bff6df4565a0"
+  },
+  "phase4_retrieval_csv_sha256": "89b899e7e64dfef6d26f9f0aaa74e2578e023965af77bc0c22d6be7b37d07e23",
+  "adapter_config_sha256": "6707f6b1cbe8fce9c64cc3d22c6d62e6ccecda7020347d1e9e9e164f7dd889f1"
+}

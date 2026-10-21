@@ -111,10 +111,16 @@ class VectorStore:
         documents = [chunk.text for chunk in chunks]
         metadatas = [chunk.to_metadata_dict() for chunk in chunks]
 
+        batch_size = 1000
         try:
-            self._collection.upsert(
-                ids=ids, embeddings=embeddings, documents=documents, metadatas=metadatas
-            )
+            for i in range(0, len(chunks), batch_size):
+                end = i + batch_size
+                self._collection.upsert(
+                    ids=ids[i:end],
+                    embeddings=embeddings[i:end],
+                    documents=documents[i:end],
+                    metadatas=metadatas[i:end],
+                )
         except Exception as exc:  # noqa: BLE001
             raise VectorStoreError(f"Failed to add {len(chunks)} chunk(s): {exc}") from exc
 

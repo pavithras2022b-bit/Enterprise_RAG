@@ -1,0 +1,27 @@
+{
+  "benchmark_version": "clean_v1",
+  "decision_basis": "Explicit human approvals supplied in user instruction dated 2026-10-14; no automated recommendation is represented as human approval.",
+  "answerable_counts": {
+    "D0": 20,
+    "D2": 20,
+    "D3": 20,
+    "total": 60
+  },
+  "approved_correction_count": 9,
+  "refusal_candidate_count": 15,
+  "d0_provenance_warning": "D0 is a Validation-Derived Diagnostic Baseline: all 20 pilot questions match lora_val.jsonl questions and answers appear in validation completions. It is not an independent test set.",
+  "gold_ids": "Preserved from the adjudicated evidence rows; all 60 were reported present in their intended collections during Phase 1B.",
+  "source_sha256": {
+    "d0_benchmark_v2.json": "bf0579384ff38f82ca1879f27c6bcd1dc33713f7e0ad6049c41cc150f3cbdd37",
+    "d2_benchmark_v2.json": "012d40d6969d44261d1e91323feb894c2463475fb3f3fac3f00ad90773f44210",
+    "d3_benchmark_v2.json": "8ec01992b58237750c18ce8293c8a28e687897aa6fb9971d3aba7d5871987222",
+    "answerable_item_adjudication.csv": "ac4075c918b4e40d8ac7725fddf1a60e590b9d14ef19b62527f461d2e6fce0be",
+    "unanswerable_item_adjudication.csv": "9620f6ecfe227e237e6c6a748aa2774a3f36c690acec2586d241e9faf11b743b"
+  },
+  "frozen_files": {
+    "cross_dataset_refusal_clean_v1.json": "b9f11a5f65937d0c91c0f5d07518717733bf06ee52c4949f6447d13c2f5261d5",
+    "d0_meridian_clean_v1.json": "4c1710eeeea211f8e2ec3f748ab449ce567c69f6d9604828a96bf60e616753c3",
+    "d2_nasa_clean_v1.json": "327be262c2d64683238c2d5de6837d13f038052ea4a4c8e5e4f605f505491bee",
+    "d3_government_clean_v1.json": "d05be224650b485d575b0d734a8b9854e79ed132b527348fe7d1bff6df4565a0"
+  }
+}

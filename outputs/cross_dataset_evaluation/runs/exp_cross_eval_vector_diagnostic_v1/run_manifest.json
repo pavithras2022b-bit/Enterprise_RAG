@@ -1,0 +1,101 @@
+{
+  "experiment_id": "exp_cross_eval_vector_diagnostic_v1",
+  "started_completed_utc": "2026-10-14T10:38:53.621186+05:30",
+  "retrieval_mode": "dense vector only; Chroma query; no generation, reranking, graph, or LLM inference",
+  "model": "all-MiniLM-L6-v2",
+  "device": "cpu",
+  "embedding_dimension": 384,
+  "normalized_embeddings": true,
+  "top_k": 5,
+  "similarity": "cosine (Chroma stored distances converted as 1-distance)",
+  "search_space_control": "each dataset evaluated only against its own named Chroma collection; no cross-collection mixing",
+  "corpora": {
+    "D0": {
+      "collection_name": "enterprise_docs",
+      "collection_id": "3a25a04f-847e-416e-b82f-aef13ccee519",
+      "count": 149,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    },
+    "D2": {
+      "collection_name": "nasa_tech_d2",
+      "collection_id": "0a053817-c2cc-416c-a6dc-e4755f3f7bdb",
+      "count": 1164,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    },
+    "D3": {
+      "collection_name": "goverment_policy_d3",
+      "collection_id": "573d7dd6-1754-44b2-ad57-c438b033ce85",
+      "count": 6119,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    }
+  },
+  "query_counts": {
+    "D0": {
+      "answerable": 20,
+      "refusal_candidates": 5
+    },
+    "D2": {
+      "answerable": 20,
+      "refusal_candidates": 5
+    },
+    "D3": {
+      "answerable": 20,
+      "refusal_candidates": 5
+    }
+  },
+  "answerable_metrics": {
+    "D0": {
+      "hit_rate_at_5": 0.9,
+      "mrr_at_5": 0.825,
+      "ndcg_at_5": 0.8446394630357187,
+      "precision_at_5": 0.18,
+      "answerable_query_count": 20,
+      "refusal_candidate_query_count": 5
+    },
+    "D2": {
+      "hit_rate_at_5": 0.65,
+      "mrr_at_5": 0.475,
+      "ndcg_at_5": 0.5192536065216309,
+      "precision_at_5": 0.13,
+      "answerable_query_count": 20,
+      "refusal_candidate_query_count": 5
+    },
+    "D3": {
+      "hit_rate_at_5": 0.5,
+      "mrr_at_5": 0.35416666666666663,
+      "ndcg_at_5": 0.39117329093938824,
+      "precision_at_5": 0.1,
+      "answerable_query_count": 20,
+      "refusal_candidate_query_count": 5
+    }
+  },
+  "input_benchmark_sha256": {
+    "clean_v1_manifest.json": "cc0cd2d58483d058602f5d08ad3b29664cd1bd545e32904a8291e26a12afde9d",
+    "cross_dataset_refusal_clean_v1.json": "b9f11a5f65937d0c91c0f5d07518717733bf06ee52c4949f6447d13c2f5261d5",
+    "d0_meridian_clean_v1.json": "4c1710eeeea211f8e2ec3f748ab449ce567c69f6d9604828a96bf60e616753c3",
+    "d2_nasa_clean_v1.json": "327be262c2d64683238c2d5de6837d13f038052ea4a4c8e5e4f605f505491bee",
+    "d3_government_clean_v1.json": "d05be224650b485d575b0d734a8b9854e79ed132b527348fe7d1bff6df4565a0"
+  },
+  "metric_definitions": {
+    "hit_rate_at_5": "fraction of answerable queries with >=1 adjudicated gold ID in top 5",
+    "mrr_at_5": "mean reciprocal rank of first adjudicated gold ID, truncated at 5",
+    "ndcg_at_5": "binary relevance DCG/log2(rank+1), normalized by ideal ranking for number of gold IDs, truncated at 5",
+    "precision_at_5": "number of gold IDs in top 5 divided by 5; fixed denominator even if collection returns fewer"
+  },
+  "refusal_evaluation": "retrieval candidates logged only; no gold relevant IDs or semantic refusal outcome asserted",
+  "dataset_specific_claim_restrictions": {
+    "D0": "Validation-Derived Diagnostic Baseline only. All 20 pilot questions match lora_val.jsonl questions and answers appear in validation completions; do not claim unseen independent test performance."
+  },
+  "software_versions": {
+    "chromadb": "1.5.9",
+    "sentence_transformers": "5.7.0"
+  },
+  "chroma_store_integrity_note": "No explicit Chroma add/update/delete calls were issued. HNSW vector-segment files retained pre-run timestamps (D0 2026-08-31; D2 2026-10-01; D3 2026-10-02). The persistent client advanced chroma.sqlite3 mtime from 2026-10-13 13:23:25 to 2026-10-14 10:38:50 local time. No pre-run SQLite hash/backup exists, so metadata-store content immutability cannot be certified.",
+  "environment_deviation": "Runtime chromadb version is 1.5.9, while repository requirements.txt specifies chromadb>=0.5,<1.0."
+}

@@ -1102,6 +1102,22 @@ objectives,
 
 **\## 18. Evaluation Results**
 
+### Visualization report
+
+The completed evaluation artifacts can be visualized without rerunning or
+changing the RAG pipeline:
+
+```bash
+python scripts/generate_visualizations.py
+```
+
+This reporting-only command reads the existing JSON files in `outputs/` and
+writes PNG and SVG charts plus `visualization_metric_summary.csv` to
+`outputs/visualizations/`. The report includes production and safety overview,
+retrieval ablation scores, generation-quality heatmaps and run comparisons,
+model latency and alpha analysis, citation compliance, evidence overlap,
+reranker-score profiles, and alpha-guardrail trends.
+
 The finalized and frozen experimental results---including retrieval,
 
 adaptive fusion, generation, robustness, and evaluation statistics---are

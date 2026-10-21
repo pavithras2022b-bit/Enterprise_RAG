@@ -1,0 +1,161 @@
+{
+  "benchmark_id": "cross_dataset_refusal_clean_v1",
+  "dataset_ids": [
+    "D0",
+    "D2",
+    "D3"
+  ],
+  "query_count": 15,
+  "queries": [
+    {
+      "query_id": "D0_unanswerable_1",
+      "dataset_id": "D0",
+      "query": "What is the maximum payload capacity of the Falcon 9 heavy rocket stage?",
+      "target_collection": "enterprise_docs",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/documents/; enterprise_docs (140 source docs, 149 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D0_unanswerable_2",
+      "dataset_id": "D0",
+      "query": "What are the encryption key management life cycle states under NIST SP 800-57?",
+      "target_collection": "enterprise_docs",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/documents/; enterprise_docs (140 source docs, 149 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D0_unanswerable_3",
+      "dataset_id": "D0",
+      "query": "How are civil service severance payouts audited under UK NAO standards?",
+      "target_collection": "enterprise_docs",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/documents/; enterprise_docs (140 source docs, 149 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D0_unanswerable_4",
+      "dataset_id": "D0",
+      "query": "What is the flight anomaly reporting procedure for Mars Global Surveyor?",
+      "target_collection": "enterprise_docs",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/documents/; enterprise_docs (140 source docs, 149 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D0_unanswerable_5",
+      "dataset_id": "D0",
+      "query": "What is the statutory threshold for UK Department for Business and Trade export guarantees?",
+      "target_collection": "enterprise_docs",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/documents/; enterprise_docs (140 source docs, 149 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D2_unanswerable_1",
+      "dataset_id": "D2",
+      "query": "What are the employee leave encashment rules at Meridian Dynamics Inc.?",
+      "target_collection": "nasa_tech_d2",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Nasa_documents/; nasa_tech_d2 (10 PDFs, 1,164 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D2_unanswerable_2",
+      "dataset_id": "D2",
+      "query": "How is Value Added Tax (VAT) reported under UK HMRC regulations?",
+      "target_collection": "nasa_tech_d2",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Nasa_documents/; nasa_tech_d2 (10 PDFs, 1,164 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D2_unanswerable_3",
+      "dataset_id": "D2",
+      "query": "What is the standard probation period for administrative officers at Cabinet Office?",
+      "target_collection": "nasa_tech_d2",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Nasa_documents/; nasa_tech_d2 (10 PDFs, 1,164 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D2_unanswerable_4",
+      "dataset_id": "D2",
+      "query": "What are the encryption key management life cycle states under NIST SP 800-57?",
+      "target_collection": "nasa_tech_d2",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Nasa_documents/; nasa_tech_d2 (10 PDFs, 1,164 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D2_unanswerable_5",
+      "dataset_id": "D2",
+      "query": "What was Meridian Dynamics Project Titan budget allocation for FY 2026?",
+      "target_collection": "nasa_tech_d2",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Nasa_documents/; nasa_tech_d2 (10 PDFs, 1,164 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D3_unanswerable_1",
+      "dataset_id": "D3",
+      "query": "What is the orbital trajectory calculation procedure for Mars Reconnaissance Orbiter?",
+      "target_collection": "goverment_policy_d3",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Goverment_policy_documents/; goverment_policy_d3 (29 PDFs, 6,119 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D3_unanswerable_2",
+      "dataset_id": "D3",
+      "query": "What are the employee leave encashment rules at Meridian Dynamics Inc.?",
+      "target_collection": "goverment_policy_d3",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Goverment_policy_documents/; goverment_policy_d3 (29 PDFs, 6,119 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D3_unanswerable_3",
+      "dataset_id": "D3",
+      "query": "What is the annual maintenance schedule for the Orbiter Down Period at JSC?",
+      "target_collection": "goverment_policy_d3",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Goverment_policy_documents/; goverment_policy_d3 (29 PDFs, 6,119 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D3_unanswerable_4",
+      "dataset_id": "D3",
+      "query": "What were Meridian Dynamics Project Falcon marketing campaign approvals in 2025?",
+      "target_collection": "goverment_policy_d3",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Goverment_policy_documents/; goverment_policy_d3 (29 PDFs, 6,119 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "D3_unanswerable_5",
+      "dataset_id": "D3",
+      "query": "What is the specific impulse rating of the RS-25 rocket engine at sea level?",
+      "target_collection": "goverment_policy_d3",
+      "expected_behavior": "abstain_or_refuse",
+      "answerability_status": "human-approved candidate for out-of-domain refusal testing; corpus-wide absence not independently established",
+      "corpus_boundary": "data/raw/Goverment_policy_documents/; goverment_policy_d3 (29 PDFs, 6,119 chunks)",
+      "approval_status": "approved_by_user_instruction_2026-10-14"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "dataset_id": "D2",
+  "dataset_name": "NASA Technical Corpus",
+  "collection_name": "nasa_tech_d2",
+  "eval_query_count": 20,
+  "eval_queries": [
+    {
+      "query_id": "d2_prop_q1",
+      "query": "What percentage of the total dollar value of NASA procurements in FY 1997 came from procurements over $25,000?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_0a53f73d2ad5c617_chunk_0000"
+      ],
+      "reference_answer": "Procurements over $25,000 accounted for 98 percent of the total dollar value of procurement actions completed during Fiscal Year 1997.",
+      "evidence_snippet": "The dollar value on procurements over $25,000 amounted to 98 percent of the total dollar value of procurement actions completed during Fiscal Year 1997.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q2",
+      "query": "What percentage of total awards in FY 1997 consisted of incentive contracts?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_0a53f73d2ad5c617_chunk_0002"
+      ],
+      "reference_answer": "Incentive contracts, including cost-plus-incentive-fee and fixed-price-incentive, made up 18 percent of total awards in Fiscal Year 1997.",
+      "evidence_snippet": "Incentive contracts, both cost-plus-incentive-fee and fixed-price-incentive, made up 18 percent of the total awards.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q3",
+      "query": "What was the total dollar amount of NASA procurements in Fiscal Year 1997?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_0a53f73d2ad5c617_chunk_0003"
+      ],
+      "reference_answer": "NASA procurements in Fiscal Year 1997 totaled $12,789.5 million.",
+      "evidence_snippet": "NASA's procurements in Fiscal Year 1997 totaled $12,789.5 million. This is $90.3 million, or .7 percent more than in Fiscal Year 1996.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q4",
+      "query": "What trend in direct procurements by type of contractor occurred between FY 1993 and 1997?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_0a53f73d2ad5c617_chunk_0004"
+      ],
+      "reference_answer": "Business firms’ share fell from 80% in FY 1993 to 77% in FY 1994 and remained at 77% through FY 1997. Educational institutions rose from 5% to 6%; nonprofit institutions went 3%, 2%, 2%, 2%, 3%.",
+      "evidence_snippet": "The trend in the distribution of NASA's direct procurements by type of contractor during the period Fiscal Years 1993-1997 is shown.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q5",
+      "query": "What percentage of total contracts in FY 1997 was represented by firm-fixed-price contracts?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_0a53f73d2ad5c617_chunk_0009"
+      ],
+      "reference_answer": "Firm-fixed-price contracts amounted to 11 percent of the total contracts in Fiscal Year 1997.",
+      "evidence_snippet": "Firm-fixed-price contracts amounted to 11 percent of the total, and cost-plus-fixed-fee contracts represented 6 percent of the total in Fiscal Year 1997.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q6",
+      "query": "What documents did NPD 1000.1C cancel when it was issued?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_723b433b9a0fb29e_chunk_0016"
+      ],
+      "reference_answer": "NPD 1000.1C canceled the NASA Strategic Plan dated February 3, 2003, and NPR 1000.2A Strategic Management Handbook dated April 13, 2005.",
+      "evidence_snippet": "NPD 1000.1C, NASA Strategic Plan, dated February 3, 2003. NPR 1000.2A, Strategic Management Handbook, dated April 13, 2005.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q7",
+      "query": "What are the fundamental core values that guide NASA missions?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_723b433b9a0fb29e_chunk_0020"
+      ],
+      "reference_answer": "NASA’s core values are Safety, Teamwork, Integrity, and Mission Success.",
+      "evidence_snippet": "NASA is privileged to take on missions of extraordinary risk, complexity, and national priority.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q8",
+      "query": "What role do Implementation Plans play in NASA strategic management?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_723b433b9a0fb29e_chunk_0036"
+      ],
+      "reference_answer": "Implementation Plans serve as the bridge between the high-level Strategic Plan and program execution developed by Mission Directorates.",
+      "evidence_snippet": "Mission Directorates shall develop Implementation Plans to execute the strategic goals/objectives outlined in the Strategic Plan. Implementation Plans serve as the bridge.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q9",
+      "query": "What report document code is assigned to the Goddard Space Flight Center 1998 Annual Report?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_6c1749a27f332bf1_chunk_0000"
+      ],
+      "reference_answer": "The report code is NP-1999-01-004-GSFC.",
+      "evidence_snippet": "Goddard Space Flight Center 1998 Annual Report NP-1999-01-004-GSFC Message From the Director",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q10",
+      "query": "What audit opinion did NASA receive on its FY 2002 financial statements?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_b5e459d51a1efb7b_chunk_0001"
+      ],
+      "reference_answer": "NASA received an unqualified audit opinion on its FY 2002 financial statements.",
+      "evidence_snippet": "We received an unqualified audit opinion on our FY 2002 financial statements. We achieved the vast majority of our performance goals.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q11",
+      "query": "How many years of continuous human habitation on the International Space Station occurred by FY 2002?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_b5e459d51a1efb7b_chunk_0003"
+      ],
+      "reference_answer": "FY 2002 was the second year of continuous, permanent human habitation of the International Space Station.",
+      "evidence_snippet": "FY 2002 was the second year of continuous,permanent human habitation of the International Space Station.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q12",
+      "query": "What findings were reported by the Independent Program Assessment Office regarding Cockpit Avionics Upgrade in FY 2002?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_b5e459d51a1efb7b_chunk_0164"
+      ],
+      "reference_answer": "The review found considerable progress in hardware design and system and software requirements. Previous technical findings/issues had been resolved, but concern remained about the contractor’s delivery schedule.",
+      "evidence_snippet": "Program Assessment Office conducted a Cockpit Avionics Upgrade non-advocate review in FY 2002. It found that the project has made considerable progress in hardware design and system and software requirements.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q13",
+      "query": "What systematic architecture is established by the NASA Strategic Human Capital Plan?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_9cbf47f207ab88bb_chunk_0001"
+      ],
+      "reference_answer": "The plan establishes an Agencywide approach consisting of five human capital pillars, goals, and strategies.",
+      "evidence_snippet": "The Plan is based on an architecture consisting of five human capital pillars, and their associated goals, and strategies.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q14",
+      "query": "What is the subject of Section 2.0 of the NASA Strategic Human Capital Plan?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_9cbf47f207ab88bb_chunk_0005"
+      ],
+      "reference_answer": "Section 2.0 covers NASA human capital pillars, goals, and strategies.",
+      "evidence_snippet": "SECTION 2.0 NASA'S HUMAN CAPITAL PILLARS, GOALS, AND STRATEGIES",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q15",
+      "query": "What is discussed in Chapter 3 of the NASA environmental management overview?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_796da926b0b4a74c_chunk_0020"
+      ],
+      "reference_answer": "Chapter 3 provides an overview of environmental laws applicable to NASA operations.",
+      "evidence_snippet": "3-8 Chapter 3 Overview of Environmental Laws",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q16",
+      "query": "What was the purpose of Executive Order 11514 as amended by Executive Order 11991?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_796da926b0b4a74c_chunk_0179"
+      ],
+      "reference_answer": "Executive Order 11514 mandates the Protection and Enhancement of Environmental Quality.",
+      "evidence_snippet": "Executive Order 11514 (Amended by Executive Order 11991): Protection and Enhancement of Environmental Quality.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q17",
+      "query": "What is the responsibility of the Systems Engineering Office within the NESC?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_5be19ddeaea7951e_chunk_0005"
+      ],
+      "reference_answer": "The Systems Engineering Office is responsible for conducting independent systems engineering reviews and proactive assessments.",
+      "evidence_snippet": "The Systems Engineering Office is responsible for conducting independent systems engineering reviews and for providing proactive assessment.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q18",
+      "query": "Who announced the initial priority of establishing the NASA Engineering and Safety Center (NESC)?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_5be19ddeaea7951e_chunk_0037"
+      ],
+      "reference_answer": "Roy D. Bridges stated that his first priority was establishing the NESC to enhance safety through independent analysis.",
+      "evidence_snippet": "\"My first priority is establishment of the NASA Engineering and Safety Center that will enhance and reinvigorate safety through independent assessment and analysis.\" Roy D. Bridges",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q19",
+      "query": "What role did Ms. Kramer White hold before joining the NASA Engineering and Safety Center?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_5be19ddeaea7951e_chunk_0043"
+      ],
+      "reference_answer": "Ms. Kramer White served as the Chief Engineer for Orbiter Maintenance Down Period in the Orbiter Engineer Office at JSC.",
+      "evidence_snippet": "Prior to the NESC, Ms. Kramer White served as the Chief Engineer for Orbiter Maintenance Down Period in the Orbiter Engineer Office at JSC.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    },
+    {
+      "query_id": "d2_prop_q20",
+      "query": "From which branch did Dr. Piascik join the NASA Engineering and Safety Center?",
+      "ground_truth_chunk_ids": [
+        "d2_nasa_pdf_5be19ddeaea7951e_chunk_0044"
+      ],
+      "reference_answer": "Dr. Piascik came from the LaRC Mechanics of Materials Branch and the Metals and Thermal Structures Branch.",
+      "evidence_snippet": "Dr. Piascik came to the NESC from the LaRC Mechanics of Materials Branch and the Metals and Thermal branch.",
+      "validation_status": "human_approved_clean_v1",
+      "adjudication_status": "approved_by_user_instruction_2026-10-14"
+    }
+  ],
+  "out_of_corpus_queries": [
+    "What are the employee leave encashment rules at Meridian Dynamics Inc.?",
+    "How is Value Added Tax (VAT) reported under UK HMRC regulations?",
+    "What is the standard probation period for administrative officers at Cabinet Office?",
+    "What are the encryption key management life cycle states under NIST SP 800-57?",
+    "What was Meridian Dynamics Project Titan budget allocation for FY 2026?"
+  ]
+}

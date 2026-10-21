@@ -47,6 +47,7 @@ class Neo4jGraphBuilder:
         self,
         connection: Neo4jConnection,
         schema: Optional[GraphSchema] = None,
+        dataset_id: Optional[str] = None,
     ) -> None:
         """
         Args:
@@ -56,6 +57,7 @@ class Neo4jGraphBuilder:
         """
         self._connection = connection
         self._schema = schema or GraphSchema.default()
+        self._dataset_id = dataset_id
 
     def create_node(self, entity: Entity) -> bool:
         """
@@ -80,16 +82,27 @@ class Neo4jGraphBuilder:
         """
         self._schema.validate_entity(entity)
 
-        query = (
-            f"MERGE (n:{entity.entity_type.value} {{canonical_name: $canonical_name}}) "
-            f"ON CREATE SET n.text = $text, n.source_chunk_id = $source_chunk_id "
-            f"RETURN n"
-        )
+        if self._dataset_id is None:
+            # Preserve the canonical baseline's existing graph write behavior.
+            query = (
+                f"MERGE (n:{entity.entity_type.value} {{canonical_name: $canonical_name}}) "
+                f"ON CREATE SET n.text = $text, n.source_chunk_id = $source_chunk_id "
+                f"RETURN n"
+            )
+        else:
+            query = (
+                f"MERGE (n:{entity.entity_type.value} "
+                f"{{dataset_id: $dataset_id, canonical_name: $canonical_name}}) "
+                f"ON CREATE SET n.text = $text, n.source_chunk_id = $source_chunk_id "
+                f"RETURN n"
+            )
         params = {
             "canonical_name": entity.canonical_name if entity.canonical_name is not None else entity.text,
             "text": entity.text,
             "source_chunk_id": entity.source_chunk_id,
         }
+        if self._dataset_id is not None:
+            params["dataset_id"] = self._dataset_id
         try:
             _, counters = self._connection.execute_write(query, params)
         except Neo4jConnectionError as exc:
@@ -144,6 +157,8 @@ class Neo4jGraphBuilder:
             "r.source_chunk_id = coalesce(r.source_chunk_id, $source_chunk_id)",
             "r.confidence = coalesce(r.confidence, $confidence)",
         ]
+        if self._dataset_id is not None:
+            assignments.append("r.dataset_id = $dataset_id")
 
         assignments.extend(
             f"r.{key} = ${key}"
@@ -152,15 +167,26 @@ class Neo4jGraphBuilder:
 
         set_clause = "SET " + ", ".join(assignments) + " "
 
-        query = (
-            f"MATCH (s:{relation.subject_entity.entity_type.value} "
-            f"{{canonical_name: $subject_name}}), "
-            f"(o:{relation.object_entity.entity_type.value} "
-            f"{{canonical_name: $object_name}}) "
-            f"MERGE (s)-[r:{relation.predicate.value}]->(o) "
-            f"{set_clause}"
-            f"RETURN r"
-        )
+        if self._dataset_id is None:
+            query = (
+                f"MATCH (s:{relation.subject_entity.entity_type.value} "
+                f"{{canonical_name: $subject_name}}), "
+                f"(o:{relation.object_entity.entity_type.value} "
+                f"{{canonical_name: $object_name}}) "
+                f"MERGE (s)-[r:{relation.predicate.value}]->(o) "
+                f"{set_clause}"
+                f"RETURN r"
+            )
+        else:
+            query = (
+                f"MATCH (s:{relation.subject_entity.entity_type.value} "
+                f"{{dataset_id: $dataset_id, canonical_name: $subject_name}}), "
+                f"(o:{relation.object_entity.entity_type.value} "
+                f"{{dataset_id: $dataset_id, canonical_name: $object_name}}) "
+                f"MERGE (s)-[r:{relation.predicate.value}]->(o) "
+                f"{set_clause}"
+                f"RETURN r"
+            )
         params: dict[str, Any] = {
             "subject_name": (
                 relation.subject_entity.canonical_name
@@ -176,6 +202,8 @@ class Neo4jGraphBuilder:
             "confidence": relation.confidence,
             **relation.properties,
         }
+        if self._dataset_id is not None:
+            params["dataset_id"] = self._dataset_id
         try:
             _, counters = self._connection.execute_write(query, params)
         except Neo4jConnectionError as exc:

@@ -36,6 +36,11 @@ _DEFAULT_SYSTEM_INSTRUCTION = (
     "[pdf_ff8f53d904329460_chunk_0000]. "
     "Only state facts that are directly supported by the provided context. "
 
+    "For a simple factual question (including a count, date, name, or yes/no), "
+    "extract the specific fact that answers the question and respond in one short "
+    "sentence. Include only a directly relevant qualification if it helps answer "
+    "the question. Do not summarize the surrounding document, list other options, "
+    "or repeat unrelated facts from the context. "
     "ANSWER STYLE: Give the shortest complete answer that directly satisfies the "
     "question. For 'Who' questions, return the person or department and only the "
     "minimum identifying information needed. For 'When' questions, return the "

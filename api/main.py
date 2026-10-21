@@ -58,4 +58,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from pathlib import Path
+from fastapi.responses import FileResponse, HTMLResponse
+
 app.include_router(router)
+
+
+@app.get("/", response_class=HTMLResponse)
+async def serve_ui():
+    """Serves the primary Enterprise RAG web interface."""
+    root_dir = Path(__file__).resolve().parent.parent
+    ui_path = root_dir / "rag_demo.html"
+    if ui_path.exists():
+        return FileResponse(ui_path)
+    return HTMLResponse("<h1>Enterprise RAG API</h1><p>rag_demo.html not found.</p>")
+
+\n

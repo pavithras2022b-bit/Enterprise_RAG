@@ -40,6 +40,17 @@ RETURN [n IN nodes(path) | n.canonical_name] AS node_names,
        length(path) AS hops
 """.strip()
 
+_SCOPED_TRAVERSAL_QUERY_TEMPLATE = """
+MATCH path = (start {{dataset_id: $dataset_id, canonical_name: $start_name}})-[*1..{max_hops}]-(end)
+WHERE all(n IN nodes(path) WHERE n.dataset_id = $dataset_id)
+RETURN [n IN nodes(path) | n.canonical_name] AS node_names,
+       [n IN nodes(path) | labels(n)[0]] AS node_labels,
+       [r IN relationships(path) | type(r)] AS rel_types,
+       [r IN relationships(path) | r.source_chunk_id] AS source_chunk_ids,
+       [r IN relationships(path) | startNode(r).canonical_name] AS rel_start_names,
+       length(path) AS hops
+""".strip()
+
 
 class RetrievalError(Exception):
     """Wraps failures from the underlying vector/graph/embedding backends."""
@@ -54,12 +65,14 @@ class HybridRetrievalController:
         entity_linker: EntityLinker,
         max_hops: int = 3,
         graph_schema: Optional[GraphSchema] = None,
+        dataset_id: Optional[str] = None,
     ) -> None:
         self._vector_store = vector_store
         self._graph_connection = graph_connection
         self._embedding_model = embedding_model
         self._entity_linker = entity_linker
         self._max_hops = max_hops
+        self._dataset_id = dataset_id
         self._graph_schema = graph_schema if graph_schema is not None else GraphSchema.default()
 
     # ------------------------------------------------------------------
@@ -107,15 +120,21 @@ class HybridRetrievalController:
         # max_hops is bounds-checked above BEFORE string interpolation --
         # never interpolate a value that hasn't first been type/range
         # checked in Python (Section 9's Cypher safety note).
-        query = _TRAVERSAL_QUERY_TEMPLATE.format(max_hops=int(effective_max_hops))
+        query_template = (
+            _SCOPED_TRAVERSAL_QUERY_TEMPLATE
+            if self._dataset_id is not None
+            else _TRAVERSAL_QUERY_TEMPLATE
+        )
+        query = query_template.format(max_hops=int(effective_max_hops))
 
         best_by_fact_id: dict[str, GraphFact] = {}
 
         for entity_ref in entities:
             try:
-                rows = self._graph_connection.execute_read(
-                    query, {"start_name": entity_ref.canonical_name}
-                )
+                parameters = {"start_name": entity_ref.canonical_name}
+                if self._dataset_id is not None:
+                    parameters["dataset_id"] = self._dataset_id
+                rows = self._graph_connection.execute_read(query, parameters)
             except Neo4jConnectionError as exc:
                 raise RetrievalError(f"Graph traversal failed: {exc}") from exc
 

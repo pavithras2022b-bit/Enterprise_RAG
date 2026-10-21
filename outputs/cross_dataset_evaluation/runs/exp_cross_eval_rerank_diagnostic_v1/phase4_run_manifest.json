@@ -1,0 +1,115 @@
+{
+  "experiment_id": "exp_cross_eval_rerank_diagnostic_v1",
+  "completed_utc": "2026-10-14T10:52:43.579888+05:30",
+  "mode": "dense vector top-20 plus cross-encoder reranking to top-5; no generation or fine-tuning",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "reranker_snapshot": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "device": "cpu",
+  "embedding_dimension": 384,
+  "normalized_embeddings": true,
+  "initial_top_k": 20,
+  "reranked_top_k": 5,
+  "cross_encoder_max_length": 512,
+  "similarity": "cosine; score=1-distance",
+  "corpora": {
+    "D0": {
+      "collection_name": "enterprise_docs",
+      "collection_id": "3a25a04f-847e-416e-b82f-aef13ccee519",
+      "count": 149,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    },
+    "D2": {
+      "collection_name": "nasa_tech_d2",
+      "collection_id": "0a053817-c2cc-416c-a6dc-e4755f3f7bdb",
+      "count": 1164,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    },
+    "D3": {
+      "collection_name": "goverment_policy_d3",
+      "collection_id": "573d7dd6-1754-44b2-ad57-c438b033ce85",
+      "count": 6119,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    }
+  },
+  "phase2_top5_baseline_match": "All 60 answerable queries had identical Phase 2 vector top-5 IDs when queried against the isolated snapshot.",
+  "answerable_metrics": {
+    "D0": {
+      "vector_hit_rate_at_5": 0.9,
+      "rerank_hit_rate_at_5": 1.0,
+      "delta_hit_rate_at_5": 0.09999999999999998,
+      "vector_mrr_at_5": 0.825,
+      "rerank_mrr_at_5": 0.9166666666666666,
+      "delta_mrr_at_5": 0.09166666666666667,
+      "vector_ndcg_at_5": 0.8446394630357187,
+      "rerank_ndcg_at_5": 0.9380929753571458,
+      "delta_ndcg_at_5": 0.09345351232142707,
+      "vector_precision_at_5": 0.18,
+      "rerank_precision_at_5": 0.2,
+      "delta_precision_at_5": 0.020000000000000018,
+      "answerable_query_count": 20,
+      "per_query_ndcg_change_classification": {
+        "improved": 4,
+        "unchanged": 13,
+        "degraded": 3
+      }
+    },
+    "D2": {
+      "vector_hit_rate_at_5": 0.65,
+      "rerank_hit_rate_at_5": 0.9,
+      "delta_hit_rate_at_5": 0.25,
+      "vector_mrr_at_5": 0.475,
+      "rerank_mrr_at_5": 0.8166666666666667,
+      "delta_mrr_at_5": 0.3416666666666667,
+      "vector_ndcg_at_5": 0.5192536065216309,
+      "rerank_ndcg_at_5": 0.8380929753571458,
+      "delta_ndcg_at_5": 0.3188393688355149,
+      "vector_precision_at_5": 0.13,
+      "rerank_precision_at_5": 0.18,
+      "delta_precision_at_5": 0.04999999999999999,
+      "answerable_query_count": 20,
+      "per_query_ndcg_change_classification": {
+        "improved": 10,
+        "unchanged": 10,
+        "degraded": 0
+      }
+    },
+    "D3": {
+      "vector_hit_rate_at_5": 0.5,
+      "rerank_hit_rate_at_5": 0.7,
+      "delta_hit_rate_at_5": 0.19999999999999996,
+      "vector_mrr_at_5": 0.35416666666666663,
+      "rerank_mrr_at_5": 0.6166666666666667,
+      "delta_mrr_at_5": 0.26250000000000007,
+      "vector_ndcg_at_5": 0.39117329093938824,
+      "rerank_ndcg_at_5": 0.6380929753571458,
+      "delta_ndcg_at_5": 0.24691968441775758,
+      "vector_precision_at_5": 0.1,
+      "rerank_precision_at_5": 0.14,
+      "delta_precision_at_5": 0.04000000000000001,
+      "answerable_query_count": 20,
+      "per_query_ndcg_change_classification": {
+        "improved": 8,
+        "unchanged": 10,
+        "degraded": 2
+      }
+    }
+  },
+  "d0_claim_restriction": "Validation-Derived Diagnostic Baseline only; not an independent test set.",
+  "refusal_candidates": "15 candidates were also reranked and logged; no relevance metrics computed because no verified gold IDs.",
+  "artifacts": {
+    "per_query_rerank_retrieval.csv_sha256": "89b899e7e64dfef6d26f9f0aaa74e2578e023965af77bc0c22d6be7b37d07e23",
+    "chroma_snapshot_manifest.json_sha256": "ef466171bc69e48298e46a5cffde5b5d501575c72bfc75ae9aaa2257070b53d8"
+  },
+  "software_versions": {
+    "chromadb": "1.5.9",
+    "sentence_transformers": "5.7.0"
+  },
+  "source_store_access": "Original Chroma store was copied and file-hash verified before PersistentClient access. Chroma queries were run against only the isolated copy in this run directory."
+}

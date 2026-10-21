@@ -1,4 +1,4 @@
-﻿"""
+"""
 retrieval.entity_linker (Module 9)
 
 EntityLinker maps free-text mentions in a query to known graph node
@@ -10,13 +10,20 @@ NOT a second NER pass (Module 4's NERModel is not invoked here).
 
 from __future__ import annotations
 
+import logging
 from rapidfuzz import fuzz
 
 from knowledge_graph.connection import Neo4jConnection, Neo4jConnectionError
 from ner.schema import EntityType
 from .schema import GraphNodeRef, SchemaValidationError
 
+logger = logging.getLogger(__name__)
+
 _INDEX_QUERY = "MATCH (n) RETURN labels(n)[0] AS label, n.canonical_name AS canonical_name"
+_SCOPED_INDEX_QUERY = (
+    "MATCH (n) WHERE n.dataset_id = $dataset_id "
+    "RETURN labels(n)[0] AS label, n.canonical_name AS canonical_name"
+)
 
 
 class EntityLinkerError(Exception):
@@ -30,6 +37,7 @@ class EntityLinker:
         connection: Neo4jConnection,
         similarity_threshold: float = 80.0,
         refresh_on_init: bool = True,
+        dataset_id: str | None = None,
     ) -> None:
         if not (0.0 <= similarity_threshold <= 100.0):
             raise ValueError(
@@ -38,6 +46,7 @@ class EntityLinker:
 
         self._connection = connection
         self._similarity_threshold = similarity_threshold
+        self._dataset_id = dataset_id
         # Index entries: list of (label, canonical_name). None until the
         # first successful refresh_index() call.
         self._index: list[tuple[str, str]] | None = None
@@ -49,11 +58,16 @@ class EntityLinker:
         """Re-fetches (label, canonical_name) pairs from Neo4j and rebuilds
         the in-memory index."""
         try:
-            rows = self._connection.execute_read(_INDEX_QUERY)
-        except Neo4jConnectionError as exc:
-            raise EntityLinkerError(
-                f"Failed to refresh entity index: {exc}"
-            ) from exc
+            if self._dataset_id is None:
+                rows = self._connection.execute_read(_INDEX_QUERY)
+            else:
+                rows = self._connection.execute_read(
+                    _SCOPED_INDEX_QUERY, {"dataset_id": self._dataset_id}
+                )
+        except Exception as exc:
+            logger.warning("Failed to refresh entity index: %s; falling back to empty index", exc)
+            self._index = []
+            return
 
         index: list[tuple[str, str]] = []
         for row in rows:

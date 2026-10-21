@@ -1,0 +1,293 @@
+{
+  "database": "neo4j",
+  "uri": "bolt://localhost:7687",
+  "nodes_by_dataset": [
+    {
+      "dataset_id": "D0",
+      "node_count": 483,
+      "nodes_with_source_chunk_id": 483,
+      "distinct_node_source_chunks": 113
+    },
+    {
+      "dataset_id": "D1",
+      "node_count": 952,
+      "nodes_with_source_chunk_id": 952,
+      "distinct_node_source_chunks": 298
+    },
+    {
+      "dataset_id": "D2",
+      "node_count": 5671,
+      "nodes_with_source_chunk_id": 5671,
+      "distinct_node_source_chunks": 977
+    },
+    {
+      "dataset_id": "D3",
+      "node_count": 11145,
+      "nodes_with_source_chunk_id": 11145,
+      "distinct_node_source_chunks": 2917
+    }
+  ],
+  "edges_by_dataset": [
+    {
+      "dataset_id": "D0",
+      "edge_count": 106,
+      "edges_with_source_chunk_id": 0,
+      "distinct_edge_source_chunks": 0
+    },
+    {
+      "dataset_id": "D1",
+      "edge_count": 3,
+      "edges_with_source_chunk_id": 3,
+      "distinct_edge_source_chunks": 2
+    },
+    {
+      "dataset_id": "D2",
+      "edge_count": 10,
+      "edges_with_source_chunk_id": 10,
+      "distinct_edge_source_chunks": 9
+    },
+    {
+      "dataset_id": "D3",
+      "edge_count": 11,
+      "edges_with_source_chunk_id": 11,
+      "distinct_edge_source_chunks": 7
+    }
+  ],
+  "nodes_by_label": [
+    {
+      "dataset_id": "D0",
+      "label": "DEPARTMENT",
+      "node_count": 237
+    },
+    {
+      "dataset_id": "D0",
+      "label": "EMPLOYEE",
+      "node_count": 102
+    },
+    {
+      "dataset_id": "D0",
+      "label": "NETWORK_RESOURCE",
+      "node_count": 13
+    },
+    {
+      "dataset_id": "D0",
+      "label": "POLICY",
+      "node_count": 64
+    },
+    {
+      "dataset_id": "D0",
+      "label": "PROJECT",
+      "node_count": 27
+    },
+    {
+      "dataset_id": "D0",
+      "label": "SOFTWARE",
+      "node_count": 40
+    },
+    {
+      "dataset_id": "D1",
+      "label": "DEPARTMENT",
+      "node_count": 563
+    },
+    {
+      "dataset_id": "D1",
+      "label": "EMPLOYEE",
+      "node_count": 5
+    },
+    {
+      "dataset_id": "D1",
+      "label": "NETWORK_RESOURCE",
+      "node_count": 67
+    },
+    {
+      "dataset_id": "D1",
+      "label": "POLICY",
+      "node_count": 251
+    },
+    {
+      "dataset_id": "D1",
+      "label": "PROJECT",
+      "node_count": 11
+    },
+    {
+      "dataset_id": "D1",
+      "label": "SOFTWARE",
+      "node_count": 55
+    },
+    {
+      "dataset_id": "D2",
+      "label": "DEPARTMENT",
+      "node_count": 2592
+    },
+    {
+      "dataset_id": "D2",
+      "label": "EMPLOYEE",
+      "node_count": 573
+    },
+    {
+      "dataset_id": "D2",
+      "label": "NETWORK_RESOURCE",
+      "node_count": 392
+    },
+    {
+      "dataset_id": "D2",
+      "label": "POLICY",
+      "node_count": 1418
+    },
+    {
+      "dataset_id": "D2",
+      "label": "PROJECT",
+      "node_count": 256
+    },
+    {
+      "dataset_id": "D2",
+      "label": "ROLE",
+      "node_count": 4
+    },
+    {
+      "dataset_id": "D2",
+      "label": "SOFTWARE",
+      "node_count": 436
+    },
+    {
+      "dataset_id": "D3",
+      "label": "DEPARTMENT",
+      "node_count": 5769
+    },
+    {
+      "dataset_id": "D3",
+      "label": "EMPLOYEE",
+      "node_count": 1079
+    },
+    {
+      "dataset_id": "D3",
+      "label": "LEAVE_TYPE",
+      "node_count": 2
+    },
+    {
+      "dataset_id": "D3",
+      "label": "NETWORK_RESOURCE",
+      "node_count": 578
+    },
+    {
+      "dataset_id": "D3",
+      "label": "POLICY",
+      "node_count": 2895
+    },
+    {
+      "dataset_id": "D3",
+      "label": "PROJECT",
+      "node_count": 172
+    },
+    {
+      "dataset_id": "D3",
+      "label": "ROLE",
+      "node_count": 1
+    },
+    {
+      "dataset_id": "D3",
+      "label": "SOFTWARE",
+      "node_count": 649
+    }
+  ],
+  "edges_by_type": [
+    {
+      "dataset_id": "D0",
+      "relationship_type": "ASSIGNED_TO",
+      "edge_count": 4
+    },
+    {
+      "dataset_id": "D0",
+      "relationship_type": "MANAGES",
+      "edge_count": 64
+    },
+    {
+      "dataset_id": "D0",
+      "relationship_type": "REQUIRES_TRAINING",
+      "edge_count": 10
+    },
+    {
+      "dataset_id": "D0",
+      "relationship_type": "USES",
+      "edge_count": 28
+    },
+    {
+      "dataset_id": "D1",
+      "relationship_type": "FOLLOWS",
+      "edge_count": 3
+    },
+    {
+      "dataset_id": "D2",
+      "relationship_type": "FOLLOWS",
+      "edge_count": 4
+    },
+    {
+      "dataset_id": "D2",
+      "relationship_type": "MANAGES",
+      "edge_count": 1
+    },
+    {
+      "dataset_id": "D2",
+      "relationship_type": "REQUIRES_TRAINING",
+      "edge_count": 4
+    },
+    {
+      "dataset_id": "D2",
+      "relationship_type": "USES",
+      "edge_count": 1
+    },
+    {
+      "dataset_id": "D3",
+      "relationship_type": "FOLLOWS",
+      "edge_count": 8
+    },
+    {
+      "dataset_id": "D3",
+      "relationship_type": "REQUIRES_TRAINING",
+      "edge_count": 3
+    }
+  ],
+  "phase4_source_chunk_overlap": {
+    "D0": {
+      "phase4_answerable_top20_unique_chunk_ids": 131,
+      "matching_edges": 0,
+      "matching_source_chunks": 0
+    },
+    "D2": {
+      "phase4_answerable_top20_unique_chunk_ids": 239,
+      "matching_edges": 1,
+      "matching_source_chunks": 1
+    },
+    "D3": {
+      "phase4_answerable_top20_unique_chunk_ids": 349,
+      "matching_edges": 2,
+      "matching_source_chunks": 2
+    }
+  },
+  "prior_ingestion_summaries": {
+    "D2": {
+      "dataset_id": "D2",
+      "processed_chunk_count": 1164,
+      "entity_span_count": 11314,
+      "relation_count_extracted": 10,
+      "graph_nodes_created": 5671,
+      "graph_nodes_merged": 5643,
+      "graph_relationships_created": 10,
+      "graph_relationships_merged": 0,
+      "graph_write_errors": [],
+      "ingestion_status": "complete"
+    },
+    "D3": {
+      "dataset_id": "D3",
+      "processed_chunk_count": 6119,
+      "entity_span_count": 28865,
+      "relation_count_extracted": 13,
+      "graph_nodes_created": 11145,
+      "graph_nodes_merged": 17720,
+      "graph_relationships_created": 11,
+      "graph_relationships_merged": 2,
+      "graph_write_errors": [],
+      "ingestion_status": "complete"
+    }
+  }
+}

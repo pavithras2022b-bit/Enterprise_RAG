@@ -1,0 +1,146 @@
+{
+  "experiment_id": "exp_cross_eval_hybrid_full_v1",
+  "status": "completed",
+  "started_utc": "2026-10-14T06:55:03.034444+00:00",
+  "d0_claim_restriction": "D0 is a Validation-Derived Diagnostic Baseline; the 20 pilot questions originate from lora_val.jsonl and answers appear in validation completions; not an independent test set.",
+  "benchmark_files": {},
+  "clean_v1_manifest_sha256": "cc0cd2d58483d058602f5d08ad3b29664cd1bd545e32904a8291e26a12afde9d",
+  "phase2_csv_sha256": "57c0dc82161d51fbfb2cb1a15750a017500361ff7771a84f5efc0ea7acc4f920",
+  "phase4_csv_sha256": "89b899e7e64dfef6d26f9f0aaa74e2578e023965af77bc0c22d6be7b37d07e23",
+  "phase3_csv_sha256": "e102f745095df91104ed2fe82ce834a5bdda65a8612c87bf862426d6ed5e5c19",
+  "chroma_source": "Phase 4 isolated read-only snapshot; no Chroma add/update/delete API used.",
+  "execution_controls": {
+    "vector_top_k": 20,
+    "graph_top_k": 20,
+    "reranked_top_k": 5,
+    "query_scope": "each dataset searches only its named collection and matching dataset-scoped graph; D0 uses legacy untagged graph only",
+    "temperature": 0.2,
+    "model_tag": "qwen2.5-3b-lora-ragqa"
+  },
+  "completion": {
+    "rows_written": 75,
+    "answerable_generation_errors": 0,
+    "refusal_generation_errors": 0,
+    "generation_errors": []
+  },
+  "model_configuration": {
+    "embedding_model": "all-MiniLM-L6-v2",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "reranker_max_length": 512,
+    "alpha_classifier_config": "learned",
+    "alpha_classifier_loaded": "LearnedAlphaClassifier",
+    "generator_model_tag": "qwen2.5-3b-lora-ragqa",
+    "generator_endpoint": "http://localhost:11434",
+    "generator_temperature": 0.2,
+    "generation_method": "configured LLMClient.generate_answer; citation extraction/validation enabled"
+  },
+  "collections": {
+    "D0": {
+      "name": "enterprise_docs",
+      "id": "3a25a04f-847e-416e-b82f-aef13ccee519",
+      "count": 149,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    },
+    "D2": {
+      "name": "nasa_tech_d2",
+      "id": "0a053817-c2cc-416c-a6dc-e4755f3f7bdb",
+      "count": 1164,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    },
+    "D3": {
+      "name": "goverment_policy_d3",
+      "id": "573d7dd6-1754-44b2-ad57-c438b033ce85",
+      "count": 6119,
+      "metadata": {
+        "hnsw:space": "cosine"
+      }
+    }
+  },
+  "graph_counts": {
+    "D0": {
+      "nodes": 483,
+      "edges": 106
+    },
+    "D1": {
+      "nodes": 952,
+      "edges": 3
+    },
+    "D2": {
+      "nodes": 5671,
+      "edges": 10
+    },
+    "D3": {
+      "nodes": 11145,
+      "edges": 11
+    }
+  },
+  "benchmarks": {
+    "D0": {
+      "file": "d0_meridian_clean_v1.json",
+      "sha256": "4c1710eeeea211f8e2ec3f748ab449ce567c69f6d9604828a96bf60e616753c3",
+      "answerable_queries": 20
+    },
+    "D2": {
+      "file": "d2_nasa_clean_v1.json",
+      "sha256": "327be262c2d64683238c2d5de6837d13f038052ea4a4c8e5e4f605f505491bee",
+      "answerable_queries": 20
+    },
+    "D3": {
+      "file": "d3_government_clean_v1.json",
+      "sha256": "d05be224650b485d575b0d734a8b9854e79ed132b527348fe7d1bff6df4565a0",
+      "answerable_queries": 20
+    },
+    "refusal": {
+      "file": "cross_dataset_refusal_clean_v1.json",
+      "sha256": "b9f11a5f65937d0c91c0f5d07518717733bf06ee52c4949f6447d13c2f5261d5",
+      "candidate_queries": 15
+    }
+  },
+  "alpha_summary": {
+    "D0": {
+      "n": 25,
+      "mean": 0.7893616783618927,
+      "std": 0.10871300721190959,
+      "min": 0.4076542556285858,
+      "p25": 0.7589902877807617,
+      "median": 0.8212224245071411,
+      "p75": 0.840206503868103,
+      "max": 0.9272217750549316,
+      "vector_oriented_alpha_ge_0_5": 24,
+      "graph_oriented_alpha_lt_0_5": 1
+    },
+    "D2": {
+      "n": 25,
+      "mean": 0.8009068441390991,
+      "std": 0.09090806821989082,
+      "min": 0.526339590549469,
+      "p25": 0.7881856560707092,
+      "median": 0.816739022731781,
+      "p75": 0.8646937608718872,
+      "max": 0.9239672422409058,
+      "vector_oriented_alpha_ge_0_5": 25,
+      "graph_oriented_alpha_lt_0_5": 0
+    },
+    "D3": {
+      "n": 25,
+      "mean": 0.8117985439300537,
+      "std": 0.05994936837563802,
+      "min": 0.6549760699272156,
+      "p25": 0.7756784558296204,
+      "median": 0.8138685822486877,
+      "p75": 0.8460157513618469,
+      "max": 0.9239672422409058,
+      "vector_oriented_alpha_ge_0_5": 25,
+      "graph_oriented_alpha_lt_0_5": 0
+    }
+  },
+  "software_versions": {
+    "chromadb": "1.5.9"
+  },
+  "completed_utc": "2026-10-14T08:14:01.959599+00:00",
+  "output_sha256": "36940d9c539c382c72621a1cd707f055783c4f82f771fc17ddfba858b55b1b20"
+}
